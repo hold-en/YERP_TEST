@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/page_template.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		$(".btn_pop").click(function(){
+			$(".ly_popup").hide("fast");
+			$(".dimd").hide();
+		});		
+	};
+
+	scwin.btnOpenLayer_onclick = function() {
+		$(".ly_popup").show("fast");
+		$(".dimd").show();
+	};
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+
+    <xf:group id="" style="" class="sub_contents">
+    	<xf:group class="dfbox" id="" style="">
+    		<w2:textbox class="df_tit fl" id="" label="레이어팝업 호출" style=""></w2:textbox>
+    		<xf:group class="fr" id="" style="">
+    			<xf:trigger class="btn_cm " id="btnOpenLayer" style="" type="button" ev:onclick="scwin.btnOpenLayer_onclick">
+    				<xf:label><![CDATA[팝업띄우기]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </xf:group>
+    <xf:group id="" style="" class="ly_popup">
+    		<xf:group id="" style="" class="ly_head">
+    			<w2:textbox id="" style="" class="tit" label="Alert" tagname="p"></w2:textbox>
+    		</xf:group>
+    		<xf:group id="" style="" class="ly_cont">
+    			<w2:textbox id="" style="" class="txt1" label="장애가 발생하였습니다." tagname="p"></w2:textbox>
+    			<w2:textbox id="" style="" class="txt2" label="장애문의 : admin@admin.com" tagname="p"></w2:textbox>
+    			<w2:anchor id="" style="" class="btn_pop" outerDiv="false">
+    				<xf:label><![CDATA[닫기]]></xf:label>
+    			</w2:anchor>
+    		</xf:group>
+
+    	</xf:group><xf:group id="" style="" class="dimd"></xf:group></body>
+</html>

@@ -1,0 +1,1834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_vertical_guides="" meta_horizontal_guides="">
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" id="dlt_01" repeatNode="map" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CD_Project" name="CD_Project" dataType="text"></w2:column>
+            			<w2:column id="DS_Project" name="DS_Project" dataType="text"></w2:column>
+            			<w2:column id="CD_Client" name="CD_Client" dataType="text"></w2:column>
+            			<w2:column id="DS_Client" name="DS_Client" dataType="text"></w2:column>
+            			<w2:column id="DS_ClientDiv" name="DS_ClientDiv" dataType="text"></w2:column>
+            			<w2:column id="DS_ClientPer" name="DS_ClientPer" dataType="text"></w2:column>
+            			<w2:column id="CD_Jojik" name="CD_Jojik" dataType="text"></w2:column>
+            			<w2:column id="DS_Jojik" name="DS_Jojik" dataType="text"></w2:column>
+            			<w2:column id="CD_SujuJojik" name="CD_SujuJojik" dataType="text"></w2:column>
+            			<w2:column id="DS_SujuJojik" name="DS_SujuJojik" dataType="text"></w2:column>
+            			<w2:column id="ID_SiteRep" name="ID_SiteRep" dataType="text"></w2:column>
+            			<w2:column id="DS_SiteRep" name="DS_SiteRep" dataType="text"></w2:column>
+            			<w2:column id="TY_ContGubun" name="TY_ContGubun" dataType="text"></w2:column>
+            			<w2:column id="CD_Status" name="CD_Status" dataType="text"></w2:column>
+            			<w2:column id="TY_Sale" name="TY_Sale" dataType="text"></w2:column>
+            			<w2:column id="AM_Proj" name="AM_Proj" dataType="text"></w2:column>
+            			<w2:column id="AM_Vat" name="AM_Vat" dataType="text"></w2:column>
+            			<w2:column id="AM_Real" name="AM_Real" dataType="text"></w2:column>
+            			<w2:column id="AM_RealVat" name="AM_RealVat" dataType="text"></w2:column>
+            			<w2:column id="DT_Bid" name="DT_Bid" dataType="text"></w2:column>
+            			<w2:column id="DT_Cont" name="DT_Cont" dataType="text"></w2:column>
+            			<w2:column id="DT_ProjStart" name="DT_ProjStart" dataType="text"></w2:column>
+            			<w2:column id="DT_ProjEnd" name="DT_ProjEnd" dataType="text"></w2:column>
+            			<w2:column id="TY_Cont" name="TY_Cont" dataType="text"></w2:column>
+            			<w2:column id="AM_Joint" name="AM_Joint" dataType="text"></w2:column>
+            			<w2:column id="AM_JointVat" name="AM_JointVat" dataType="text"></w2:column>
+            			<w2:column id="CD_Prof" name="CD_Prof" dataType="text"></w2:column>
+            			<w2:column id="DS_Prof" name="DS_Prof" dataType="text"></w2:column>
+            			<w2:column id="DS_Joint" name="DS_Joint" dataType="text"></w2:column>
+            			<w2:column id="DS_AssurCo" name="DS_AssurCo" dataType="text"></w2:column>
+            			<w2:column id="CD_ConCal" name="CD_ConCal" dataType="text"></w2:column>
+            			<w2:column id="TY_Bid" name="TY_Bid" dataType="text"></w2:column>
+            			<w2:column id="YN_ProjExp" name="YN_ProjExp" dataType="text"></w2:column>
+            			<w2:column id="YN_ProjCert" name="YN_ProjCert" dataType="text"></w2:column>
+            			<w2:column id="AM_Design" name="AM_Design" dataType="text"></w2:column>
+            			<w2:column id="AM_Plan" name="AM_Plan" dataType="text"></w2:column>
+            			<w2:column id="AM_Bid" name="AM_Bid" dataType="text"></w2:column>
+            			<w2:column id="YN_Domestic" name="YN_Domestic" dataType="text"></w2:column>
+            			<w2:column id="CD_Bank" name="CD_Bank" dataType="text"></w2:column>
+            			<w2:column id="DS_Bank" name="DS_Bank" dataType="text"></w2:column>
+            			<w2:column id="NO_BankAcc" name="NO_BankAcc" dataType="text"></w2:column>
+            			<w2:column id="TY_Tax" name="TY_Tax" dataType="text"></w2:column>
+            			<w2:column id="NO_Bid" name="NO_Bid" dataType="text"></w2:column>
+            			<w2:column id="ID_Manage" name="ID_Manage" dataType="text"></w2:column>
+            			<w2:column id="SN_Project" name="SN_Project" dataType="text"></w2:column>
+            			<w2:column id="CD_OrgClient" name="CD_OrgClient" dataType="text"></w2:column>
+            			<w2:column id="DS_OrgClient" name="DS_OrgClient" dataType="text"></w2:column>
+            			<w2:column id="AM_TotProj" name="AM_TotProj" dataType="text"></w2:column>
+            			<w2:column id="AM_TotReal" name="AM_TotReal" dataType="text"></w2:column>
+            			<w2:column id="AM_TotJoint" name="AM_TotJoint" dataType="text"></w2:column>
+            			<w2:column id="RT_Success" name="RT_Success" dataType="text"></w2:column>
+            			<w2:column id="DS_Pm" name="DS_Pm" dataType="text"></w2:column>
+            			<w2:column id="AM_CProj" name="AM_CProj" dataType="text"></w2:column>
+            			<w2:column id="AM_CVat" name="AM_CVat" dataType="text"></w2:column>
+            			<w2:column id="AM_CTotProj" name="AM_CTotProj" dataType="text"></w2:column>
+            			<w2:column id="AM_CReal" name="AM_CReal" dataType="text"></w2:column>
+            			<w2:column id="AM_CRealVat" name="AM_CRealVat" dataType="text"></w2:column>
+            			<w2:column id="AM_CTotReal" name="AM_CTotReal" dataType="text"></w2:column>
+            			<w2:column id="DT_CCont" name="DT_CCont" dataType="text"></w2:column>
+            			<w2:column id="DT_CStart" name="DT_CStart" dataType="text"></w2:column>
+            			<w2:column id="DT_CEnd" name="DT_CEnd" dataType="text"></w2:column>
+            			<w2:column id="DS_ContPosi" name="DS_ContPosi" dataType="text"></w2:column>
+            			<w2:column id="DS_EtcPosi" name="DS_EtcPosi" dataType="text"></w2:column>
+            			<w2:column id="DS_CapitalSource" name="DS_CapitalSource" dataType="text"></w2:column>
+            			<w2:column id="DS_StartMemberStatus" name="DS_StartMemberStatus" dataType="text"></w2:column>
+            			<w2:column id="YN_ContEnd" name="YN_ContEnd" dataType="text"></w2:column>
+            			<w2:column id="TY_Order" name="TY_Order" dataType="text"></w2:column>
+            			<w2:column id="YN_Expose" name="YN_Expose" dataType="text"></w2:column>
+            			<w2:column id="CD_National" name="CD_National" dataType="text"></w2:column>
+            			<w2:column id="DS_National" name="DS_National" dataType="text"></w2:column>
+            			<w2:column id="DT_CompleteCont" name="DT_CompleteCont" dataType="text"></w2:column>
+            			<w2:column id="DT_ExpireInsure" name="DT_ExpireInsure" dataType="text"></w2:column>
+            			<w2:column id="YN_CheckInsure" name="YN_CheckInsure" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_02" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CD_Project" name="CD_Project" dataType="text"></w2:column>
+            			<w2:column id="SN_Seq" name="SN_Seq" dataType="text"></w2:column>
+            			<w2:column id="DT_Contract" name="DT_Contract" dataType="text"></w2:column>
+            			<w2:column id="DT_ProjStart" name="DT_ProjStart" dataType="text"></w2:column>
+            			<w2:column id="DT_ProjEnd" name="DT_ProjEnd" dataType="text"></w2:column>
+            			<w2:column id="AM_Project" name="AM_Project" dataType="text"></w2:column>
+            			<w2:column id="DT_Change" name="DT_Change" dataType="text"></w2:column>
+            			<w2:column id="DS_Update" name="DS_Update" dataType="text"></w2:column>
+            			<w2:column id="DT_Submit" name="DT_Submit" dataType="text"></w2:column>
+            			<w2:column id="TY_Collect" name="TY_Collect" dataType="text"></w2:column>
+            			<w2:column id="ID_Damdang" name="ID_Damdang" dataType="text"></w2:column>
+            			<w2:column id="DS_Damdang" name="DS_Damdang" dataType="text"></w2:column>
+            			<w2:column id="YN_File" name="YN_File" dataType="text"></w2:column>
+            			<w2:column id="DS_Filename" name="DS_Filename" dataType="text"></w2:column>
+            			<w2:column id="AM_Real" name="AM_Real" dataType="text"></w2:column>
+            			<w2:column id="AM_Joint" name="AM_Joint" dataType="text"></w2:column>
+            			<w2:column id="YN_FirstFile" name="YN_FirstFile" dataType="text"></w2:column>
+            			<w2:column id="FLAG" name="FLAG" dataType="text"></w2:column>
+            			<w2:column id="tg_file" name="버튼명" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_05" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CD_Project" name="CD_Project" dataType="text"></w2:column>
+            			<w2:column id="DS_Memo" name="DS_Memo" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_09" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="ID_Sabun" name="ID_Sabun" dataType="text"></w2:column>
+            			<w2:column id="DS_Name" name="DS_Name" dataType="text"></w2:column>
+            			<w2:column id="CD_Project" name="CD_Project" dataType="text"></w2:column>
+            			<w2:column id="CD_Part" name="CD_Part" dataType="text"></w2:column>
+            			<w2:column id="DS_Part" name="DS_Part" dataType="text"></w2:column>
+            			<w2:column id="DT_PartStart" name="DT_PartStart" dataType="text"></w2:column>
+            			<w2:column id="DT_PartEnd" name="DT_PartEnd" dataType="text"></w2:column>
+            			<w2:column id="CD_Tech" name="CD_Tech" dataType="text"></w2:column>
+            			<w2:column id="DS_Tech" name="DS_Tech" dataType="text"></w2:column>
+            			<w2:column id="CD_Job" name="CD_Job" dataType="text"></w2:column>
+            			<w2:column id="DS_Job" name="DS_Job" dataType="text"></w2:column>
+            			<w2:column id="DS_Charge" name="DS_Charge" dataType="text"></w2:column>
+            			<w2:column id="DS_Position" name="DS_Position" dataType="text"></w2:column>
+            			<w2:column id="DS_Field" name="DS_Field" dataType="text"></w2:column>
+            			<w2:column id="DS_Kind" name="DS_Kind" dataType="text"></w2:column>
+            			<w2:column id="DS_Method" name="DS_Method" dataType="text"></w2:column>
+            			<w2:column id="RM_Desc" name="RM_Desc" dataType="text"></w2:column>
+            			<w2:column id="YN_Submit" name="YN_Submit" dataType="text"></w2:column>
+            			<w2:column id="YN_RegEng" name="YN_RegEng" dataType="text"></w2:column>
+            			<w2:column id="YN_RegJodal" name="YN_RegJodal" dataType="text"></w2:column>
+            			<w2:column id="TY_Submit" name="TY_Submit" dataType="text"></w2:column>
+            			<w2:column id="YN_RegNational" name="YN_RegNational" dataType="text"></w2:column>
+            			<w2:column id="FLAG" name="FLAG" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : multi_template
+	// 프로그램 명    : 멀티 화면 탬플릿
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_02_index = -1;
+	var G_09_index = -1;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		requires("uiplugin.popup");
+		scwin.fn_setEvent();
+		scwin.fn_setCommomCode();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 조회조건
+	//========================================================
+	scwin.fn_setCommomCode = function() {
+		
+	};
+	
+	//========================================================
+	// 버튼 이벤트
+	//========================================================
+	scwin.fn_setEvent = function() {
+		tg_select.bind("onclick", function(e){scwin.fn_pre01_F0();});
+		tg_print.bind("onclick", function(e){scwin.fn_pre01_P0();});
+		tg_xlsx.bind("onclick", function(e){scwin.fn_pre01_E0();});
+		tg_add.bind("onclick", function(e){scwin.fn_pre01_I0();});
+		tg_del.bind("onclick", function(e){scwin.fn_pre01_D0();});
+		tg_save.bind("onclick", function(e){scwin.fn_pre01_T0();});
+		tgF_select.bind("onclick", function(e){scwin.fn_pre01_F0();});
+		tg_add_02.bind("onclick", function(e){scwin.fn_pre02_I0();});
+		tg_del_02.bind("onclick", function(e){scwin.fn_pre02_D0();});
+		tg_save_02.bind("onclick", function(e){scwin.fn_pre02_T0();});
+		tg_cancel_02.bind("onclick", function(e){scwin.fn_exe02_F0();});
+		tg_add_05.bind("onclick", function(e){scwin.fn_pre05_I0();});
+		tg_del_05.bind("onclick", function(e){scwin.fn_pre05_D0();});
+		tg_save_05.bind("onclick", function(e){scwin.fn_pre05_T0();});
+		tg_cancel_05.bind("onclick", function(e){scwin.fn_exe05_C0();});
+		tgI_CD_Client.bind("onclick", function(e){scwin.fn_searchDeptClient(ipI_DS_Client.getValue());});
+		tgI_DS_Jojik.bind("onclick", function(e){scwin.fn_searchDeptJojik(ipI_DS_Jojik.getValue());});
+		tgI_DS_SujuJojik.bind("onclick", function(e){scwin.fn_searchDeptSujuJojik(ipI_DS_SujuJojik.getValue());});
+	}
+	
+	// 조회
+	scwin.fn_pre01_F0 = function() {
+		// 조회시 validation 호출
+		var result = scwin.fn_selectValidation();
+		
+		// 에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_F0();
+	}
+	
+	scwin.fn_exe01_F0 = function() {
+		_request.get("/template/multi_template_01_F0", {
+			data : {
+				normal : {
+					   CD_Project : ipF_CD_Project.getValue()
+				}
+			},
+			success : function(res) {
+//				console.log(res.out[0]);
+				dlt_01.setJSON(res.out[0].dlt_01);
+				dlt_02.setJSON(res.out[0].dlt_02);
+				dlt_05.setJSON(res.out[0].dlt_05);
+				dlt_09.setJSON(res.out[0].dlt_09);
+				dlt_01.setRowPosition(0);
+//				scwin.fn_exe02_F0();
+//				scwin.fn_exe05_F0();
+//				scwin.fn_exe09_F0();
+				if(0 <= G_02_index) {
+					gd_02.setFocusedCell(G_02_index, 0, false);
+				} else {
+					gd_02.setFocusedCell(0, 0, false);
+				}
+				for(var i=0; i<dlt_02.getRowCount(); i++){
+					var ipType = "text";
+					if(dlt_02.getCellData(i, "YN_File") == "Y"){
+						ipType = "button";
+						
+						dlt_02.setCellData(i, "tg_file", "보기");
+					}
+					var info = {
+						inputType : ipType
+					}
+					gd_02.setCellInputType(i, "tg_file", info);
+				}
+				
+				dlt_02.modifyAllStatus("R");
+				
+				if(dlt_05.getTotalRow() > 0){
+					dlt_05.setRowPosition(0);
+				}
+				if(!ta_DS_Memo.getDisabled()){
+					ta_DS_Memo.setDisabled(true);
+				}
+				
+				gd_09.setFocusedCell(0, 0, false);
+			}
+		})
+	};
+	
+	// 신규
+	scwin.fn_pre01_I0 = function() {
+		// 신규시 validation 호출
+		var result = scwin.fn_newValidation();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_I0();
+	}
+	
+	scwin.fn_exe01_I0 = function() {
+		dlt_01.removeAll();
+		var insertedIndex = dlt_01.insertRow(0);
+		dlt_01.setRowPosition(0);
+		
+		ipF_CD_Project.setValue("");
+		ipF_DS_Project.setValue("");
+		
+		ipI_CD_Project.focus();
+		
+		scwin.fn_exe02_F0();
+		scwin.fn_exe05_F0();
+		scwin.fn_exe09_F0();
+	};
+	
+	// 삭제
+	scwin.fn_pre01_D0 = function() {
+		// 삭제시 validation 호출
+		var result = scwin.fn_deleteValidation();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		var message = "자료가 삭제됩니다.\n삭제된 자료는 복구할 수 없습니다.\n정말 삭제 하시겠습니까?";
+		_util.confirm1(message, scwin.fn_exe01_D0());
+	};
+	
+	scwin.fn_exe01_D0 = function() {
+		if(dlt_01.getRowStatus(0) == "C"){	//신규행일 경우 행삭제
+			dlt_01.removeRow(0);
+		}
+		else{	//신규행이 아닐경우 rowStatus만 D로 변경
+			dlt_01.deleteRow(0);
+		}
+		scwin.fn_post01_D0();
+	};
+	
+	scwin.fn_post01_D0 = function() {
+		_util.alert("삭제한 항목은 저장 후 반영됩니다.", "info");
+	};
+	
+	// 저장
+	scwin.fn_pre01_T0 = function() {
+		// 저장시 validation 호출
+//		var result = scwin.fn_saveValidation();
+		
+		// 에러일때 처리
+//		if(!result) return;
+//		dlt_01.modifyRowStatus(0, "U");
+		console.log(dlt_01.getAllJSON());
+//		scwin.fn_exe01_T0();
+	};
+	
+	scwin.fn_exe01_T0 = function() {
+		// 정상일때 처리
+		_request.post("/template/multi_template_01_T0", {
+			defaultNotify : false,
+			data : {
+				body : dlt_01.getModifiedJSON()
+			}, 
+			success : function(res) {
+				_util.returnMessage(res);
+				_util.alert("저장되었습니다.");
+				scwin.fn_exe01_F0();
+			}
+		});
+	};
+	
+	scwin.fn_pre01_P0 = function() {
+		_util.alert("인쇄.", "info");
+	};
+	
+	scwin.fn_pre01_E0 = function() {
+		_util.alert("엑셀.", "info");
+//		var curDate = $p.getCurrentServerDate("yyyyMMdd");console.log(curDate);
+//		gd_01.advancedExcelDownload({fileName : "그리드화면.xls"});
+	};
+	
+	scwin.fn_exe02_F0 = function() {
+		_request.get("/template/multi_template_02_F0", {
+			data : {
+				normal : {
+					   CD_Project : dlt_01.getCellData(0, "CD_Project")
+				}
+			},
+			success : function(res) {
+				dlt_02.setJSON(res.out);
+				if(0 <= G_02_index) {
+					gd_02.setFocusedCell(G_02_index, 0, false);
+				} else {
+					gd_02.setFocusedCell(0, 0, false);
+				}
+				for(var i=0; i<dlt_02.getRowCount(); i++){
+					var ipType = "text";
+					if(dlt_02.getCellData(i, "YN_File") == "Y"){
+						ipType = "button";
+						
+						dlt_02.setCellData(i, "tg_file", "보기");
+					}
+					var info = {
+						inputType : ipType
+					}
+					gd_02.setCellInputType(i, "tg_file", info);
+				}
+				
+				dlt_02.modifyAllStatus("R");
+			}
+		})
+	};
+	
+	scwin.fn_pre02_I0 = function() {
+		// 신규시 validation 호출
+		var result = scwin.fn_newValidation_02();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe02_I0();
+	};
+	
+	scwin.fn_exe02_I0 = function() {
+		var cdProject = dlt_01.getCellData(0, "CD_Project");
+		var insertedIndex = dlt_02.insertRow(0);
+		
+		dlt_02.setCellData(insertedIndex, "CD_Project", cdProject);
+	};
+	
+	scwin.fn_pre02_D0 = function() {
+		// 삭제시 validation 호출
+		var result = scwin.fn_deleteValidation_02();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		var message = "자료가 삭제됩니다.\n삭제된 자료는 복구할 수 없습니다.\n정말 삭제 하시겠습니까?";
+		var result = confirm(message);
+		if(result){
+			scwin.fn_exe02_D0();
+		}
+//		_util.confirm1(message, scwin.fn_exe02_D0());
+	};
+	
+	scwin.fn_exe02_D0 = function() {
+		if (G_02_index > -1) {
+			if(dlt_02.getRowStatus(G_02_index) == "C"){	//신규행일 경우 행삭제
+				dlt_02.removeRow(G_02_index);
+			}
+			else{	//신규행이 아닐경우 rowStatus만 D로 변경
+				dlt_02.deleteRow(G_02_index);
+			}
+			scwin.fn_post02_D0();
+		}
+	};
+	
+	scwin.fn_post02_D0 = function() {
+		_util.alert("삭제한 항목은 저장 후 반영됩니다.", "info");
+	};
+	
+	// 저장
+	scwin.fn_pre02_T0 = function() {
+		// 저장시 validation 호출
+//		var result = scwin.fn_saveValidation();
+		
+		// 에러일때 처리
+//		if(!result) return;
+		
+		scwin.fn_exe02_T0();
+	};
+	
+	scwin.fn_exe02_T0 = function() {
+		// 정상일때 처리
+		_request.post("/template/multi_template_02_T0", {
+			defaultNotify : false,
+			data : {
+				body : dlt_02.getModifiedJSON()
+			}, 
+			success : function(res) {
+				_util.returnMessage(res);
+				_util.alert("저장되었습니다.");
+				scwin.fn_exe02_F0();
+			}
+		});
+	};
+	
+	scwin.fn_exe05_F0 = function() {
+		_request.get("/template/multi_template_05_F0", {
+			data : {
+				normal : {
+					   CD_Project : dlt_01.getCellData(0, "CD_Project")
+				}
+			},
+			success : function(res) {
+				dlt_05.setJSON(res.out);
+				if(dlt_05.getTotalRow() > 0){
+					dlt_05.setRowPosition(0);
+				}
+				if(!ta_DS_Memo.getDisabled()){
+					ta_DS_Memo.setDisabled(true);
+				}
+			}
+		})
+	};
+	
+	scwin.fn_pre05_I0 = function() {
+		ta_DS_Memo.setDisabled(false);
+		if(dlt_05.getRowPosition() != 0){
+			scwin.fn_exe05_I0();
+		}
+		else{
+			ta_DS_Memo.focus();
+		}
+	};
+	
+	scwin.fn_exe05_I0 = function() {
+		var cdProject = dlt_01.getCellData(0, "CD_Project");
+		var insertedIndex = dlt_05.insertRow(0);
+		
+		dlt_05.setCellData(insertedIndex, "CD_Project", cdProject);
+		
+		ta_DS_Memo.focus();
+	};
+	
+	scwin.fn_pre05_D0 = function() {
+		// 삭제시 validation 호출
+//		var result = scwin.fn_deleteValidation();
+		
+		//에러일때 처리
+//		if(!result) return;
+		
+		if(dlt_05.getTotalRow() == 0){
+			_util.alert("삭제할 자료가 없습니다.");
+			return;
+		}
+		
+		// 정상일때 처리
+		var message = "자료가 삭제됩니다.\n삭제된 자료는 복구할 수 없습니다.\n정말 삭제 하시겠습니까?";
+		var result = confirm(message);
+		if(result){
+			scwin.fn_exe05_D0();
+		}
+	};
+	
+	scwin.fn_exe05_D0 = function() {
+		if(dlt_05.getRowStatus(0) == "C"){	//신규행일 경우 행삭제
+			dlt_05.removeRow(0);
+		}
+		else{	//신규행이 아닐경우 rowStatus만 D로 변경
+			dlt_05.deleteRow(0);
+		}
+		scwin.fn_post05_D0();
+	};
+	
+	scwin.fn_post05_D0 = function() {
+		_util.alert("삭제한 항목은 저장 후 반영됩니다.", "info");
+	};
+	
+	// 저장
+	scwin.fn_pre05_T0 = function() {
+		// 저장시 validation 호출
+//		var result = scwin.fn_saveValidation();
+		
+		// 에러일때 처리
+//		if(!result) return;
+		
+		scwin.fn_exe05_T0();
+	};
+	
+	scwin.fn_exe05_T0 = function() {
+		// 정상일때 처리
+		_request.post("/template/multi_template_05_T0", {
+			defaultNotify : false,
+			data : {
+				body : dlt_05.getModifiedJSON()
+			}, 
+			success : function(res) {
+				_util.returnMessage(res);
+				_util.alert("저장되었습니다.");
+				scwin.fn_exe05_F0();
+			}
+		});
+	};
+	
+	scwin.fn_exe09_F0 = function() {
+		_request.get("/template/multi_template_09_F0", {
+			data : {
+				normal : {
+					   CD_Project : dlt_01.getCellData(0, "CD_Project")
+				}
+			},
+			success : function(res) {
+				dlt_09.setJSON(res.out);
+				gd_09.setFocusedCell(0, 0, false);
+			}
+		})
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	scwin.gd_02_onrowindexchange = function(row,oldRow) {
+		G_02_index = row;
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	scwin.fn_selectValidation = function() {
+		if(ipF_CD_Project.getValue() == "") {
+			_util.alert("조회조건을 입력하세요.");
+			ipF_CD_Project.focus();
+			return false;
+		}
+		
+		return true;
+	};
+	
+	scwin.fn_newValidation = function() {
+		
+		return true;
+	};
+	
+	scwin.fn_saveValidation = function() {
+		var createdRows = dlt_01.getRowIndexByStatus("C").length;
+		var updatedRows = dlt_01.getRowIndexByStatus("U").length;
+		var deletedRows = dlt_01.getRowIndexByStatus("D").length;
+		
+		if(createdRows + updatedRows + deletedRows == 0){
+			return false;
+		}
+		
+		// 필수 값 체크
+		var tmpData = dlt_01.getAllJSON();
+		for(i=0; i<tmpData.length; i++){
+			if(tmpData[i].rowStatus == "C" || tmpData[i].rowStatus == "U"){
+				if(tmpData[i].ID_Sabun == ""){
+					_util.alert("사원번호은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].CD_Vacation_GB == ""){
+					_util.alert("경조구분은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].DT_Vacation_Day == ""){
+					_util.alert("발생일자은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].DT_Give == ""){
+					_util.alert("경조비은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	};
+	
+	scwin.fn_deleteValidation = function() {
+		if(dlt_01.getRowCount() == 0){
+			return false;
+		}
+		
+//		if (G_01_index < 0) {
+//			_util.alert("삭제할 항목을 선택해 주십시오.", "error");
+//			return false;
+//		}
+		
+		return true;
+	}
+	
+	scwin.fn_newValidation_02 = function() {
+		var cdProject = dlt_01.getCellData(0, "CD_Project");
+		var rowP = dlt_01.getRowStatus(0);
+		
+		if(cdProject == "" || rowP == "C"){
+			_util.alert("계약정보를 등록 후 사용할 수 있습니다.", "error");
+			return false;
+		}
+		
+		return true;
+	};
+	
+	scwin.fn_deleteValidation_02 = function() {
+		if(dlt_02.getRowCount() == 0){
+			return false;
+		}
+		
+		if (G_02_index < 0) {
+			_util.alert("삭제할 항목을 선택해 주십시오.", "error");
+			return false;
+		}
+		
+		return true;
+	}
+	
+	scwin.fn_searchDeptClient = function(dsClient) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 820;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "searchDeptClient",
+			title : "부서 찾기",
+			url : "/ui/system/popup/searchDept_p.xml",
+			param : {
+				DS_Client : dsClient
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.fn_searchDeptJojik = function(dsClient) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 820;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "searchDeptJojik",
+			title : "부서 찾기",
+			url : "/ui/system/popup/searchDept_p.xml",
+			param : {
+				DS_Client : dsClient
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.fn_searchDeptSujuJojik = function(dsClient) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 820;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "searchDeptSujuJojik",
+			title : "부서 찾기",
+			url : "/ui/system/popup/searchDept_p.xml",
+			param : {
+				DS_Client : dsClient
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.fn_searchDeptOrgClient = function() {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 820;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "searchDeptOrgClient",
+			title : "부서 찾기",
+			url : "/ui/system/popup/searchDept_p.xml",
+			param : {
+				DS_Client : dsClient
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	//팝업정보삽입
+	_util.addCallbackListener({
+		searchDeptClient : function(item) {
+			dlt_01.setCellData(0, "CD_Client", item.CD_Jojik);
+			dlt_01.setCellData(0, "DS_Client", item.DS_JojikName);
+		},
+		searchDeptJojik : function(item) {
+			dlt_01.setCellData(0, "CD_Jojik", item.CD_Jojik);
+			dlt_01.setCellData(0, "DS_Jojik", item.DS_JojikName);
+		},
+		searchDeptSujuJojik : function(item) {
+			dlt_01.setCellData(0, "CD_SujuJojik", item.CD_Jojik);
+			dlt_01.setCellData(0, "DS_SujuJojik", item.DS_JojikName);
+		}
+	});
+	
+	
+	scwin.trigger4_onclick = function(e) {
+		_request.get("/sample/sample_crud_01_F0", {
+			data : {
+				normal : {
+					   ID_Code : ""
+					 , YN_Use : "All"
+				}
+			},
+			success : function(res) {
+				
+			}
+		})
+	};
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style=""><xf:group class="dfbox" id="" style="">
+    			<xf:group class="fl" id="" style="">
+    				<w2:wframe class="btnbox_grid" id="" src="/ui/wframe/grid_btnbox.xml" style="display: inline-block;margin-right: 5px;"
+    					scope="false">
+    				</w2:wframe>
+    				<xf:trigger class="btn_cm " id="" style="" type="button" disabled="true">
+    					<xf:label><![CDATA[계약완료]]></xf:label>
+    				</xf:trigger>
+
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[사전PM등록]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[계약정보 메모]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[선금정산 신청]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[공채매입비 청구]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[수금내역 조회]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext" id="" style="" type="button">
+    					<xf:label><![CDATA[대금청구 등록]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="shbox" id="" style="">
+    			<xf:group class="shbox_inner" id="" style="">
+    				<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tb " id="" style="" tagname="table">
+    					<w2:attributes>
+    						<w2:summary></w2:summary>
+    					</w2:attributes>
+    					<xf:group tagname="colgroup">
+    						<xf:group style="width:85px;" tagname="col"></xf:group>
+    						<xf:group style="" tagname="col"></xf:group>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="tr">
+    						<xf:group class="w2tb_th req" style="" tagname="th">
+    							<w2:textbox class="" id="" label="사업번호(*)" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group class="w2tb_td" id="" style="" tagname="td">
+    							<xf:group class="flex" id="" style="">
+    								<xf:input class="flex_no" id="ipF_CD_Project" placeholder="" style="width: 120px;"></xf:input>
+    								<xf:trigger class="btn_search type02" id="" style="" type="button">
+    									<xf:label><![CDATA[Search]]></xf:label>
+    								</xf:trigger>
+    								<xf:input class="" id="ipF_DS_Project" placeholder="" style="" disabled="true"></xf:input>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="btn_shbox" id="" style="">
+    				<xf:trigger class="btn_cm sch" disabled="" escape="false" id="tgF_select" style="" type="button">
+    					<xf:label><![CDATA[조회]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="tbbox" id="" style="">
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group class="w2tb_th req" tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="사업번호(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input class="" id="ipI_CD_Project" placeholder="" style="width:30.21%;" ref="data:dlt_01.CD_Project"></xf:input>
+    						<xf:trigger class="btn_ext btn_bull" id="" style="" type="button">
+    							<xf:label><![CDATA[입찰정보 검색]]></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn_ext btn_bull" id="" style="" type="button">
+    							<xf:label><![CDATA[수주전정보 검색]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약서 위치" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.DS_ContPosi"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="관계철 위치" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.DS_EtcPosi"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group class="w2tb_th req" tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="사업명(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:colspan>7</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.DS_Project"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th req" tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="발주처(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="ipI_DS_Client" placeholder="" style="width:68%;" ref="data:dlt_01.DS_Client"></xf:input>
+    						<xf:trigger class="btn_search type02" id="tgI_CD_Client" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="수요기관" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:68%;" ref="data:dlt_01.DS_OrgClient"></xf:input>
+    						<xf:trigger class="btn_search type02" id="tgI_DS_OrgClient" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="감독부서" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.DS_ClientPer"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약담당" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="주관부서(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="ipI_DS_Jojik" placeholder="" style="width:68%;" ref="data:dlt_01.DS_Jojik"></xf:input>
+    						<xf:trigger class="btn_search type02" id="tgI_DS_Jojik" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;"><w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes><w2:textbox class="" id="" label="수주부서(*)" ref="" style="" userData2=""></w2:textbox></xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="ipI_DS_SujuJojik" placeholder="" style="width:68%;" ref="data:dlt_01.DS_SujuJojik"></xf:input>
+    						<xf:trigger class="btn_search type02" id="tgI_DS_SujuJojik" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="사업책임기술자" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:68%;" disabled="true"></xf:input>
+    						<xf:trigger class="btn_search type02" id="" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="전문분야" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:68%;" disabled="true"></xf:input>
+    						<xf:trigger class="btn_search type02" id="" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group class="w2tb_th req" tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약구분(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabled="false"
+    							disabledClass="w2selectbox_disabled" id="" ref="data:dlt_01.TY_ContGubun" renderType="" style="width:100%;" submenuSize="auto">
+    							<xf:choices></xf:choices>
+    						</xf:select1>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.TY_ContGubun"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="차수(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<w2:spinner skin="type1" buttonSize="30" inputReadOnly="false" id=""
+    							style="position: relative;width: 100%;height: 30px;" ref="data:dlt_01.SN_Project" min="0" max="99">
+    						</w2:spinner>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="진행상태(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabled="false"
+    							disabledClass="w2selectbox_disabled" id="" ref="data:dlt_01.CD_Status" renderType="" style="width:100%;" submenuSize="auto">
+    							<xf:choices></xf:choices>
+    						</xf:select1>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.CD_Status"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="과세구분(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:select1 appearance="full" cols="" disabled="" id="" ref="data:dlt_01.TY_Tax" renderType="radiogroup" rows=""
+    							selectedIndex="" style="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[과세]]></xf:label>
+    									<xf:value><![CDATA[2]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[영세]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[면세]]></xf:label>
+    									<xf:value><![CDATA[1]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[일부과세]]></xf:label>
+    									<xf:value><![CDATA[3]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.TY_Tax"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th req" tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약금액(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_Proj" dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="부가가치세" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_Vat"
+    							dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약금합계" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" disabled="true" dataType="number"
+    							displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="입찰일" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    							renderDiv="true" renderType="" rightAlign="false" style="width: 100%;" ref="data:dlt_01.DT_Bid">
+    						</w2:inputCalendar>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약일(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    							renderDiv="true" renderType="" rightAlign="false" style="width: 100%;" ref="data:dlt_01.DT_Cont">
+    						</w2:inputCalendar>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th req" tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="수행금액(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_Real" dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="수행부가세" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_RealVat"
+    							dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="수행금액합계" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" disabled="true"
+    							ref="data:dlt_01.AM_TotReal" dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="착수일(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    							renderDiv="true" renderType="" rightAlign="false" style="width: 100%;" ref="data:dlt_01.DT_ProjStart">
+    						</w2:inputCalendar>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="준공일(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    							renderDiv="true" renderType="" rightAlign="false" style="width: 100%;" ref="data:dlt_01.DT_ProjEnd">
+    						</w2:inputCalendar>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="공동계약액" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" disabled="true"
+    							ref="data:dlt_01.AM_Joint" dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="공동부가세" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_JointVat"
+    							dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="공동계약액합계" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" disabled="true"
+    							ref="data:dlt_01.AM_TotJoint" dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th req" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="계약형태(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:select1 appearance="full" cols="" disabled="" id="" ref="data:dlt_01.TY_Cont" renderType="radiogroup"
+    							rows="" selectedIndex="" style="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[단독]]></xf:label>
+    									<xf:value><![CDATA[1]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[공동]]></xf:label>
+    									<xf:value><![CDATA[2]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.TY_Cont"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="거래은행" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:68%;" disabled="true" ref="data:dlt_01.DS_Bank"></xf:input>
+    						<xf:trigger class="btn_search type02" id="" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="설계금액" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_Design"
+    							dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="예정금액" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_Plan"
+    							dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="낙찰금액" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;text-align:right;" ref="data:dlt_01.AM_Bid"
+    							dataType="number" displayFormat="#,##0">
+    						</xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th " style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="수주구분" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="padding:1px 8px 1px 8px;">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabled="false"
+    							disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width:100%;" submenuSize="auto">
+    							<xf:choices></xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="공동사항" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.DS_Joint"></xf:input>
+    					</xf:group>
+    					<xf:group class="w2tb_th req" tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="매출적용(*)" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:select1 appearance="full" cols="" disabled="" id="" ref="data:dlt_01.TY_Sale" renderType="radiogroup"
+    							rows="" selectedIndex="" style="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[적용]]></xf:label>
+    									<xf:value><![CDATA[Y]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[미적용]]></xf:label>
+    									<xf:value><![CDATA[N]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.TY_Sale"></xf:input>
+    					</xf:group>
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    							<w2:colspan>2</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="손해배상공제증권 만료일" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes>
+    							<w2:colspan>2</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    							renderDiv="true" renderType="" rightAlign="false" style="width: 120px;">
+    						</w2:inputCalendar>
+    						<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows=""
+    							selectedindex="1" style="" falseValue="N">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[확인완료]]></xf:label>
+    									<xf:value><![CDATA[Y]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="width:100px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="국내구분" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:select1 appearance="full" cols="" disabled="" id="" ref="data:dlt_01.YN_Domestic" renderType="radiogroup"
+    							rows="" selectedIndex="" style="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[국내]]></xf:label>
+    									<xf:value><![CDATA[Y]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[해외]]></xf:label>
+    									<xf:value><![CDATA[N]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="발주국가" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:68%;" disabled="true" ref="data:dlt_01.DS_National"></xf:input>
+    						<xf:trigger class="btn_search type02" id="" style="" type="button">
+    							<xf:label><![CDATA[Search]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="발주구분" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:select1 appearance="full" cols="" disabled="" id="" ref="" renderType="radiogroup" rows="" selectedIndex=""
+    							style="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[재정]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[민간]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="자금원" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" ref="data:dlt_01.DS_CapitalSource"></xf:input>
+    					</xf:group>
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="PM" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" disabled="true" ref="data:dlt_01.DS_Pm"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th">
+    						<w2:attributes></w2:attributes>
+    						<w2:textbox class="" id="" label="착수계진행현황" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="" placeholder="" style="width:100%;" disabled="true"
+    							ref="data:dlt_01.DS_StartMemberStatus">
+    						</xf:input>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="wq_tbc" id="" style="">
+    			<w2:tabControl alwaysDraw="false" class="sub_tbc" confirmFalseAction="new" confirmTrueAction="exist" id="tab_control"
+    				style="" tabScroll="" useConfirmMessage="false" useMoveNextTabFocus="false" useTabKeyOnly="true">
+    				<w2:tabs disabled="false" id="tabs1" label="계약 변경사항" style=""></w2:tabs>
+    				<w2:tabs disabled="false" id="tabs2" label="공동도급사항" style=""></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs3" label="계약문서"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs4" label="계약메모"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs5" label="공동수주사항"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs6" label="공동발주사항"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs7" label="외환계약사항"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs8" label="착수계명단"></w2:tabs>
+    				<w2:content alwaysDraw="false" id="content1" style="">
+    					<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    						<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dlt_02"
+    							defaultCellHeight="20" id="gd_02" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="true" rowNumWidth="50"
+    							rowStatusHeaderValue="상태" rowStatusVisible="true" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false"
+    							style="height: 300px;" ev:onrowindexchange="scwin.gd_02_onrowindexchange" setCellInputTypeCustom="true">
+    							<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    							<w2:header id="header2" style="">
+    								<w2:row id="row3" style="">
+    									<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text"
+    										removeBorderStyle="false" style="height:34px;" value="계약변경일자" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text"
+    										removeBorderStyle="false" style="height:34px;" value="계약일" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text"
+    										removeBorderStyle="false" style="height:34px;" value="착수일" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text"
+    										removeBorderStyle="false" style="height:34px;" value="준공일" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="column7" inputType="text"
+    										removeBorderStyle="false" style="height:34px;" value="공동계약금액" width="120">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="column6" inputType="text"
+    										removeBorderStyle="false" style="height:34px;" value="계약금액" width="120">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="column12" value="수행금액"
+    										displayMode="label" removeBorderStyle="false" blockSelect="false">
+    									</w2:column>
+    									<w2:column width="70" inputType="text" style="height:34px" id="column14" value="변경내용"
+    										displayMode="label" removeBorderStyle="false" blockSelect="false">
+    									</w2:column>
+    									<w2:column width="80" inputType="text" style="height:34px" id="column16" value="계약서회수"
+    										displayMode="label" removeBorderStyle="false" blockSelect="false">
+    									</w2:column>
+    									<w2:column width="70" inputType="text" style="height:34px" id="column22" value="계약서"
+    										displayMode="label" removeBorderStyle="false" blockSelect="false">
+    									</w2:column>
+    									<w2:column width="100" inputType="text" style="height:34px" id="column20" value="계약담당자"
+    										displayMode="label" removeBorderStyle="false" blockSelect="false">
+    									</w2:column>
+    									<w2:column width="100" inputType="text" style="height:34px" id="column18" value="등록일자"
+    										displayMode="label" removeBorderStyle="false" blockSelect="false">
+    									</w2:column>
+    								</w2:row>
+    							</w2:header>
+    							<w2:gBody id="gBody2" style="">
+    								<w2:row id="row4" style="">
+    									<w2:column blockSelect="false" displayMode="label" id="DT_Change" inputType="calendar"
+    										removeBorderStyle="false" style="height:34px;" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="DT_Contract" inputType="calendar"
+    										removeBorderStyle="false" style="height:20px" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="DT_ProjStart" inputType="calendar"
+    										removeBorderStyle="false" style="height:20px" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="DT_ProjEnd" inputType="calendar"
+    										removeBorderStyle="false" style="height:20px" width="100">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="AM_Joint" inputType="text"
+    										removeBorderStyle="false" style="height:20px" width="120" dataType="number" displayFormat="#,##0" textAlign="right">
+    									</w2:column>
+    									<w2:column blockSelect="false" displayMode="label" id="AM_Project" inputType="text"
+    										removeBorderStyle="false" style="height:20px" width="120" dataType="number" displayFormat="#,##0" textAlign="right">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="AM_Real" displayMode="label"
+    										dataType="number" displayFormat="#,##0" textAlign="right">
+    									</w2:column>
+    									<w2:column width="70" inputType="text" style="height:34px" id="DS_Update" displayMode="label">
+    									</w2:column>
+    									<w2:column width="80" inputType="text" style="height:34px" id="TY_Collect" displayMode="label">
+    									</w2:column>
+    									<w2:column width="70" inputType="custom" style="height:34px" id="tg_file" displayMode="label">
+    									</w2:column>
+    									<w2:column width="100" inputType="text" style="height:34px" id="DS_Damdang" displayMode="label">
+    									</w2:column>
+    									<w2:column width="100" inputType="calendar" style="height:34px" id="DT_Submit"
+    										displayMode="label">
+    									</w2:column>
+    								</w2:row>
+    							</w2:gBody>
+    						</w2:gridView>
+    						<xf:group class="btnbox" id="" style="">
+    							<xf:group class="fr" id="" style="">
+    								<xf:trigger class="btn_ext btn_add" id="tg_add_02" style="" type="button">
+    									<xf:label><![CDATA[입력]]></xf:label>
+    								</xf:trigger>
+    								<xf:trigger class="btn_ext btn_del" id="tg_del_02" style="" type="button">
+    									<xf:label><![CDATA[삭제]]></xf:label>
+    								</xf:trigger>
+    								<xf:trigger class="btn_ext btn_save" id="tg_save_02" style="" type="button">
+    									<xf:label><![CDATA[저장]]></xf:label>
+    								</xf:trigger>
+    								<xf:trigger class="btn_ext btn_cncl" id="tg_cancel_02" style="" type="button">
+    									<xf:label><![CDATA[취소]]></xf:label>
+    								</xf:trigger>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" id="content2" style="">
+    					<xf:group class="btnbox" id="" style="">
+    						<xf:group class="fr" id="" style="">
+    							<xf:trigger class="btn_ext btn_add" id="trigger1" style="" type="button">
+    								<xf:label><![CDATA[입력]]></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn_ext btn_del" id="trigger2" style="" type="button">
+    								<xf:label><![CDATA[삭제]]></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn_ext btn_save" id="trigger3" style="" type="button">
+    								<xf:label><![CDATA[저장]]></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn_ext btn_cncl" id="trigger4" style="" type="button" ev:onclick="scwin.trigger4_onclick">
+    								<xf:label><![CDATA[취소]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    					</xf:group>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content3">
+    					<w2:textbox class="tac" id="" label="탭 3"
+    						style="height: 150px;line-height: 150px;background-color: gray;color: #fff">
+    					</w2:textbox>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content4">
+    					<xf:group id="" class="tbbox pr10 pl10">
+    						<xf:textarea style="width:100%;height: 300px;" id="ta_DS_Memo" placeholder="" class="" ref="data:dlt_05.DS_Memo"
+    							disabled="true">
+    						</xf:textarea>
+    					</xf:group>
+    					<xf:group class="btnbox mt3" id="" style="">
+    						<xf:group class="fr" id="" style="">
+    							<xf:trigger class="btn_ext btn_add" id="tg_add_05" style="" type="button">
+    								<xf:label><![CDATA[입력]]></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn_ext btn_del" id="tg_del_05" style="" type="button">
+    								<xf:label><![CDATA[삭제]]></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn_ext btn_save" id="tg_save_05" style="" type="button">
+    								<xf:label><![CDATA[저장]]></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn_ext btn_cncl" id="tg_cancel_05" style="" type="button">
+    								<xf:label><![CDATA[취소]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    					</xf:group>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content5">
+    					<w2:textbox class="tac" id="" label="탭 5"
+    						style="height: 150px;line-height: 150px;background-color: gray;color: #fff">
+    					</w2:textbox>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content6">
+    					<w2:textbox class="tac" id="" label="탭 6"
+    						style="height: 150px;line-height: 150px;background-color: gray;color: #fff">
+    					</w2:textbox>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content7">
+    					<w2:textbox class="tac" id="" label="탭 7"
+    						style="height: 150px;line-height: 150px;background-color: gray;color: #fff">
+    					</w2:textbox>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content8">
+    					<xf:group id="" class="gvwbox mt3">
+    						<w2:gridView scrollByColumnAdaptive="false" rowNumVisible="true" rowStatusWidth="50"
+    							keepDefaultColumnWidth="true" rowNumHeaderValue="No" scrollByColumn="false" defaultCellHeight="20" rowStatusHeaderValue="상태"
+    							checkReadOnlyOnPasteEnable="" rowNumWidth="50" dataList="data:dlt_09" style="height: 300px;" autoFit="allColumn" id="gd_09"
+    							class="wq_gvw" readOnly="true">
+    							<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    							<w2:header style="" id="header2">
+    								<w2:row style="" id="row3">
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:34px;" id="column11"
+    										value="사원번호" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:34px;" id="column10"
+    										value="성명" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:34px;" id="column9"
+    										value="직위" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:34px;" id="column8"
+    										value="착수계제출" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="200" inputType="text" style="height:34px;" id="column7"
+    										value="비고" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="120" inputType="text" style="height:34px;" id="column6"
+    										value="참여직책" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="column16" value="전문분야"
+    										displayMode="label">
+    									</w2:column>
+    									<w2:column width="100" inputType="text" style="height:34px" id="column14" value="참여시작일"
+    										displayMode="label">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="column12" value="참여종료일"
+    										displayMode="label">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="column18" value="참여분야"
+    										displayMode="label">
+    									</w2:column>
+    								</w2:row>
+    							</w2:header>
+    							<w2:gBody style="" id="gBody2">
+    								<w2:row style="" id="row4">
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:34px;" id="ID_Sabun"
+    										blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:20px" id="DS_Name"
+    										blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:20px"
+    										id="DS_Position" blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="100" inputType="text" style="height:20px" id="col4"
+    										blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="200" inputType="text" style="height:20px" id="RM_Desc"
+    										blockSelect="false" displayMode="label" textAlign="left">
+    									</w2:column>
+    									<w2:column removeBorderStyle="false" width="120" inputType="text" style="height:20px" id="col6"
+    										blockSelect="false" displayMode="label">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="DS_Job" displayMode="label"></w2:column>
+    									<w2:column width="100" inputType="calendar" style="height:34px" id="DT_PartStart"
+    										displayMode="label">
+    									</w2:column>
+    									<w2:column width="120" inputType="calendar" style="height:34px" id="DT_PartEnd"
+    										displayMode="label">
+    									</w2:column>
+    									<w2:column width="120" inputType="text" style="height:34px" id="column19" displayMode="label"></w2:column>
+    								</w2:row>
+    							</w2:gBody>
+    						</w2:gridView>
+    					</xf:group>
+    				</w2:content>
+    			</w2:tabControl>
+    		</xf:group>
+
+    		
+    	</xf:group>
+
+    </body>
+</html>

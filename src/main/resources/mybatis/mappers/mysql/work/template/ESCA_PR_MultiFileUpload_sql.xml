@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="template">
+
+	<select id="ESCA_PR_MultiUpdate_01_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_MultiFileupload_Select (
+			
+		)}
+	</select>
+	
+	<select id="ESCA_PR_MultiUpdate_01_I0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_MultiFileupload_Insert(
+			   #{DS_Title}
+			 , #{DT_Rent}
+			 , #{DS_Filename}
+			 , #{AM_Size}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+	
+	<select id="ESCA_PR_MultiUpdate_01_U0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_MultiFileupload_Update(
+			   #{SN_File}
+			 , #{DS_Title}
+			 , #{DT_Rent}
+			 , #{DS_Filename}
+			 , #{AM_Size}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+	
+	<select id="ESCA_PR_MultiUpdate_01_D0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_MultiFileupload_Delete(
+			   #{SN_File}
+		)}
+	</select>
+
+</mapper>

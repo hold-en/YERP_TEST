@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	
+	scwin.trigger1_onclick = function(e) {
+		upload1.submit();
+	};
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<w2:upload type="" imageStyle="position:absolute;vertical-align:middle;word-wrap:break-word"
+    		inputStyle="position:absolute;vertical-align:middle;word-wrap:break-word" disabled=""
+    		style="position: absolute ;left: 23px;top: 18px;width: 350px;height: 52px;" id="upload1" accept=".jpg,.png,.xml,.text,.jpeg,.zip" action="" subDir="sub2">
+    	</w2:upload>
+    	<xf:trigger type="button" style="position: absolute ;left: 392px;top: 18px;width: 148px;height: 51px;" id="trigger1" ev:onclick="scwin.trigger1_onclick">
+    		<xf:label><![CDATA[저장]]></xf:label>
+    	</xf:trigger>
+    </body>
+</html>

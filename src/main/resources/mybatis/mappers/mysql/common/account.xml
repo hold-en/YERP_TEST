@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="system.account">
+	
+	<select id="getUserInfo" parameterType="jsonObject" resultType="jsonObject">
+	    SELECT 
+			A.USER_IDNT,
+			B.USER_KRNM
+		FROM 	CA1000 A, VW1000 B
+		WHERE 	A.USER_IDNT = B.USER_IDNT 
+	    AND 	A.USER_IDNT = #{USER_IDNT} AND A.USER_PSWD = #{USER_PSWD}
+	</select>
+	
+	<resultMap id="sessionInfo" type="jsonObject"></resultMap>
+	
+	<select id="getUserInfoForAddSession" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.SG_GAT_LOGININFO_SELECT(
+			   #{USER_IDNT}
+			 , #{C_RESULT, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=sessionInfo}
+			 , #{OUT_ERR_CD, mode=OUT, jdbcType=VARCHAR, javaType=string}
+			 , #{OUT_ERR_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+		)}
+	</select>
+	
+	<select id="getUserInfoForMainPopup" parameterType="jsonObject" resultType="jsonObject">
+	    {CALL dbo.ADM_AIS001P_SELECT(#{SESSION_USER_IDNT})}
+	</select>
+	
+	<select id="setUserInfoForMainPopup" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+	    {CALL dbo.ADM_AIS001P_PROCESS(
+	      #{SESSION_USER_IDNT},
+	      #{NmEng},
+	      #{TelNo},
+	      #{Mobile},
+	      #{GyoNaeNo},
+	      #{ZipNo},
+	      #{Juso1},
+	      #{Juso2},
+	      #{EngJuso1},
+	      #{EngJuso2},
+	      #{Email},
+	      #{Email_2nd},
+	      #{Pwd1},
+	      #{JilmunGb},
+	      #{Dabbyeon},
+	      #{Fax},
+	      #{Pwdold},
+	      #{SESSION_USER_IDNT},
+	      #{RESULT_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+	    )}
+	</select>
+	
+<!-- 	<resultMap id="selectUser" type="jsonObject"></resultMap> -->
+	
+	<select id="selectLoginUser" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCB_SP_UserLoginCheck(
+			   #{ID_Sabun}
+			 , #{DS_Password}
+		)}
+	</select>
+	
+	<select id="selectUserAuthProgram" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCB_SP_UserAuthProgram_Select(
+			   #{SESSION_USER_IDNT}
+			 , ''
+		)}
+	</select>
+
+</mapper>

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_01" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="ID_Sabun" name="사원번호" dataType="text"></w2:column>
+            			<w2:column id="SN_SeqNo" name="순번" dataType="text"></w2:column>
+            			<w2:column id="CD_Vacation_GB" name="경조구분" dataType="text"></w2:column>
+            			<w2:column id="ds_Vacation" name="경조명" dataType="text"></w2:column>
+            			<w2:column id="DT_Vacation_Day" name="발생일자" dataType="text"></w2:column>
+            			<w2:column id="DT_Vacation_Start" name="시작일자" dataType="text"></w2:column>
+            			<w2:column id="DT_Vacation_End" name="종료일자" dataType="text"></w2:column>
+            			<w2:column id="DT_Give" name="지급일자" dataType="text"></w2:column>
+            			<w2:column id="AM_Expense" name="경조비" dataType="text"></w2:column>
+            			<w2:column id="RM_Remarks" name="name10" dataType="text"></w2:column>
+            			<w2:column id="DS_Name" name="성명" dataType="text"></w2:column>
+            			<w2:column id="ds_Posi" name="직위" dataType="text"></w2:column>
+            			<w2:column id="ds_belong_jojik" name="name13" dataType="text"></w2:column>
+            			<w2:column id="FLAG" name="name14" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="false">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : grid_template
+	// 프로그램 명    : 그리드 화면 탬플릿
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_01_index = -1;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		scwin.fn_setEvent();
+		var comnCds = "KJO:KJO:KJO";
+		var options = "A:E:N";
+		scwin.fn_setCommonCode(comnCds, options);
+//		console.log($p.parent().dlt_code);
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 조회조건
+	//========================================================
+	scwin.fn_setCommonCode = function(comnCds, options) {
+		var comnCdArr = comnCds.split(":");
+		var optionArr = options.split(":");
+		
+		for(var i=0; i<comnCdArr.length; i++){
+			/*
+			var fn_tmpDeptFilter = function(cellData, tmpParam, rowIdx){
+				if(cellData.indexOf(comnCdArr[i]) == 0){
+					return true;
+				}
+				return false;   //return이 true인 경우 적용하고 false인 경우 skip한다.
+			}
+			var filterOptions = { "type" : "func"
+								, "colIndex" : "ID_Code"
+								, "key": fn_tmpDeptFilter
+								, "condition" : "and"
+			};
+			*/
+			var filterOptions = { "type" : "row"
+								, "colIndex" : "ID_Code"
+								, "key": comnCdArr[i]
+								, "condition" : "and"
+								, "exactMatch" : true
+			};
+			$p.parent().dlt_code.clearFilter();
+			$p.parent().dlt_code.setColumnFilter(filterOptions);
+			var jsonData = $p.parent().dlt_code.getAllFilteredJSON();
+			$p.parent().dlt_code.clearFilter();
+			var info = {
+					"id" :"dlt_" + comnCdArr[i] + "_" + optionArr[i],
+					"type" : "dataList",
+					"option":{ "baseNode": "list", "repeatNode": "map"},
+					"columnInfo":[{"id":"ID_Code", "name":"ID_Code", "dataType":"text"}
+								, {"id":"ID_Sub", "name":"ID_Sub", "dataType":"text"}
+								, {"id":"SN_Seq", "name":"SN_Seq", "dataType":"text"}
+								, {"id":"ID_CodeFull", "name":"ID_CodeFull", "dataType":"text"}
+								, {"id":"DS_CODE", "name":"DS_CODE", "dataType":"text"}
+								, {"id":"RM_REMARK", "name":"RM_REMARK", "dataType":"text"}
+								, {"id":"OLD_CODE", "name":"OLD_CODE", "dataType":"text"}
+								, {"id":"YN_Use", "name":"YN_Use", "dataType":"text"}
+								, {"id":"FLAG", "name":"FLAG", "dataType":"text"}
+								]
+			};
+			$p.data.create(info);
+			var dataList = $p.getComponentById("dlt_" + comnCdArr[i] + "_" + optionArr[i]);
+			dataList.setJSON(jsonData);
+			if(optionArr[i] == "A"){
+				dataList.insertRow(0);
+				dataList.setCellData(0, "DS_CODE", "전체");
+				dataList.modifyAllStatus("R");
+			}
+			else if(optionArr[i] == "E"){
+				dataList.insertRow(0);
+				dataList.modifyAllStatus("R");
+			}
+		}
+	};
+	
+	//========================================================
+	// 버튼 이벤트
+	//========================================================
+	scwin.fn_setEvent = function() {
+		tg_select.bind("onclick", function(e){scwin.fn_pre01_F0();});
+		tg_print.bind("onclick", function(e){scwin.fn_pre01_P0();});
+		tg_xlsx.bind("onclick", function(e){scwin.fn_pre01_E0();});
+		mf_tabc_layout_contents_uitemplategrid_templatexml_body_wf_btnbox_tg_add.bind("onclick", function(e){scwin.fn_pre01_I0();});
+		mf_tabc_layout_contents_uitemplategrid_templatexml_body_wf_btnbox_tg_del.bind("onclick", function(e){scwin.fn_pre01_D0();});
+		mf_tabc_layout_contents_uitemplategrid_templatexml_body_wf_btnbox_tg_save.bind("onclick", function(e){scwin.fn_pre01_T0();});
+	}
+	
+	// 조회
+	scwin.fn_pre01_F0 = function() {
+		// 조회시 validation 호출
+		var result = scwin.fn_selectValidation();
+		
+		// 에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_F0();
+	}
+	
+	scwin.fn_exe01_F0 = function() {
+		_request.get("/template/grid_template_01_F0", {
+			data : {
+				normal : {
+					   DS_Name : ipF_DS_Name.getValue()
+					 , ID_Sabun : ipF_ID_Sabun.getValue()//"Y10222"
+				}
+			},
+			success : function(res) {
+				dlt_01.setJSON(res.out);
+//				gd_01.setFocusedCell(0, 0);
+				if(0 <= G_01_index) {
+					gd_01.setFocusedCell(G_01_index, 0, false);
+				} else {
+					gd_01.setFocusedCell(0, 0, false);
+				}
+			}
+		})
+	};
+	
+	// 신규
+	scwin.fn_pre01_I0 = function() {
+		// 신규시 validation 호출
+		var result = scwin.fn_newValidation();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_I0();
+	}
+	
+	scwin.fn_exe01_I0 = function() {
+		var insertedIndex = dlt_01.insertRow(0);
+//		scwin.fn_postM0_I0(insertedIndex);
+		gd_01.setFocusedCell(insertedIndex, 0);
+	};
+	
+	// 삭제
+	scwin.fn_pre01_D0 = function() {
+		// 삭제시 validation 호출
+		var result = scwin.fn_deleteValidation();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		var message = "자료가 삭제됩니다.\n삭제된 자료는 복구할 수 없습니다.\n정말 삭제 하시겠습니까?";
+		_util.confirm1(message, scwin.fn_exe01_D0());
+	};
+	
+	scwin.fn_exe01_D0 = function() {
+		if (G_01_index > -1) {
+			if(dlt_01.getRowStatus(G_01_index) == "C"){	//신규행일 경우 행삭제
+				dlt_01.removeRow(G_01_index);
+			}
+			else{	//신규행이 아닐경우 rowStatus만 D로 변경
+				dlt_01.deleteRow(G_01_index);
+			}
+			scwin.fn_post01_D0();
+		}
+	};
+	
+	scwin.fn_post01_D0 = function() {
+		_util.alert("삭제한 항목은 저장 후 반영됩니다.", "info");
+	};
+	
+	// 저장
+	scwin.fn_pre01_T0 = function() {
+		// 저장시 validation 호출
+		var result = scwin.fn_saveValidation();
+		
+		// 에러일때 처리
+		if(!result) return;
+		
+		scwin.fn_exe01_T0();
+	};
+	
+	scwin.fn_exe01_T0 = function() {
+		// 정상일때 처리
+		_request.post("/template/grid_template_01_T0", {
+			defaultNotify : false,
+			data : {
+				body : dlt_01.getModifiedJSON()
+			}, 
+			success : function(res) {
+				_util.returnMessage(res);
+				_util.alert("저장되었습니다.");
+				scwin.fn_exe01_F0();
+			}
+		});
+	};
+	
+	scwin.fn_pre01_P0 = function() {
+		_util.alert("인쇄.", "info");
+	};
+	
+	scwin.fn_pre01_E0 = function() {
+//		_util.alert("엑셀.", "info");
+//		var curDate = $p.getCurrentServerDate("yyyyMMdd");console.log(curDate);
+//		gd_01.advancedExcelDownload({fileName : "그리드화면.xls"});
+		gd_01.advancedExcelDownload();
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	scwin.gd_01_onrowindexchange = function(row,oldRow) {
+		G_01_index = row;
+		
+		var strMode = dlt_01.getRowStatus( row );
+		if (strMode == "C") {
+			gd_01.setCellReadOnly(row, "ID_Sabun", false);
+		}
+		else{
+			gd_01.setCellReadOnly(row, "ID_Sabun", true);
+		}
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	scwin.fn_selectValidation = function() {
+//		if(ipGroupCode.getValue() == "" && ipGroupNm.getValue() == "" && ipCodeNm.getValue() == "" ) {
+//			_util.alert('최소 한가지 조회조건을 입력하세요.');
+//			txtvwYy.focus();
+//			return false;
+//		}
+		
+		return true;
+	};
+	
+	scwin.fn_newValidation = function() {
+		
+		return true;
+	};
+	
+	scwin.fn_saveValidation = function() {
+		var createdRows = dlt_01.getRowIndexByStatus("C").length;
+		var updatedRows = dlt_01.getRowIndexByStatus("U").length;
+		var deletedRows = dlt_01.getRowIndexByStatus("D").length;
+		
+		if(createdRows + updatedRows + deletedRows == 0){
+			return false;
+		}
+		
+		// 필수 값 체크
+		var tmpData = dlt_01.getAllJSON();
+		for(i=0; i<tmpData.length; i++){
+			if(tmpData[i].rowStatus == "C" || tmpData[i].rowStatus == "U"){
+				if(tmpData[i].ID_Sabun == ""){
+					_util.alert("사원번호은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].CD_Vacation_GB == ""){
+					_util.alert("경조구분은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].DT_Vacation_Day == ""){
+					_util.alert("발생일자은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].DT_Give == ""){
+					_util.alert("경조비은(는) 필수항목입니다.", "error");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	};
+	
+	scwin.fn_deleteValidation = function() {
+		if(dlt_01.getRowCount() == 0){
+			return false;
+		}
+		
+		if (G_01_index < 0) {
+			_util.alert("삭제할 항목을 선택해 주십시오.", "error");
+			return false;
+		}
+		
+		return true;
+	}
+	
+	scwin.fn_searchUser = function(e) {
+		if(gd_01.getCellReadOnly(G_01_index, "ID_Sabun") == true){
+			return false;
+		}
+		
+//		var options = {
+//			popupName : "사용자 조회", title : true, width : 650, height : 471, modal : true,
+//			type: "iframePopup",
+//			popupParam : { 
+//				closeCallbackFncName : "fn_searchUser_callback",
+//				//사용자번호
+//				ID_Sabun : dlt_01.getCellData(G_01_index, "ID_Sabun")
+//			}
+//		};
+//		comLib.openPopup("searchUser", "/ui/comm/co/popup/co03_10010301_p.xml", options);
+	};
+	
+	//사용자 조회 팝업 callback함수
+	scwin.fn_searchUser_callback = function(returnData) {
+		var jsonData = jsonLib.parse(returnData);
+		
+//		dlt_01.setCellData(G_01_index, "ID_Sabun", jsonData.ID_Sabun);
+//		dlt_01.setCellData(G_01_index, "DS_Name", jsonData.DS_Name);
+//		dlt_01.setCellData(G_01_index, "DS_Posi", jsonData.DS_Posi);
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style="">
+    		<xf:group class="dfbox" id="" style="">
+    			<xf:group style="" id="" class="fl">
+    				<w2:wframe style="display: inline-block;margin-right: 5px;" id="wf_btnbox" class="btnbox_grid" src="/ui/wframe/grid_btnbox.xml"></w2:wframe>
+    				<xf:trigger class="btn_ext btn_down" id="tg_select" style="" type="button">
+    					<xf:label><![CDATA[다운로드]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_print" id="tg_print" style="" type="button">
+    					<xf:label><![CDATA[인쇄]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_xlsx" id="tg_xlsx" style="" type="button">
+    					<xf:label><![CDATA[엑셀]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_add" id="" style="" type="button">
+    					<xf:label><![CDATA[입력]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_del" id="" style="" type="button">
+    					<xf:label><![CDATA[삭제]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_save" id="" style="" type="button">
+    					<xf:label><![CDATA[저장]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_cncl" id="" style="" type="button">
+    					<xf:label><![CDATA[취소]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[원인지급현황 조회]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="shbox" id="" style="">
+    			<xf:group class="shbox_inner" id="" style="">
+    				<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tb " id="" style="" tagname="table">
+    					<w2:attributes>
+    						<w2:summary></w2:summary>
+    					</w2:attributes>
+    					<xf:group tagname="colgroup">
+    						<xf:group style="width:80px;" tagname="col"></xf:group>
+    						<xf:group style="" tagname="col"></xf:group>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="tr">
+    						<xf:group class="w2tb_th" style="" tagname="th"><w2:textbox class="" id="" label="사원찾기" style=""></w2:textbox></xf:group>
+    						<xf:group class="w2tb_td" style="" tagname="td">
+    							<xf:group id="" class="flex" style="width: 300px;">
+    								<xf:input style="width:100px;" id="ipF_DS_Name" placeholder="" class="flex_no"></xf:input>
+    								<xf:trigger style="" id="" type="button" class="btn_search type02">
+    									<xf:label><![CDATA[Search]]></xf:label>
+    								</xf:trigger>
+    								<xf:input style="" id="ipF_ID_Sabun" placeholder="" class=""></xf:input>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="btn_shbox" id="" style=""></xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dlt_01" defaultCellHeight="20"
+    				id="gd_01" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="상태"
+    				rowStatusVisible="true" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 500px;"
+    				focusDefaultColumn="true" ev:onrowindexchange="scwin.gd_01_onrowindexchange">
+    				<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header2" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="사원번호(*)" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="성명" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="직위" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="경조구분(*)" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column7" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="발생일자(*)" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column6" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="지급일자" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column5" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="경조비(*)" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column4" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="시작일자" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column3" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="종료일자" width="100">
+    						</w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody2" style="">
+    					<w2:row id="row4" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="ID_Sabun" inputType="textImage" removeBorderStyle="false"
+    							style="height:34px;" width="120" imageHeight="34" imageWidth="34" imageClickFunction="scwin.fn_searchUser" readOnly="true" imageSrc="/cm/images/ico_srh.png">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DS_Name" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100" readOnly="true">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="ds_Posi" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100" readOnly="true">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="CD_Vacation_GB" inputType="select"
+    							removeBorderStyle="false" style="height:20px" width="120" allOption="" chooseOption="" ref="">
+    							<w2:choices>
+    								<w2:itemset nodeset="data:dlt_KJO_E">
+    									<w2:label ref="DS_CODE"></w2:label>
+    									<w2:value ref="ID_CodeFull"></w2:value>
+    								</w2:itemset>
+    							</w2:choices>
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DT_Vacation_Day" inputType="calendar"
+    							removeBorderStyle="false" style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DT_Give" inputType="calendar" removeBorderStyle="false"
+    							style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="AM_Expense" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="120" dataType="number" displayFormat="#,##0">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DT_Vacation_Start" inputType="calendar"
+    							removeBorderStyle="false" style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DT_Vacation_End" inputType="calendar"
+    							removeBorderStyle="false" style="height:20px" width="100">
+    						</w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

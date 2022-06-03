@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>Kukudocs Editor</title>
+
+    <script type="text/javascript" src="./externalLib/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="./externalLib/jquery-ui-1.11.4.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+
+    <script type="text/javascript" src="./javascripts/build/Editor.bundle.js"></script>
+    <link rel="stylesheet" href="./stylesheets/kk_webEditor_min.css">
+
+    <style>
+        html, body { 
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function Editor_Complete() {
+
+            if (parent != window) {
+                parent.Editor_Complete();
+            }
+            console.log("Editor Load Complete !!!");
+        }
+
+        function Key_down_event(e) {
+            console.log("Key_Down_event Call !!!");
+        }
+
+        function Key_up_event(e) {
+            console.log("Key_Up_event Call !!!");
+        }
+
+        function Mouse_Down_event(e) {
+            console.log("Mouse_Down_event Call !!!");
+        }
+
+        function Mouse_Up_event(e) {
+            console.log("Mouse_Up_event Call !!!");
+        }
+
+        $(document).ready(function () {
+            window.kukuEditor = new KuKudocsEditor('editor', {
+                licPathURL: '/kukudocs_2.lic',
+                // minHeight: 0,
+                maxHeight: '760px',
+                width: '100%',
+                height: '100%',
+                useFooterMenu: true,
+                useMenuBar: true,
+                useDeleteTableAlert: true,
+                removeDevComments: true,
+                //useFirstMode : 'preview',
+                fileUploadURL: '/fileUpload',
+                helpURL : '/kukudocsEditor.pdf',
+                Editor_Complete: Editor_Complete,
+
+                fontFamily: [
+                    {name: "나눔고딕", value: "나눔고딕, NanumGothic"},
+                    {name: "굴림", value: "굴림"},
+                    {name: "돋움", value: "돋움"},
+                    {name: "바탕", value: "바탕"},
+                    {name: "궁서", value: "궁서"},
+                    {name: "맑은 고딕", value: "맑은 고딕"},
+                    {name: "Microsoft Yahei", value: "Microsoft Yahei"}
+                ],
+
+                defaultFontSize: '10pt',
+                defaultFontFamily: '나눔고딕',
+
+                defaultTableWidth: 300,
+
+                defaultLanguage: KuKudocsEditor.prototype.getUrlParam('lang') || 'kr',
+
+                useTextMode : true,
+                useHtmlMode : true,
+                usePreviewMode : true,
+
+                isValidReg : {
+                    url: /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i
+                },
+
+                byteLimitSize : (1024 * 1024 * 5),
+                limitSizeText : "5 MB",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="editor"></div>
+</body>
+</html>

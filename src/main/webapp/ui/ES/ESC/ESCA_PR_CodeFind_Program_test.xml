@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_vertical_guides="" meta_horizontal_guides="">
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="ds_ProgramID" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="ID_Program" name="프로그램 ID" dataType="text"></w2:column>
+            			<w2:column id="DS_Program" name="프로그램명" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+    //========================================================
+	// 전역변수
+	//========================================================
+	var G_popupId;
+	var G_parameter;
+	var G_01_index = -1;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {		
+		requires("uiplugin.popup");
+		G_popupId = $p.getParameter("popupID");
+		// 부모창에서 넘겨준 파라미터
+		G_parameter = _util.getPopupParameter();
+		
+		txtCD_System.setValue(G_parameter.CD_System);
+		txtDS_System.setValue(G_parameter.DS_System);
+		
+		scwin.selectData();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	
+	
+	scwin.txtID_Program_onkeydown = function(e) {
+		if((e.charCode || e.keyCode) == 13){
+			scwin.selectData();
+		}		
+	};
+	
+	
+	scwin.txtDS_Program_onkeydown = function(e) {
+		if((e.charCode || e.keyCode) == 13){
+			scwin.selectData();
+		}	
+	};
+	
+	
+	scwin.selectData = function(e) {
+		_request.get("/ESCA/ESCA_BC_Codefind_Program_Select", {
+			data : {
+				normal : {
+					   CD_System : txtCD_System.getValue(),
+					   ID_Program : txtID_Program.getValue(),
+					   DS_Program : txtDS_Program.getValue()
+				}
+			},
+			success : function(res) {
+				ds_ProgramID.setJSON(res.out);
+				gd_01.setFocusedCell(0, 0, false);
+			}			
+		})
+	}
+	
+	
+	scwin.gd_01_onrowindexchange = function(row,oldRow) {
+		G_01_index = row;
+	};
+	
+	scwin.gd_01_oncelldblclick = function(row,col,colId) {
+		_util.runCallbackForPopup(G_popupId, ds_ProgramID.getRowJSON(row));
+	};
+	
+	
+	scwin.btnSend_onclick = function(e) {
+		if(-1 == G_01_index) {
+			_util.alert("1");
+			$p.closePopup();
+		} else {
+			_util.alert("2");
+			console.log(ds_ProgramID.getRowJSON(G_01_index));
+			_util.runCallbackForPopup(G_popupId, ds_ProgramID.getRowJSON(G_01_index));
+		}
+	};
+	
+	scwin.btnClose_onclick = function(e) {
+		$p.closePopup();
+	};
+	
+	
+	
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="pop_contents" id="" style="">
+    		<xf:group class="tbbox" id="" style="margin: 15px 0px 0px 0px;">
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:150px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="시스템코드" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" disabled="true" id="txtCD_System" placeholder="" style="width:100%;"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th" style="width: 150px">
+    						<w2:attributes></w2:attributes>
+    						<w2:textbox class="" id="" label="시스템명" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" disabled="true" id="txtDS_System" placeholder="" style="width:100%;"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="tbbox" id="" style="margin: 0px 0px 0px 0px">
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:150px;" tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th " style="" tagname="th">
+    						<w2:textbox class="" id="" label="프로그램 ID" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" style="" tagname="td">
+    						<xf:input class="" id="txtID_Program" placeholder="" style="width:150px;" ev:onkeydown="scwin.txtID_Program_onkeydown"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="프로그램명" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>1</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input class="" id="txtDS_Program" placeholder="" style="width:100%;" ev:onkeydown="scwin.txtDS_Program_onkeydown" ev:onclick="scwin.txtDS_Program_onclick"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw"
+    				dataList="data:ds_ProgramID" defaultCellHeight="20" id="gd_01" keepDefaultColumnWidth="false" rowNumVisible="false"
+    				rowNumWidth="50" rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false"
+    				scrollByColumnAdaptive="false" style="height:500px;" ev:oncelldblclick="scwin.gd_01_oncelldblclick" ev:onrowindexchange="scwin.gd_01_onrowindexchange">
+    				<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    				<w2:header style="" id="header1">
+    					<w2:row style="" id="row1">
+    						<w2:column width="70" inputType="text" style="height:20px" id="column6" value="프로그램 ID" displayMode="label"></w2:column>
+    						<w2:column width="70" inputType="text" style="height:20px" id="column5" value="프로그램명" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody style="" id="gBody1">
+    					<w2:row style="" id="row2">
+    						<w2:column width="70" inputType="text" style="height:20px" id="ID_Program" displayMode="label"></w2:column>
+    						<w2:column width="70" inputType="text" style="height:20px" id="DS_Program" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group>
+    	<xf:group id="" class="btncbox"><xf:trigger style="" id="btnSend" type="button" class="btn_cm " ev:onclick="scwin.btnSend_onclick">
+    			<xf:label><![CDATA[확인]]></xf:label>
+    		</xf:trigger><xf:trigger style="" id="btnClose" type="button" class="btn_cm " ev:onclick="scwin.btnClose_onclick">
+    			<xf:label><![CDATA[취소]]></xf:label>
+    		</xf:trigger></xf:group></xf:group>
+    </body>
+</html>

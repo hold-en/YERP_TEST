@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_01" saveRemovedData="true"
+            		ev:onremoverow="scwin.dlt_01_onremoverow">
+            		<w2:columnInfo>
+            			<w2:column id="SN_File" name="SN_File" dataType="text"></w2:column>
+            			<w2:column id="DS_Title" name="DS_Title" dataType="text"></w2:column>
+            			<w2:column id="DT_Rent" name="DT_Rent" dataType="text"></w2:column>
+            			<w2:column id="ID_Regist" name="ID_Regist" dataType="text"></w2:column>
+            			<w2:column id="DS_Filename" name="DS_Filename" dataType="text"></w2:column>
+            			<w2:column id="AM_Size" name="AM_Size" dataType="text"></w2:column>
+            			<w2:column id="FLAG" name="FLAG" dataType="text"></w2:column>
+            			<w2:column id="Status" name="Status" dataType="text"></w2:column>
+            			<w2:column id="ORIGIN_FILE_NM" name="ORIGIN_FILE_NM" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="false">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : ESCA_PR_MultiFileUpload
+	// 프로그램 명    : 멀티 파일업로드 탬플릿
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_ACCEPT_EXT;
+	var G_MAX_FILE_CNT;
+	var G_MAX_FILE_SIZE;
+	var G_01_index = -1;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		requires("uiplugin.popup");
+		
+		G_ACCEPT_EXT = "jpg,jpeg,gif,png,bmp,txt,xls,xlsx,doc,docx,ppt,pptx,hwp,hwpx,pdf,zip";
+		G_MAX_FILE_CNT = 20;
+		G_MAX_FILE_SIZE = 100 * 1024 * 1024;
+		
+		muFILE_UPLOAD.setMaxFileCount(G_MAX_FILE_CNT);
+		muFILE_UPLOAD.setMaxFileSize(G_MAX_FILE_SIZE);
+		
+		scwin.fn_setEvent();
+		scwin.setDropEventHandler();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 조회조건
+	//========================================================
+	
+	//========================================================
+	// 버튼 이벤트
+	//========================================================
+	scwin.fn_setEvent = function() {
+		tg_select.bind("onclick", function(e){scwin.fn_pre01_F0();});
+		tg_fileSave.bind("onclick", function(e){scwin.fn_preSaveFile();});
+		tg_fileDelete.bind("onclick", function(e){scwin.fn_preDeleteFile();});
+		tg_fileDown.bind("onclick", function(e){scwin.fn_preDownloadFile();});
+	}
+	
+	// 조회
+	scwin.fn_pre01_F0 = function() {
+		// 조회시 validation 호출
+//		var result = scwin.fn_selectValidation();
+		
+		// 에러일때 처리
+//		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_F0();
+	}
+	
+	scwin.fn_exe01_F0 = function() {
+		_request.get("/template/ESCA_PR_MultiUpdate_01_F0", {
+			data : {
+				normal : {
+//					   DS_Name : ipF_DS_Name.getValue()
+//					 , ID_Sabun : ipF_ID_Sabun.getValue()//"Y10222"
+				}
+			},
+			success : function(res) {
+				dlt_01.setJSON(res.out);
+				gd01.setFocusedCell(0, 0);
+			}
+		})
+	};
+	
+	scwin.fn_preSaveFile = function() {
+		if(muFILE_UPLOAD.getFileCount() <= 0){
+			_util.alert("저장할 파일이 없습니다.");
+			return;
+		}
+//		dlt_01.removeAll();
+		
+		muFILE_UPLOAD.setParam( 0 , 'callback' , 'scwin.multiUploadCallBack' );
+		muFILE_UPLOAD.setParam( 1 , "ACCEPT_EXT" , G_ACCEPT_EXT );
+		muFILE_UPLOAD.setParam( 2 , "MAX_FILE_CNT" , G_MAX_FILE_CNT );
+		muFILE_UPLOAD.setParam( 3 , "dir" , "/test" );
+		muFILE_UPLOAD.setParam( 4 , "fileJson" , JSON.stringify(dlt_01.getInsertedJSON()) );
+		console.log(dlt_01.getInsertedJSON());
+		muFILE_UPLOAD.startUpload();
+	};
+	
+	scwin.fn_preDeleteFile = function() {
+		if(dlt_01.getRowCount() == 0){
+			fn_comm_msgBox("I", "0", "삭제할 테이터가 없습니다.");
+			return;
+		}
+		
+		var message = "자료가 삭제됩니다.\n삭제된 자료는 복구할 수 없습니다.\n정말 삭제 하시겠습니까?";
+		
+//		_util.confirm1(message, function(bool){
+//			if(bool){
+				scwin.fn_exeDeleteFile();
+//			}else{
+//				return false;
+//			}
+//		});
+	};
+	
+	scwin.fn_exeDeleteFile = function() {
+		dlt_01.deleteRow(G_01_index);
+		
+		_request.post("/template/ESCA_PR_MultiUpdate_01_D0", {
+			defaultNotify : false,
+			data : {
+				normal :{
+					   SN_File : dlt_01.getCellData(G_01_index, "SN_File")
+					 , DS_Filename : dlt_01.getCellData(G_01_index, "DS_Filename")
+					 , dir : "/test"
+				}
+			},
+			success : function(res) {
+				_util.returnMessage(res);
+				_util.alert("삭제되었습니다.");
+				scwin.fn_exe01_F0();
+			}
+		});
+	};
+	
+	scwin.fn_preDownloadFile = function() {
+		var dir = "/test";
+		var name = dlt_01.getCellData(G_01_index, "DS_Filename");
+		$p.download("/template/ESCA_PR_MultiUpdate_Download?dir=" + dir + "&name=" + encodeURIComponent(name));
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	// 업로드 완료 함수
+	scwin.muFILE_UPLOAD_ondone = function(data) {
+//		var newFileCount = data.length;
+//		
+//		for (var fileIdx = 0; fileIdx < newFileCount; fileIdx++) {
+//			var rowIdx = dlt_01.getMatchedIndex("ORIGIN_FILE_NM", data[fileIdx].localFile);
+//			
+//			dlt_01.setBroadcast(false);
+//			for (var idx = 0; idx < rowIdx.length; idx++) {
+//				var fileInfo = dlt_01.getRowJSON(rowIdx[idx]);
+//				if ((fileInfo.rowStatus === "C") && (fileInfo.status === gcm.MESSAGE_CODE.STATUS_SUCCESS)) {
+//					dlt_01.setCellData(rowIdx[idx], "DATA_SEQ", scwin.dataSeq);
+//					dlt_01.setCellData(rowIdx[idx], "FILE_GRP_SEQ", scwin.fileGrpSeq);
+//					dlt_01.setCellData(rowIdx[idx], "FILE_STORED_PATH", scwin.subDir);
+//					dlt_01.setCellData(rowIdx[idx], "STORED_FILE_NM", data[fileIdx].file);
+//					dlt_01.setCellData(rowIdx[idx], "FILE_SIZE", data[fileIdx].size);
+//					grd_file.refreshCell(rowIdx[idx], "ORIGIN_FILE_NM");
+//				}
+//			}
+//			dlt_01.setBroadcast(true, true);
+//		}
+		
+//		scwin.saveFileInfo();
+		scwin.fn_pre01_F0();
+	};
+	
+	// 업로드 중 에러 함수
+	scwin.muFILE_UPLOAD_onerror = function(data) {
+		_util.alert("파일 업로드에 실패했습니다.");
+	};
+	
+	// 업로드 프로그레스 함수
+	scwin.muFILE_UPLOAD_onprogress = function(data) {
+		var rowIdx = dlt_01.getMatchedIndex("ORIGIN_FILE_NM", data.fileName);
+		
+		for (var idx = 0; idx < rowIdx.length; idx++) {
+			var fileInfo = dlt_01.getRowJSON(rowIdx[idx]);
+			if ((fileInfo.rowStatus === "C") && (!_valid.required(fileInfo.DS_Filename) === true)) {
+				if (data.percentData < 100) {
+					dlt_01.setCellData(rowIdx[idx], "Status", data.percentData);
+				} else {
+					dlt_01.setCellData(rowIdx[idx], "Status", "S");
+				}
+			}
+		}
+	};
+	
+	scwin.gd01_onrowindexchange = function(row,oldRow) {
+		G_01_index = row;
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	/**
+	 * File Drop Event Handler를 세팅한다.
+	 */
+	scwin.setDropEventHandler = function() {
+		var fileDragDom = gd01.render;
+		fileDragDom.addEventListener("dragover", scwin.doHandleDrop, false);
+		fileDragDom.addEventListener("dragenter", scwin.doHandleDrop, false);
+		fileDragDom.addEventListener("dragleave", scwin.doHandleDrop, false);
+		fileDragDom.addEventListener("drop", scwin.doHandleDrop, false);
+	};
+	
+	/**
+	 * 업로드할 파일 Drop를 업로드할 파일로 등록한다.
+	 */
+	scwin.doHandleDrop = function(e) {
+		try {
+			WebSquare.event.stopEvent(e);
+			var fileData = e.dataTransfer.files;
+			var uploadFileData = [];
+			for(var idx = 0; idx < fileData.length; idx++) {
+				var isExisted = false;
+				for (var fileIdx in muFILE_UPLOAD.fileArray) {
+					if (fileData[idx].name === muFILE_UPLOAD.fileArray[fileIdx].name) {
+						isExisted = true;
+					}
+				}
+				
+				if (isExisted === false) {
+					uploadFileData.push(fileData[idx]);
+					muFILE_UPLOAD.fileArray.push(fileData[idx]);
+					muFILE_UPLOAD.fileNameArr.push(fileData[idx].name);
+					muFILE_UPLOAD._inx++;
+				}
+			}
+//			console.log(uploadFileData);
+			scwin.selectCallback(uploadFileData);
+//			console.table(muFILE_UPLOAD.fileArray);
+		} catch (ex) {
+			console.error(ex);
+		}
+	};
+	
+	scwin.selectCallback = function(selectedFiles) {
+		var dltRowCnt = dlt_01.getTotalRow();
+		
+		var isValid = true;
+		var fileInfo = scwin.getCurrentFileInfo();
+		
+		var newFileInfo = {
+			fileCount : 0,
+			fileSize : 0
+		};
+		
+		for (var idx in selectedFiles) {
+			if (G_MAX_FILE_SIZE < selectedFiles[idx].size) {
+				_util.alert("등록할수 있는 최대 파일 크기는 " + G_MAX_FILE_SIZE + "Bytes입니다.");
+				muFILE_UPLOAD.removeFile(selectedFiles[idx].name);
+				delete selectedFiles[idx];
+			} else {
+				newFileInfo.fileCount++;
+				newFileInfo.fileSize += selectedFiles[idx].size;
+			}
+		}
+		
+		if (G_MAX_FILE_CNT < (fileInfo.fileCount + newFileInfo.fileCount)) {
+			_util.alert("등록할수 있는 최대 파일 갯수는 " + G_MAX_FILE_CNT + "개입니다.");
+			isValid = false;
+		}
+		
+		if (isValid === false) {
+			for (var idx in selectedFiles) {
+				muFILE_UPLOAD.removeFile(selectedFiles[idx].name);
+			}
+			return;
+		}
+		
+		if (selectedFiles.length > 0) {
+			var newFileCount = selectedFiles.length;
+			var fileInfoList = [];
+			
+			for (var idx in selectedFiles) {
+				var fileInfo = {
+					"DS_Title" : "멀티테스트",
+					"DT_Rent" : "20220513",
+					"DS_Filename" : selectedFiles[idx].name,
+					"AM_Size" : selectedFiles[idx].size,
+					"ORIGIN_FILE_NM" : selectedFiles[idx].name
+				};
+				
+				fileInfoList.push(fileInfo);
+			}
+			
+			var lastIdx = dlt_01.getRowCount();
+			var totalFileCount = lastIdx + fileInfoList.length;
+			
+			dlt_01.insertJSON(lastIdx, fileInfoList);
+			
+			for (var idx = lastIdx; idx < totalFileCount; idx++) {
+				gd01.setCellClass(idx, "Status", "progress");
+			}
+			
+			gd01.setFocusedCell(totalFileCount - 1, 0, false);
+		}
+		console.log(dlt_01.getInsertedJSON());
+	};
+	
+	/**
+	 * 현재 업로드된 파일 정보를 반환한다.
+	 */
+	scwin.getCurrentFileInfo = function() {
+		var fileInfo = {
+			fileCount : 0,
+			fileSize : 0
+		};
+		var fileList = dlt_01.getAllJSON();
+		
+		for (var idx in fileList) {
+			var rowStatus = fileList[idx].rowStatus;
+			if ((rowStatus === "C") || (rowStatus === "U") || (rowStatus === "R")) {
+				fileInfo.fileCount++;
+				fileInfo.fileSize += parseInt(fileList[idx].AM_Size);
+			}
+		};
+		
+		return fileInfo;
+	};
+	
+	/**
+	 * 전체 파일 정보를 지운다.
+	 */
+	scwin.clearFiles = function() {
+		dlt_01.removeAll();
+		muFILE_UPLOAD.setMaxFileCount(G_MAX_FILE_CNT);
+	};
+	
+	/**
+	 * 업로드 상태 표시 Display Formatter
+	 */
+	scwin.setDisplayStatus = function(value) {
+		if (value === "S") {
+			return "Completed";
+		} else if (value === "E") {
+			return "Error";
+		} else if ((parseInt(value) > 0) && (parseInt(value) < 100)) { 
+			return "<div style='width:"+value+"%; height:100%;' class='div_progress'>"+ value +"%</div>";
+		} else {
+			return "<div style='width:0%; height:100%;' class='div_progress'></div>";
+		}
+	};
+	
+	/**
+	 * 업로드하려는 파일을 다시 삭제할 때 발생하는 이벤트
+	 */
+	scwin.dlt_01_onremoverow = function(info) {
+		for (var idx in info.removedDataObj) {
+			var fileName = info.removedDataObj[idx][6];
+			muFILE_UPLOAD.removeFile(fileName);
+		}
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style="">
+    		<xf:group class="dfbox" id="" style="">
+    			<xf:group class="fl" id="" style="">
+    				<w2:wframe class="btnbox_grid" id="" src="/ui/wframe/grid_btnbox.xml"
+    					style="display: inline-block;margin-right: 5px;" scope="false">
+    				</w2:wframe>
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[성수기 콘도등록]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" autoFitMinWidth="968" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dlt_01"
+    				defaultCellHeight="20" id="" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="true" rowNumWidth="50"
+    				rowStatusHeaderValue="상태" rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false"
+    				style="height: 150px;" visibleRowNum="all">
+    				<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header2" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="휴양시설 명" width="200" calendarClass="" class="req">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="지역" width="130">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="시설 현황" width="220">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="등록일자" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column7" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="파일첨부" width="80" fixColumnWidth="true">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column6" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="사용여부" width="80" fixColumnWidth="true">
+    						</w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody2" style="">
+    					<w2:row id="row4" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="DS_Title" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" width="200" value="">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col2" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" width="130" value="">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col3" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" width="220" value="">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col4" inputType="calendar" removeBorderStyle="false"
+    							style="height:34px;" width="120" value="">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col5" inputType="image" removeBorderStyle="false"
+    							style="height:34px;" width="80" value="" imageSrc="/cm/images/icon_C.gif" fixColumnWidth="true">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col6" inputType="checkbox" removeBorderStyle="false"
+    							style="height:34px;" width="80" value="" fixColumnWidth="true">
+    						</w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group><xf:group class="dfbox" id="" style="">
+    			<w2:textbox class="df_tit fl" id="" label="서브타이틀" style=""></w2:textbox>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_cm  row_add" id="" style="position: absolute;" type="button">
+    					<xf:label><![CDATA[추가]]></xf:label>
+    				</xf:trigger>
+    				<w2:multiupload mode="html5_transparent" wmode="false" style="width: 74px;height: 30px;position: relative;float: left;"
+    					id="muFILE_UPLOAD" uploadButton="" selectCallback="scwin.selectCallback" ev:ondone="scwin.muFILE_UPLOAD_ondone"
+    					ev:onerror="scwin.muFILE_UPLOAD_onerror" ev:onprogress="scwin.muFILE_UPLOAD_onprogress" filter="*:*.*"
+    					action="/template/ESCA_PR_MultiFileUpload_Upload">
+    				</w2:multiupload>
+    				<xf:trigger class="btn_cm fl ml5" id="tg_fileSave" style="" type="button">
+    					<xf:label><![CDATA[저장]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_cm fl" id="tg_fileDelete" style="" type="button">
+    					<xf:label><![CDATA[삭제]]></xf:label>
+    				</xf:trigger>
+
+    				<xf:trigger class="btn_cm fl" id="tg_fileDown" style="" type="button">
+    					<xf:label><![CDATA[다운로드]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" autoFitMinWidth="968" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dlt_01"
+    				defaultCellHeight="20" id="gd01" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="true" rowNumWidth="50"
+    				rowStatusHeaderValue="상태" rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false"
+    				style="height: 150px;" visibleRowNum="all" ev:onrowindexchange="scwin.gd01_onrowindexchange">
+    				<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header2" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column blockSelect="false" calendarClass="" class="req" displayMode="label" id="column11" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="DS_Title" width="200">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="SN_File" width="130">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="DS_Filename" width="200">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="DT_Rent" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" fixColumnWidth="true" id="column7" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="AM_Size" width="80">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" fixColumnWidth="true" id="Status" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="Status" width="200">
+    						</w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody2" style="">
+    					<w2:row id="row4" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="DS_Title" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="" width="200">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="SN_File" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="" width="130" readOnly="true">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DS_Filename" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="" width="200">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DT_Rent" inputType="calendar" removeBorderStyle="false"
+    							style="height:34px;" value="" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" fixColumnWidth="true" id="AM_Size"
+    							imageSrc="/cm/images/icon_C.gif" inputType="text" removeBorderStyle="false" style="height:34px;" value="" width="80">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" fixColumnWidth="true" id="col6" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="" width="200">
+    						</w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group>
+    		
+    	</xf:group>
+    </body>
+</html>

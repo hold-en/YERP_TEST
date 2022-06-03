@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+        <w2:buildDate/>
+        <w2:userPalette defaultIcon="mix.png" desc=""/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+        </xf:model>
+        <script type="text/javascript"><![CDATA[ ]]></script>
+    </head>
+    <body>
+		<xf:group class="lybox col3" id="" style="">
+			<xf:group class="ly_column" id="" style="">
+				<xf:group class="dfbox" id="" style="">
+					<w2:textbox class="df_tit fl" id="" label="분할" style="">
+					</w2:textbox>
+</xf:group>
+				<xf:group class="tbbox" id="" style="">
+					<xf:group class="w2tb tb" id="" style="width:100%;" tagname="table">
+						<w2:attributes>
+							<w2:summary>
+							</w2:summary>
+</w2:attributes>
+						<xf:group tagname="caption">
+						</xf:group>
+						<xf:group tagname="colgroup">
+							<xf:group style="width:100.00%;" tagname="col">
+							</xf:group>
+</xf:group>
+						<xf:group style="" tagname="tr">
+							<xf:group class="w2tb_th" style="" tagname="th">
+								<w2:attributes>
+									<w2:scope>col</w2:scope>
+</w2:attributes>
+								<xf:group id="">
+									<w2:span class="th_pt" id="" label="출력값" style="">
+									</w2:span>
+									<w2:span class="th_txt" id="" label="1234561234567" style="">
+									</w2:span>
+</xf:group>
+</xf:group>
+</xf:group>
+						<xf:group tagname="tr">
+							<xf:group class="w2tb_td" style="" tagname="td">
+								<xf:input class="" id="" placeholder="" style="width:100%;">
+								</xf:input>
+</xf:group>
+</xf:group>
+</xf:group>
+</xf:group>
+				<xf:group class="btncbox" id="" style="">
+					<xf:trigger class="btn_cm " id="" style="" type="button">
+						<xf:label>
+<![CDATA[확인]]></xf:label>
+</xf:trigger>
+					<xf:trigger class="btn_cm " id="" style="" type="button">
+						<xf:label>
+<![CDATA[취소]]></xf:label>
+</xf:trigger>
+</xf:group>
+</xf:group>
+			<xf:group class="ly_column" id="" style="">
+				<xf:group class="dfbox" id="" style="">
+					<w2:textbox class="df_tit fl" id="" label="분할" style="">
+					</w2:textbox>
+</xf:group>
+				<xf:group class="tbbox" id="" style="">
+					<xf:group class="w2tb tb" id="" style="width:100%;" tagname="table">
+						<w2:attributes>
+							<w2:summary>
+							</w2:summary>
+</w2:attributes>
+						<xf:group tagname="caption">
+						</xf:group>
+						<xf:group tagname="colgroup">
+							<xf:group style="width:100.00%;" tagname="col">
+							</xf:group>
+</xf:group>
+						<xf:group style="" tagname="tr">
+							<xf:group class="w2tb_th" style="" tagname="th">
+								<w2:attributes>
+									<w2:scope>col</w2:scope>
+</w2:attributes>
+								<xf:group id="">
+									<w2:span class="th_pt" id="" label="출력값" style="">
+									</w2:span>
+									<w2:span class="th_txt" id="" label="021110000" style="">
+									</w2:span>
+</xf:group>
+</xf:group>
+</xf:group>
+						<xf:group tagname="tr">
+							<xf:group class="w2tb_td" style="" tagname="td">
+								<xf:input class="" id="" placeholder="" style="width:100%;">
+								</xf:input>
+</xf:group>
+</xf:group>
+</xf:group>
+</xf:group>
+				<xf:group class="btncbox" id="" style="">
+					<xf:trigger class="btn_cm " id="" style="" type="button">
+						<xf:label>
+<![CDATA[확인]]></xf:label>
+</xf:trigger>
+					<xf:trigger class="btn_cm " id="" style="" type="button">
+						<xf:label>
+<![CDATA[취소]]></xf:label>
+</xf:trigger>
+</xf:group>
+</xf:group>
+			<xf:group class="ly_column" id="" style="">
+				<xf:group class="dfbox" id="" style="">
+					<w2:textbox class="df_tit fl" id="" label="분할" style="">
+					</w2:textbox>
+</xf:group>
+				<xf:group class="tbbox" id="" style="">
+					<xf:group class="w2tb tb" id="" style="width:100%;" tagname="table">
+						<w2:attributes>
+							<w2:summary>
+							</w2:summary>
+</w2:attributes>
+						<xf:group tagname="caption">
+						</xf:group>
+						<xf:group tagname="colgroup">
+							<xf:group style="width:100.00%;" tagname="col">
+							</xf:group>
+</xf:group>
+						<xf:group style="" tagname="tr">
+							<xf:group class="w2tb_th" style="" tagname="th">
+								<w2:attributes>
+									<w2:scope>col</w2:scope>
+</w2:attributes>
+								<xf:group id="">
+									<w2:span class="th_pt" id="" label="출력값" style="">
+									</w2:span>
+									<w2:span class="th_txt" id="" label="123402" style="">
+									</w2:span>
+</xf:group>
+</xf:group>
+</xf:group>
+						<xf:group tagname="tr">
+							<xf:group class="w2tb_td" style="" tagname="td">
+								<xf:input class="" id="" placeholder="" style="width:100%;">
+								</xf:input>
+</xf:group>
+</xf:group>
+</xf:group>
+</xf:group>
+				<xf:group class="btncbox" id="" style="">
+					<xf:trigger class="btn_cm " id="" style="" type="button">
+						<xf:label>
+<![CDATA[확인]]></xf:label>
+</xf:trigger>
+					<xf:trigger class="btn_cm " id="" style="" type="button">
+						<xf:label>
+<![CDATA[취소]]></xf:label>
+</xf:trigger>
+</xf:group>
+</xf:group>
+</xf:group>
+</body>
+</html>

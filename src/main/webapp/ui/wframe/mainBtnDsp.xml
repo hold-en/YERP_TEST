@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	scwin.btn_insert_onclick = function(e) {
+		$p.parent().scwin.fnInsert_onClick();
+	};
+	
+	scwin.btn_delete_onclick = function(e) {
+		$p.parent().scwin.fnDelete_onClick();
+	};
+	
+	scwin.btn_save_onclick = function(e) {
+		$p.parent().scwin.fnSave_onClick();
+	};
+
+	scwin.btn_select_onclick = function(e) {
+		$p.parent().scwin.fnSelect_onClick();
+	};
+		
+	scwin.btn_print_onclick = function(e) {
+		$p.parent().scwin.fnPrint_onClick();
+	};
+	
+	scwin.btn_excel_onclick = function(e) {
+		$p.parent().scwin.fnExcel_onClick();
+	};
+	
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:trigger class="btn_ext btn_down" id="btn_select" style="" type="button" ev:onclick="scwin.btn_select_onclick">
+    		<xf:label><![CDATA[조회]]></xf:label>
+    	</xf:trigger>
+    	<xf:trigger class="btn_ext btn_print" id="btn_print" style="" type="button" ev:onclick="scwin.btn_print_onclick">
+    		<xf:label><![CDATA[인쇄]]></xf:label>
+    	</xf:trigger>
+    	<xf:trigger class="btn_ext btn_xlsx" id="btn_excel" style="" type="button" ev:onclick="scwin.btn_excel_onclick">
+    		<xf:label><![CDATA[엑셀]]></xf:label>
+    	</xf:trigger>
+    </body>
+</html>

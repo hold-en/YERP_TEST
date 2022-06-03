@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/login.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_vertical_guides="" meta_horizontal_guides="-162 -478">
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload" style='background-image: url(/cm/images/logpg_bg.jpg);'>
+    	<xf:group class="login_page" id="" style="">
+    		<xf:group class="log_tt" id="" style="">
+    			<w2:textbox id="" label=" YOOSHIN ENGINEERING CORPORATION" style="" tagname="h1"></w2:textbox>
+    		</xf:group>
+    	<xf:group id="" class="flex_box_wrap" style=""><xf:group style="" id="" class="logo_area">
+    				<xf:group style="" id="" class="logoBox">
+    					<w2:textbox tagname="h2" style="" id="" label="로고" class="main_logo sound_only"></w2:textbox>
+    					<w2:textbox tagname="p" style="" id="" label="유신" class="txtLogo sound_only"></w2:textbox>
+    				</xf:group>
+    			</xf:group><xf:group id="" class="area log_input_area" tooltipPositionX="">
+    			<xf:group style="" id="" class="login_area">
+    				<xf:group id="" class="cntBox flexible">
+    					<xf:group tagname="table" style="width:100%;" id="" class="w2tb log_tb">
+    						<w2:attributes>
+    							<w2:summary></w2:summary>
+    						</w2:attributes>
+    						<xf:group tagname="caption"></xf:group>
+    						<xf:group tagname="colgroup">
+    							<xf:group tagname="col" style="width:100px;"></xf:group>
+    							<xf:group tagname="col" style="width:440px;"></xf:group>
+    							<xf:group tagname="col" style=""></xf:group>
+    						</xf:group>
+    						<xf:group tagname="tr" style="height:50px;">
+    							<xf:group tagname="td" style="" class="w2tb_td">
+    								<w2:attributes>
+    									<w2:scope>row</w2:scope>
+    								</w2:attributes>
+    							</xf:group>
+    							<xf:group tagname="td" style="" class="w2tb_td">
+    								<w2:attributes><w2:colspan>2</w2:colspan><w2:rowspan>1</w2:rowspan></w2:attributes><w2:span id="" label="Y-HANMADANG (ERP SYSTEM)" style="" class="txt"></w2:span>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group tagname="tr" style="">
+    							<xf:group tagname="th" class="w2tb_th"><w2:attributes>
+    									<w2:scope>row</w2:scope>
+    								</w2:attributes><w2:span id="" label="아이디" style="padding-bottom:0;"></w2:span></xf:group>
+    							<xf:group tagname="td" class="w2tb_td"><w2:attributes></w2:attributes><xf:input adjustMaxLength="false" id="" placeholder="아이디를 입력하세요" style=""></xf:input></xf:group>
+    							<xf:group tagname="td" class="w2tb_td">
+    								<w2:attributes>
+    									<w2:colspan>1</w2:colspan>
+    									<w2:rowspan>2</w2:rowspan>
+    								</w2:attributes>
+    								<xf:trigger class="btn" id="" style="" type="button">
+    									<xf:label><![CDATA[로그인]]></xf:label>
+    								</xf:trigger>
+    							</xf:group></xf:group><xf:group tagname="tr" style="">
+    							<xf:group tagname="th" style="" class="w2tb_th">
+    								<w2:attributes>
+    									<w2:scope>row</w2:scope>
+    								</w2:attributes>
+    								<w2:span style="padding-bottom:0;" id="" label="비밀번호"></w2:span>
+    							</xf:group>
+    							<xf:group tagname="td" style="" class="w2tb_td"><xf:input adjustMaxLength="false" style="" id="" placeholder="비밀번호를 입력하세요" dataType="" type="password"></xf:input></xf:group></xf:group>
+    					<xf:group tagname="tr"><xf:group tagname="td" class="w2tb_td"><w2:attributes></w2:attributes></xf:group>
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    							<w2:textbox class="tar" id="" label="* 정보 자산에 대한 모든 접근은 기록됩니다." style="" tagname=""></w2:textbox>
+    						</xf:group>
+    						<xf:group tagname="td" class="w2tb_td"><w2:attributes></w2:attributes></xf:group></xf:group><xf:group tagname="tr">
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes>
+    								<w2:scope>row</w2:scope>
+    							</w2:attributes>
+    						</xf:group>
+    						<xf:group tagname="td" class="w2tb_td" style="padding-bottom: 0;">
+    							<w2:attributes></w2:attributes>
+    						<xf:group id="" class="btmBox flexible"><xf:select ref="" appearance="full" style="" id="" renderType="checkboxgroup" rows="" selectedindex="0" class="cst_chk" cols="" ignoreTabIndex="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[아이디 저장하기]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select><xf:group style="" id="" class="find_area">
+    								<w2:anchor outerDiv="false" style="" id="" ref="">
+    									<xf:label><![CDATA[사용자 등록]]></xf:label>
+    								</w2:anchor>
+    								<w2:anchor outerDiv="false" style="" id="">
+    									<xf:label><![CDATA[임시비밀번호 발급]]></xf:label>
+    								</w2:anchor>
+    							</xf:group></xf:group></xf:group>
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    						</xf:group></xf:group></xf:group>
+    				</xf:group>
+</xf:group>
+    		<xf:group id="" class="top_bg"><xf:group style="" id="" class="">
+    				<xf:group tagname="ul" id="" class="textList">
+    					<xf:group tagname="li" style="margin-bottom: 10px;" id="" class="">
+    						<w2:textbox tagname="" style="" id="" label="COPYRIGHTS (c) 2011 Yooshin Engineering Corporation, ALL RIGHTS RESERVED" class="tac"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="tac" id="" style="" tagname="li">
+    						<w2:textbox class="" id="" label="시스템 문의 02)6202-0141~9" style="" tagname=""></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group id="" class="radio_grp">
+    				</xf:group>
+    			</xf:group></xf:group></xf:group></xf:group></xf:group>
+    </body>
+</html>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_vertical_guides="" meta_horizontal_guides="-220">
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+        <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		// Mobile일때 메뉴 동작	
+		if(WebSquare.util.isMobile()){
+			$(".wrap").removeClass("show_menu");
+			
+			$(".btn_toggle_menu").click(function(){
+				$(".wrap").toggleClass("show_menu");
+				$(".btn_toggle_menu").toggleClass("on");
+				$(".dim").toggleClass("on");
+			});
+		} else {
+			// LNB닫기 함수 (화면폭이 1280 이하일 때 LNB 자동닫기)
+			scwin.closeMenu = function() {
+				var winWidth = $(window).width();
+				if (winWidth > 800 && winWidth < 1281) {
+					$(".wrap").removeClass("show_menu");
+				}
+			};
+			
+			scwin.closeMenu(); // 초기진입시
+			
+			$(window).resize(function() { // 화면 리사이즈시
+				scwin.closeMenu();
+			});
+			
+			$(".btn_toggle_menu").click(function(){
+				$(".wrap").toggleClass("show_menu");
+				$(".btn_toggle_menu").toggleClass("on");
+			});
+		}
+		
+		// GNB MENU
+		$(".gnb_menu a").click(function(){
+			if(!$(this).parent().hasClass("on")){
+				$(this).parent().addClass("on").siblings().removeClass("on");
+			}
+		});
+		$(".dep2 li a").click(function(){ 
+			var pTop = $(this).parent().position().top;
+			$(this).siblings().css("top", pTop + "px");
+		});
+		$(".dep2").mouseleave(function(){
+			$(this).parent().removeClass("on");
+			$(this).children().removeClass("on");
+		});
+		
+		// 검색영역 show/hide
+		$(".btn_all_search").click(function(){
+			
+			$(".search_field").toggleClass("active");
+		});
+		
+		// 탭 타이틀 on/off
+		$(".tab_tit a").click(function(){
+			$(this).parent().addClass("on").siblings().removeClass("on");
+		});
+		
+		// 트리뷰 접기
+		$(".btn_fold").click(function(){
+			$(this).addClass("on");
+			$(".btn_fold_list").removeClass("on");
+		});
+		// 트리뷰 펼치기
+		$(".btn_fold_list").click(function(){
+			$(this).addClass("on");
+			$(".btn_fold").removeClass("on");
+		});
+		
+		// USER NAME CLICK
+		$(".btn_mypage").click(function(){
+			$(".mypage .items").toggleClass("on");
+		});
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	
+	//팝업
+	
+
+	var status = "SDI";
+	
+	// Page Sample 메뉴선택시 탭추가
+	scwin.loadPageSample = function(title, url){ 
+		var tLabel = title;
+		var tValue = url.replaceAll("/", "");
+		tValue = tValue.replace(".", "");
+		
+		if(status == "SDI"){
+			if(tValue != "") {  //받아온 value값이 비어있지않으면..
+				var tabObj = {	//json형태의 속성값을 tabObj 이용하여 설정
+				    closable : "true",	//탭 닫기 기능 제공
+				    openAction : "exist", // exist 는 기존 탭을 갱신, new 는 항상 새로, select는 동일 id 가 존재하면 선택
+				    label : tLabel	//label값은 tLabel변수의 값을 대입한다.
+			    };
+			   	
+			    var classObj = {	//json형태의 속성값을 classObj에서 설정
+				    contentsClass : "w2tabcontrol_contents",
+				    frameMode : "wframe",
+				    src : url	//탭콘테이너의 url은 treeview의 value에서 가져온다.
+				};
+				    
+			   	tabc_layout.addTab( tValue, tabObj, classObj );
+			   	var tabindex = tabc_layout.getTabIndex( tValue );
+			   	tabc_layout.SelectedTabIndex( tabindex );
+			}
+		}else if(status == "MDI"){
+			if(tValue != "") {  //받아온 value값이 비어있지않으면..
+				windowContainer1.createWindow( tLabel , null , tValue);
+			}	
+		}
+	};
+	
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="wrap show_menu user_color2" id="" style="">
+    		<xf:group style="" id="" class="box_header">
+    			<w2:wframe style="position: relative;" id="" class="header" scope="true" src="/ui/inc/header.xml"></w2:wframe>
+    			<xf:group style="" id="" class="box_quicklink">
+    				<xf:group style="" id="" class="quicklink" tagname="ul">
+
+    					<xf:group style="width: 48px;height: 48px;display: inline-block;" id="" tagname="li">
+    						<xf:trigger class="btn_quick btn_home" id="" style="" type="button">
+    							<xf:label><![CDATA[home]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_call" id="" style="" type="button">
+    							<xf:label><![CDATA[call]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_schd" id="" style="" type="button">
+    							<xf:label><![CDATA[schd]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_mail" id="" style="" type="button">
+    							<xf:label><![CDATA[mail]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_mess" id="" style="" type="button">
+    							<xf:label><![CDATA[mess]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_shch" id="" style="" type="button">
+    							<xf:label><![CDATA[shch]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_phone" id="" style="" type="button">
+    							<xf:label><![CDATA[phone]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_down" id="" style="" type="button">
+    							<xf:label><![CDATA[down]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_ask" id="" style="" type="button">
+    							<xf:label><![CDATA[ask]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="box_usercolor" id=""
+    				style="">
+    				<w2:textbox id="" label="사용자 Color" style="" class="tit"></w2:textbox>
+    				<xf:select1 appearance="full" class="userColor_radio" cols="" disabled="" id="" ref="" renderType="radiogroup" rows=""
+    					selectedIndex="1" style="">
+    					<xf:choices>
+    						<xf:item>
+    							<xf:label><![CDATA[Black]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[Blue]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[Green]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[Yellow]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[White]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    					</xf:choices>
+    				</xf:select1>
+
+    			</xf:group>
+
+    		</xf:group>
+    		
+    		<xf:group class="container" id="" style="">
+    			<xf:group style="" id="" class="contents">
+    				<w2:tabControl useTabKeyOnly="true" id="tabc_layout" useMoveNextTabFocus="false" useConfirmMessage="false"
+    					confirmTrueAction="exist" confirmFalseAction="new" alwaysDraw="false" style="" class="tabc_layout" hiddenTab="" tabPosition=""
+    					closable="true" useAccessibilityMenu="false" tableRender="" tabScroll="true" adaptive="layout" adaptiveThreshold="1024">
+    					<w2:tabs disabled="false" style="" id="tabs1" label="메인화면" closable="true" useATagBtn=""></w2:tabs>
+    					<w2:tabs disabled="false" style="" id="tabs2" label="페이지샘플"></w2:tabs>
+    					<w2:tabs disabled="false" style="" id="tabs3" label="템플릿"></w2:tabs>
+    					<w2:content alwaysDraw="false" style="" id="content1" src="/ui/system/main.xml" scope="true"></w2:content>
+    					<w2:content alwaysDraw="true" style="" id="content2" scope="true" src="/ui/system/pagemain.xml"></w2:content>
+    					<w2:content alwaysDraw="false" style="" id="content3" src="/ui/template/template.xml"></w2:content>
+    				</w2:tabControl>
+    				<w2:anchor outerDiv="false" style="" id="" class="tab_allclose">
+    					<xf:label><![CDATA[탭전체닫기]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    		</xf:group>
+    		<w2:wframe style="" id="" class="side" scope="true" src="/ui/inc/side.xml"></w2:wframe>
+    		<xf:group style="" id="" class="dim"></xf:group>
+    	</xf:group>
+    </body>
+</html>

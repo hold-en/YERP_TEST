@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_01" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="SN_SubClient" name="SN_SubClient" dataType="text"></w2:column>
+            			<w2:column id="DS_RecmJojik" name="DS_RecmJojik" dataType="text"></w2:column>
+            			<w2:column id="DS_Subclient" name="DS_Subclient" dataType="text"></w2:column>
+            			<w2:column id="CD_Subclient" name="CD_Subclient" dataType="text"></w2:column>
+            			<w2:column id="DS_Jojik" name="DS_Jojik" dataType="text"></w2:column>
+            			<w2:column id="AM_SubCont" name="AM_SubCont" dataType="text"></w2:column>
+            			<w2:column id="DS_President" name="DS_President" dataType="text"></w2:column>
+            			<w2:column id="CN_SubCont" name="CN_SubCont" dataType="text"></w2:column>
+            			<w2:column id="NO_Tel" name="NO_Tel" dataType="text"></w2:column>
+            			<w2:column id="TY_Status" name="TY_Status" dataType="text"></w2:column>
+            			<w2:column id="CD_Jojik" name="CD_Jojik" dataType="text"></w2:column>
+            			<w2:column id="DS_Code" name="DS_Code" dataType="text"></w2:column>
+            			<w2:column id="AM_Pay" name="AM_Pay" dataType="text"></w2:column>
+            			<w2:column id="AM_Remain" name="AM_Remain" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<AM_Pay><![CDATA[20325100]]></AM_Pay>
+            				<AM_Remain><![CDATA[27300000]]></AM_Remain>
+            				<AM_SubCont><![CDATA[47625100]]></AM_SubCont>
+            				<CD_Jojik><![CDATA[YC158]]></CD_Jojik>
+            				<CD_Subclient><![CDATA[00111]]></CD_Subclient>
+            				<CN_SubCont><![CDATA[2]]></CN_SubCont>
+            				<DS_Jojik><![CDATA[도로부]]></DS_Jojik>
+            				<DS_President><![CDATA[김홍식]]></DS_President>
+            				<DS_RecmJojik><![CDATA[수공본부]]></DS_RecmJojik>
+            				<DS_Subclient><![CDATA[(주)경화엔지니어링]]></DS_Subclient>
+            				<NO_Tel><![CDATA[031-789-6200]]></NO_Tel>
+            				<SN_SubClient><![CDATA[1]]></SN_SubClient>
+            				<TY_Status><![CDATA[B]]></TY_Status>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : BMCD_SP_SubClientContractStatus
+	// 프로그램 명    : 리포트 탬플릿
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		requires("uiplugin.popup");
+		scwin.fn_setEvent();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 조회조건
+	//========================================================
+	
+	//========================================================
+	// 버튼 이벤트
+	//========================================================
+	scwin.fn_setEvent = function() {
+		tg_select.bind("onclick", function(e){scwin.fn_pre01_F0();});
+		tg_print.bind("onclick", function(e){scwin.fn_pre01_P0();});
+		tg_xlsx.bind("onclick", function(e){scwin.fn_pre01_E0();});
+		tgF_select.bind("onclick", function(e){scwin.fn_pre01_F0();});
+	}
+	
+	// 조회
+	scwin.fn_pre01_F0 = function() {
+		// 조회시 validation 호출
+//		var result = scwin.fn_selectValidation();
+		
+		// 에러일때 처리
+//		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_F0();
+	}
+	
+	scwin.fn_exe01_F0 = function() {
+		_request.get("/template/BMCD_SP_SubClientContractStatus_01_F0", {
+			data : {
+				normal : {
+					   TY_Status : rdF_TY_Status.getValue()
+					 , TY_Vat : rdF_TY_Vat.getValue()
+					 , DT_From : icF_DT_From.getValue()
+					 , DT_To : icF_DT_To.getValue()
+					 , CD_Jojik : ipF_CD_Jojik.getValue()
+				}
+			},
+			success : function(res) {
+				dlt_01.setJSON(res.out);
+			}
+		})
+	};
+	
+	scwin.fn_pre01_P0 = function() {
+		if(dlt_01.getRowCount() == 0){
+			_util.alert("조회 후 사용할 수 있습니다.", "error");
+			return false;
+		}
+		var report = 'SubClientContractStatusReport';
+		var data = "";
+		data += '"ds_subClient#\\"';
+//		data += addString(dlt_01);
+		for(var i=0;i<dlt_01.getTotalRow();i++){
+			var jsonData = dlt_01.getRowJSON(i);
+			for(var key in jsonData){
+				data += jsonData[key] + '^t';
+			}
+			data += '^n';
+		}
+		data += '\\"#"';
+		console.log(data);
+		_report.openForPopup({
+			width : 1080,
+			height : 1024,
+			report : report,
+			parameter : {
+				streamdata : encodeURIComponent(data)
+			}
+		})
+//		var winWid = $(window).width();
+//		var winHei = $(window).height();
+//		var popWid = 800;
+//		var popHei = 800;
+//		var sumLeft = (winWid - popWid) / 2;
+//		var sumTop = (winHei - popHei) / 2;
+//		var options = {
+//			id : "reportPopup",
+//			title : "부서 찾기",
+//			url : "/ui/system/popup/ubiReport.xml",
+//			param : {
+//				   report : report
+//				 , streamdata : data
+//			},
+//			width : popWid,
+//			height : popHei,
+//			top : sumTop,
+//			left : sumLeft
+//		}
+//		_util.openPopup(options);dlt_01.modifyAllStatus("U");
+	};
+	
+	function addString(datalist) {
+		var data = "";
+		for(var i=0;i<datalist.getTotalRow();i++){
+			var jsonData = datalist.getRowJSON(i);
+			for(var key in jsonData){
+				data += jsonData[key] + '^t';
+			}
+			data += '^n';
+		}
+		return data;
+	}
+	
+	scwin.fn_pre01_E0 = function() {
+		_util.alert("엑셀.", "info");
+//		var curDate = $p.getCurrentServerDate("yyyyMMdd");console.log(curDate);
+//		gd_01.advancedExcelDownload({fileName : "그리드화면.xls"});
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style="">
+    		<xf:group class="dfbox" id="" style="">
+    			<xf:group class="fl" id="" style="">
+    				<xf:trigger class="btn_ext btn_down" id="tg_select" style="" type="button">
+    					<xf:label><![CDATA[다운로드]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_print" id="tg_print" style="" type="button">
+    					<xf:label><![CDATA[인쇄]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_xlsx" id="tg_xlsx" style="" type="button">
+    					<xf:label><![CDATA[엑셀]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[외주처관리]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="shbox" id="" style="">
+    			<xf:group class="shbox_inner" id="" style="">
+    				<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tb " id="" style="" tagname="table">
+    					<w2:attributes>
+    						<w2:summary></w2:summary>
+    					</w2:attributes>
+    					<xf:group tagname="colgroup">
+    						<xf:group style="width:80px;" tagname="col"></xf:group>
+    						<xf:group tagname="col"></xf:group>
+    						<xf:group tagname="col" style="width:100px;"></xf:group>
+    						<xf:group tagname="col"></xf:group>
+    						<xf:group tagname="col" style="width:100px;"></xf:group>
+    						<xf:group tagname="col" style=""></xf:group>
+    						<xf:group tagname="col" style="width:100px;"></xf:group>
+    						<xf:group style="" tagname="col"></xf:group>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="tr">
+    						<xf:group class="w2tb_th" style="" tagname="th">
+    							<w2:textbox class="" id="" label="기준일자" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group class="w2tb_td" style="" tagname="td">
+
+    							<xf:group class="flex" id="" style="">
+    								<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id="icF_DT_From"
+    									renderDiv="true" renderType="" rightAlign="false" style="width:100px;">
+    								</w2:inputCalendar>
+    								<w2:textbox id="" label="~" style="height: 23px;"></w2:textbox>
+    								<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id="icF_DT_To"
+    									renderDiv="true" renderType="" rightAlign="false" style="width:100px;">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group tagname="th" class="w2tb_th">
+    							<w2:attributes></w2:attributes>
+    							<w2:textbox class="" id="" label="주관부서" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    							<xf:group class="flex" id="" style="">
+    								<xf:input class="flex_no" id="" placeholder="" style="width:100px;"></xf:input>
+    								<xf:trigger class="btn_search type02" id="" style="" type="button">
+    									<xf:label><![CDATA[Search]]></xf:label>
+    								</xf:trigger>
+    								<xf:input class="" id="ipF_CD_Jojik" placeholder="" style="display: none;"></xf:input>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group tagname="th" class="w2tb_th">
+    							<w2:attributes></w2:attributes>
+    							<w2:textbox class="" id="" label="등록구분" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    							<xf:select1 appearance="full" cols="" disabled="" id="rdF_TY_Status" ref="" renderType="radiogroup" rows=""
+    								selectedIndex="0" style="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[등록]]></xf:label>
+    										<xf:value><![CDATA[A]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[가등록]]></xf:label>
+    										<xf:value><![CDATA[B]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group tagname="th" class="w2tb_th">
+    							<w2:attributes></w2:attributes>
+    							<w2:textbox class="" id="" label="세금구분" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    							<xf:select1 appearance="full" cols="" disabled="" id="rdF_TY_Vat" ref="" renderType="radiogroup" rows=""
+    								selectedIndex="0" style="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[VAT 포함]]></xf:label>
+    										<xf:value><![CDATA[1]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[VAT 별도]]></xf:label>
+    										<xf:value><![CDATA[2]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="btn_shbox" id="" style=""><xf:trigger class="btn_cm sch" disabled="" escape="false" id="tgF_select" style="" type="button">
+    					<xf:label><![CDATA[조회]]></xf:label>
+    				</xf:trigger></xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dlt_01" defaultCellHeight="20"
+    				focusDefaultColumn="true" id="" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="true" rowNumWidth="50"
+    				rowStatusHeaderValue="상태" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false"
+    				style="height: 400px;">
+    				<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header2" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column blockSelect="false" class="req" displayMode="label" id="column11" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="외주처명" width="120" colSpan="" rowSpan="2">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="등록부서" width="100" colSpan="" rowSpan="2">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="주 분야" width="100" colSpan="" rowSpan="2">
+    						</w2:column>
+    						<w2:column blockSelect="false" class="req" displayMode="label" id="column8" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="외주계약&lt;br/&gt;주관부서" width="120" colSpan="" rowSpan="2">
+    						</w2:column>
+    						<w2:column blockSelect="false" class="req" displayMode="label" id="column7" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" value="하도급 계약 현황" width="420" colSpan="4" rowSpan="">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column3" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="대표" width="100" colSpan="" rowSpan="2">
+    						</w2:column>
+    					</w2:row>
+    					<w2:row style="" id="row5">
+    						<w2:column width="70" inputType="text" style="height:34px;" id="column16" value="계약건수" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:34px;" id="column15" value="계약금액" displayMode="label"></w2:column>
+    						<w2:column width="120" inputType="text" style="height:34px;" id="column14" value="지급액" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:34px;" id="column13" value="잔액" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody2" style="">
+    					<w2:row id="row4" style="">
+    						<w2:column blockSelect="false" class="" displayMode="label" id="DS_Subclient" inputType="text"
+    							removeBorderStyle="false" style="height:34px;" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DS_Jojik" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col3" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DS_RecmJojik" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col5" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="70">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col6" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col7" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="120">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="col8" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DS_President" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="100">
+    						</w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    				<w2:footer style="" id="footer1">
+    					<w2:row style="" id="row6">
+    						<w2:column width="220" inputType="text" style="height:34px;" id="column29" value="합계" displayMode="label"
+    							colSpan="2" rowSpan="">
+    						</w2:column>
+    						<w2:column width="100" inputType="text" style="height:34px;" id="column27" value="" displayMode="label"></w2:column>
+    						<w2:column width="120" inputType="expression" style="height:34px;" id="column26" value="" displayMode="label" expression="'총 ' + count('DS_RecmJojik') + ' 건'"></w2:column>
+    						<w2:column width="70" inputType="text" style="height:34px;" id="column25" value="" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:34px;" id="column24" value="" displayMode="label"></w2:column>
+    						<w2:column width="120" inputType="text" style="height:34px;" id="column23" value="" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:34px;" id="column22" value="" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:34px;" id="column21" value="" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:footer>
+    			</w2:gridView>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

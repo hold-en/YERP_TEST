@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_01" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CHK" name="CHK" dataType="text"></w2:column>
+            			<w2:column id="ID_Code" name="ID_Code" dataType="text"></w2:column>
+            			<w2:column id="ID_Sub" name="ID_Sub" dataType="text"></w2:column>
+            			<w2:column id="SN_Seq" name="SN_Seq" dataType="text"></w2:column>
+            			<w2:column id="DS_Code" name="DS_Code" dataType="text"></w2:column>
+            			<w2:column id="RM_Remark" name="RM_Remark" dataType="text"></w2:column>
+            			<w2:column id="OLD_Code" name="OLD_Code" dataType="text"></w2:column>
+
+            			<w2:column id="YN_Use" name="YN_Use" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : 
+	// 프로그램 명    : 
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_gd_01_Index = -1;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 조회조건
+	//========================================================
+	
+	//========================================================
+	// 공통버튼
+	//========================================================
+	scwin.tg_select_onclick = function(e) {
+		// 조회시 validation 호출
+		var result = scwin.fn_selectValidation();
+		
+		// 에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_F0();
+	};
+	scwin.fn_exe01_F0 = function() {
+		_request.get("/sample/sample_crud_01_F0", {
+			data : {
+				normal : {
+					   ID_Code : ipF_ID_Code.getValue()
+					 , YN_Use : raF_YN_Use.getValue()
+				}
+			},
+			success : function(res) {
+				dlt_01.setJSON(res.out);
+				gd_01.setFocusedCell(0, 0);
+//				console.log("search : ", res);
+			}
+		})
+	};
+	
+	scwin.tg_new_onclick = function(e) {
+		// 신규시 validation 호출
+		var result = scwin.fn_newValidation();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_I0();
+	};
+	
+	// 신규
+	scwin.fn_exe01_I0 = function() {
+		var insertedIndex = dlt_01.insertRow();
+//		scwin.fn_postM0_I0(insertedIndex);
+		gd_01.setFocusedCell(insertedIndex, 0);
+	};
+	
+	scwin.tg_delete_onclick = function(e) {
+		// 삭제시 validation 호출
+		var result = scwin.fn_deleteValidation();
+		
+		//에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		var message = "자료가 삭제됩니다.\n삭제된 자료는 복구할 수 없습니다.\n정말 삭제 하시겠습니까?";
+		_util.confirm1(message, scwin.fn_exe01_D0());
+	};
+	
+	// 삭제 실행
+	scwin.fn_exe01_D0 = function() {
+		var checkedIdxArr = dlt_01.getMatchedIndex("CHK", "1", true, 0, dlt_01.getRowCount());
+		if (checkedIdxArr.length > 0) {
+			for (var i = 0; i < checkedIdxArr.length; i++) {	
+				if(dlt_01.getRowStatus(checkedIdxArr[i]) == 'C'){	//신규행일 경우 행삭제
+					dlt_01.removeRow(checkedIdxArr[i]);
+				}else{	//신규행이 아닐경우 rowStatus만 D로 변경
+					dlt_01.deleteRow(checkedIdxArr[i]);
+				}
+			}
+			scwin.fn_post01_D0();
+		}
+	};
+	
+	// 삭제 후처리
+	scwin.fn_post01_D0 = function() {
+		_util.alert("삭제한 항목은 저장 후 반영됩니다.");
+	};
+	
+	scwin.tg_save_onclick = function(e) {
+		// 저장시 validation 호출
+		var result = scwin.fn_saveValidation();
+		
+		// 에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		_request.post("/sample/sample_crud_01_T0", {
+			defaultNotify : false,
+			data : {
+				body : dlt_01.getModifiedJSON()
+			}, 
+			success : function(res) {
+				_util.returnMessage(res);
+				_util.alert("저장되었습니다.");
+				scwin.fn_exe01_F0();
+				console.log(res);
+			}
+		});
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	scwin.gd_01_onrowindexchange = function(row,oldRow) {
+		G_gd_01_Index = row;
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	scwin.fn_selectValidation = function() {
+//		if(ipGroupCode.getValue() == "" && ipGroupNm.getValue() == "" && ipCodeNm.getValue() == "" ) {
+//			_util.alert('최소 한가지 조회조건을 입력하세요.');
+//			txtvwYy.focus();
+//			return false;
+//		}
+		
+		return true;
+	};
+	
+	scwin.fn_newValidation = function() {
+		
+		return true;
+	};
+	
+	scwin.fn_saveValidation = function() {
+//		if(txtGroupCode.getValue() == "") {
+//			_util.alert('그룹코드는 필수 항목입니다.');
+//			txtGroupCode.focus();
+//			return false;
+//		}
+//		if(txtSubCode.getValue() == "") {
+//			_util.alert('서브코드는 필수 항목입니다.');
+//			txtSubCode.focus();
+//			return false;
+//		}
+		var createdRows = dlt_01.getRowIndexByStatus("C").length;
+		var updatedRows = dlt_01.getRowIndexByStatus("U").length;
+		var deletedRows = dlt_01.getRowIndexByStatus("D").length;
+		
+		if(createdRows + updatedRows + deletedRows == 0){
+			return false;
+		}
+		
+		// 필수 값 체크
+		var tmpData = dlt_01.getAllJSON();
+		for(i=0; i<tmpData.length; i++){
+			if(tmpData[i].rowStatus == "C" || tmpData[i].rowStatus == "U"){
+				if(tmpData[i].ID_Code == ""){
+					_util.alert("ID_Code은(는) 필수항목입니다.");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].ID_Sub == ""){
+					_util.alert("ID_Sub은(는) 필수항목입니다.");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+				if(tmpData[i].SN_Seq == ""){
+					_util.alert("SN_Seq은(는) 필수항목입니다.");
+					gd_01.setFocusedCell(i, 0, true);
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	};
+	
+	scwin.fn_deleteValidation = function() {
+		if(dlt_01.getRowCount() == 0){
+			return false;
+		}
+		var checkedIdxArr = dlt_01.getMatchedIndex("CHK", "1", true, 0, dlt_01.getRowCount());
+		if (checkedIdxArr.length < 1) {
+			_util.alert("삭제할 항목을 체크해 주십시오.");
+			return false;
+		}
+		
+		return true;
+	}
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group style="" id="">
+    		<xf:group style="height: 23px;" id="">
+    			<xf:group id="" style="float: left;">
+    				<xf:trigger style="width: 80px;height: 23px;" id="tg_select" type="button" ev:onclick="scwin.tg_select_onclick">
+    					<xf:label><![CDATA[조회]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger style="width: 80px;height: 23px;" id="tg_new" type="button" ev:onclick="scwin.tg_new_onclick">
+    					<xf:label><![CDATA[신규]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger style="width: 80px;height: 23px;" id="tg_delete" type="button" ev:onclick="scwin.tg_delete_onclick">
+    					<xf:label><![CDATA[삭제]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger style="width: 80px;height: 23px;" id="tg_save" type="button" ev:onclick="scwin.tg_save_onclick">
+    					<xf:label><![CDATA[저장]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group style="padding: 5px 5px 5px 5px;" id="">
+    			<xf:group tagname="table" style="width: 100%" id="" class="w2tb">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="caption"></xf:group>
+    				<xf:group tagname="colgroup">
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col" style=""></xf:group>
+    					<xf:group tagname="col" style="width:100px;"></xf:group>
+    					<xf:group tagname="col" style=""></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group tagname="th" style="" class="w2tb_th">ID_Code<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes></xf:group>
+    					<xf:group tagname="td" style="" class="w2tb_td">
+    						<xf:input adjustMaxLength="false" id="ipF_ID_Code" style="width: 90%;height: 21px;"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" style="" class="w2tb_th">YN_Use<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes></xf:group>
+    					<xf:group tagname="td" style="" class="w2tb_td">
+    						<xf:select1 id="raF_YN_Use" chooseOption="" style="width: 148px;height: 21px;" submenuSize="auto" allOption=""
+    							disabled="false" direction="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOptionLabel="전체" ref="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[전체]]></xf:label>
+    									<xf:value><![CDATA[All]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[사용]]></xf:label>
+    									<xf:value><![CDATA[1]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[미사용]]></xf:label>
+    									<xf:value><![CDATA[0]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<w2:gridView id="gd_01" style="height: 550px;" checkAllType="false" scrollByColumn="false" defaultCellHeight="25"
+    			scrollByColumnAdaptive="false" dataList="data:dlt_01" rowNumWidth="50" rowStatusWidth="50" sortable="true" editModeEvent="onclick"
+    			sortEvent="onclick" rowNumStatusResize="false" rowNumHeaderValue="NO" rowStatusHeaderValue="상태" rowNumVisible="true"
+    			rowStatusVisible="true" ev:onrowindexchange="scwin.gd_01_onrowindexchange">
+    			<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    			<w2:header style="" id="header1">
+    				<w2:row style="" id="row1">
+    					<w2:column width="50" inputType="checkbox" id="column1" value="CHK" displayMode="label"></w2:column>
+    					<w2:column width="100" id="column3" value="ID_Code" inputType="text"></w2:column>
+    					<w2:column width="100" id="column4" value="ID_Sub" inputType="text"></w2:column>
+    					<w2:column width="100" id="column5" value="SN_Seq" inputType="text"></w2:column>
+    					<w2:column width="100" id="column6" value="DS_Code" inputType="text"></w2:column>
+    					<w2:column width="100" id="column7" value="RM_Remark" inputType="text"></w2:column>
+    					<w2:column width="100" id="column8" value="OLD_Code" inputType="text"></w2:column>
+    					<w2:column width="70" id="column9" value="YN_Use" inputType="text"></w2:column>
+    				</w2:row>
+    			</w2:header>
+    			<w2:gBody style="" id="gBody1">
+    				<w2:row style="" id="row2">
+    					<w2:column width="50" inputType="checkbox" id="CHK" displayMode="label"></w2:column>
+    					<w2:column width="100" id="ID_Code" inputType="text"></w2:column>
+    					<w2:column width="100" id="ID_Sub" inputType="text"></w2:column>
+    					<w2:column width="100" id="SN_Seq" inputType="text"></w2:column>
+    					<w2:column width="100" id="DS_Code" inputType="text"></w2:column>
+    					<w2:column width="100" id="RM_Remark" inputType="text"></w2:column>
+    					<w2:column width="100" id="OLD_Code" inputType="text"></w2:column>
+    					<w2:column width="70" id="YN_Use" inputType="select" allOption="" chooseOption="" ref="">
+    						<w2:choices>
+    							<w2:item>
+    								<w2:label><![CDATA[사용]]></w2:label>
+    								<w2:value><![CDATA[1]]></w2:value>
+    							</w2:item>
+    							<w2:item>
+    								<w2:label><![CDATA[미사용]]></w2:label>
+    								<w2:value><![CDATA[2]]></w2:value>
+    							</w2:item>
+    						</w2:choices>
+    					</w2:column>
+    				</w2:row>
+    			</w2:gBody>
+    		</w2:gridView>
+    	</xf:group>
+    </body>
+</html>

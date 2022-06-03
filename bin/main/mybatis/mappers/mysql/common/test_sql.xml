@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test.edu">
+
+    <select id="get" parameterType="jsonObject" resultType="jsonObject">
+        SELECT * FROM TEST;
+    </select>
+
+    <insert id="insert" parameterType="jsonObject">
+        INSERT INTO TEST(
+        TITLE,
+        FILE_PATH1,
+        FILE_PATH2)
+        VALUES(
+        #{TITLE},        
+        #{FILE_PATH1},
+        #{FILE_PATH2})        
+    </insert>
+
+    <update id="update" parameterType="jsonObject">
+        UPDATE TEST SET TITLE = #{TITLE}, FILE_PATH1 = #{FILE_PATH1}, FILE_PATH2 = #{FILE_PATH2}
+        WHERE IDX = #{IDX}
+    </update>
+
+    <delete id="delete" parameterType="jsonObject">
+        DELETE FROM TEST WHERE IDX = #{IDX} 
+    </delete>
+
+	<select id="test" parameterType="jsonObject" resultType="jsonObject">
+		${execute_Sql}
+	</select>
+
+
+</mapper>
+  

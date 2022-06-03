@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet href="/cm/css/main.css" type="text/css"?> -->
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="Item01" dataType="number"></w2:column>
+            			<w2:column id="col3" name="Item02" dataType="number"></w2:column>
+            			<w2:column id="col4" name="Item03" dataType="number"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<col2><![CDATA[65]]></col2>
+            				<col3><![CDATA[78]]></col3>
+            				<col4><![CDATA[47]]></col4>
+            				
+            				
+            				<col1><![CDATA[Item01]]></col1>
+            			</w2:row>
+            			<w2:row>
+            				<col2><![CDATA[88]]></col2>
+            				<col3><![CDATA[53]]></col3>
+            				<col4><![CDATA[63]]></col4>
+            				
+            				
+            				<col1><![CDATA[Item02]]></col1>
+            			</w2:row>
+            			<w2:row>
+            				<col2><![CDATA[30]]></col2>
+            				<col3><![CDATA[38]]></col3>
+            				<col4><![CDATA[71]]></col4>
+            				
+            				
+            				<col1><![CDATA[Item03]]></col1>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[Item04]]></col1>
+            				<col2><![CDATA[47]]></col2>
+            				<col3><![CDATA[24]]></col3>
+            				<col4><![CDATA[53]]></col4>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[Item05]]></col1>
+            				<col2><![CDATA[58]]></col2>
+            				<col3><![CDATA[78]]></col3>
+            				<col4><![CDATA[63]]></col4>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[Item06]]></col1>
+            				<col2><![CDATA[58]]></col2>
+            				<col3><![CDATA[18]]></col3>
+            				<col4><![CDATA[23]]></col4>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[Item07]]></col1>
+            				<col2><![CDATA[58]]></col2>
+            				<col3><![CDATA[98]]></col3>
+            				<col4><![CDATA[33]]></col4>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+    	 
+    scwin.onpageload = function() {
+		
+		// Page Sample 메뉴선택 이벤트
+	    var pageSampleLink = $(".pageWrap li a");
+				
+		pageSampleLink.on("click", function() {  
+			var selectedText = $(this).next("span");
+			var title = selectedText.text(); // 탭제목 가져오기
+			var url = selectedText.attr("data-url"); // 선택한 메뉴의 url 가져오기
+			//$p.getParentWindow().scwin.loadPageSample(title, url);
+			$p.parent().scwin.loadPageSample(title, url);
+		});
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents main_contents" id="" style="background-color:#f8f8f8;min-height:100%;box-sizing:border-box;">
+    		<xf:group class="pgtbox" id="" style="">
+    			<w2:textbox class="pgt_tit" escape="false" id="" label='페이지 샘플' style=""
+    				tagname="h2">
+    			</w2:textbox>
+    			<xf:group class="pgt_right" id="" style=""></xf:group>
+    		</xf:group>
+    		<xf:group class="mainbox " id="" style="" tagname="ul">
+    			<xf:group class="pg" id="" style="" tagname="li">
+    				
+    			<xf:group class="shadowbox" id="" style="">
+    					<xf:group class="sample_box" id="" style="">
+    						<xf:group class="pageWrap cb" id="" style="" tagname="ul">
+    							<xf:group class="item" id="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="검색/그리드">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/search_grid.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="검색/테이블">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/search_table.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="검색/테이블/그리드">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/search_table_grid.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="검색/탭컨트롤">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/search_tab.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="검색/멀티그리드">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/search_multi_grid.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="검색/테이블/탭컨트롤">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/search_table_tab.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="트리뷰/그리드">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/treeview_grid.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="셔틀그리드(가로)">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/shuttle_grid_h.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="셔틀그리드(세로)">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/shuttle_grid_v.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="팝업창">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/popup.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    							<xf:group class="item" id="" style="" tagname="li">
+    								<w2:anchor id="" outerDiv="false">
+    									<xf:label></xf:label>
+    								</w2:anchor>
+    								<w2:span id="" label="시스템메시지창">
+    									<w2:attributes>
+    										<w2:data-url>/xml/pageSample/alert.xml</w2:data-url>
+    									</w2:attributes>
+    								</w2:span>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group></xf:group>
+    		</xf:group>
+    	</xf:group>
+
+    </body>
+</html>

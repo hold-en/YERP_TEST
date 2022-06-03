@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_vertical_guides="" meta_horizontal_guides="-220">
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataMap baseNode="map" id="dlt_G0" style="">
+            		<w2:keyInfo>
+            			<w2:key dataType="text" id="TY_Check" name="TY_Check"></w2:key>
+            			<w2:key dataType="text" id="TY_InitMenu" name="TY_InitMenu"></w2:key>
+            			<w2:key dataType="text" id="TY_Jojik_Part" name="TY_Jojik_Part"></w2:key>
+            			<w2:key dataType="text" id="TY_Menu" name="TY_Menu"></w2:key>
+            			<w2:key dataType="text" id="ID_Sabun" name="ID_Sabun"></w2:key>
+            			<w2:key dataType="text" id="DS_Name" name="DS_Name"></w2:key>
+            			<w2:key dataType="text" id="CD_Position" name="CD_Position"></w2:key>
+            			<w2:key dataType="text" id="DS_Position" name="DS_Position"></w2:key>
+            			<w2:key dataType="text" id="CD_Belong_Jojik" name="CD_Belong_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Belong_Jojik" name="DS_Belong_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Work_Jojik" name="CD_Work_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Work_Jojik" name="DS_Work_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Cost_Jojik" name="CD_Cost_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Cost_Jojik" name="DS_Cost_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Real_Jojik" name="CD_Real_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Unify_Jojik" name="CD_Unify_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Unify_Jojik" name="DS_Unify_Jojik"></w2:key>
+            			<w2:key dataType="text" id="NO_Mobile_Tel" name="NO_Mobile_Tel"></w2:key>
+            			<w2:key dataType="text" id="NO_Company_Tel" name="NO_Company_Tel"></w2:key>
+            			<w2:key dataType="text" id="NO_Company_Ext" name="NO_Company_Ext"></w2:key>
+            			<w2:key dataType="text" id="DT_Login" name="DT_Login"></w2:key>
+            			<w2:key dataType="text" id="DT_Enter" name="DT_Enter"></w2:key>
+            			<w2:key dataType="text" id="E_Mail" name="E_Mail"></w2:key>
+            			<w2:key dataType="text" id="YN_JojikTop" name="YN_JojikTop"></w2:key>
+            			<w2:key dataType="text" id="TM_PayCheckPass" name="TM_PayCheckPass"></w2:key>
+            		</w2:keyInfo>
+            	</w2:dataMap>
+            	<w2:dataList baseNode="list" id="dlt_G1" repeatNode="map" saveRemovedData="true" style="">
+            		<w2:columnInfo>
+            			<w2:column dataType="text" id="DS_Menu" name="메뉴명"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<DS_Menu><![CDATA[인력관리]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[일반관리]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[수주/계약]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[사업관리]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[전자결재]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[커뮤니티]]></DS_Menu>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" id="dlt_G2" repeatNode="map" saveRemovedData="true" style="">
+            		<w2:columnInfo>
+            			<w2:column dataType="text" id="DS_Menu" name="메뉴명"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<DS_Menu><![CDATA[인력관리]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[일반관리]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[수주/계약]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[사업관리]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[전자결재]]></DS_Menu>
+            			</w2:row>
+            			<w2:row>
+            				<DS_Menu><![CDATA[커뮤니티]]></DS_Menu>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+        <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : 
+	// 프로그램 명    : 
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var status = "SDI";
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		// Mobile일때 메뉴 동작	
+		if(WebSquare.util.isMobile()){
+			$(".wrap").removeClass("show_menu");
+			
+			$(".btn_toggle_menu").click(function(){
+				$(".wrap").toggleClass("show_menu");
+				$(".btn_toggle_menu").toggleClass("on");
+				$(".dim").toggleClass("on");
+			});
+		} else {
+			// LNB닫기 함수 (화면폭이 1280 이하일 때 LNB 자동닫기)
+			scwin.closeMenu = function() {
+				var winWidth = $(window).width();
+				if (winWidth > 800 && winWidth < 1281) {
+					$(".wrap").removeClass("show_menu");
+				}
+			};
+			
+			scwin.closeMenu(); // 초기진입시
+			
+			$(window).resize(function() { // 화면 리사이즈시
+				scwin.closeMenu();
+			});
+			
+			$(".btn_toggle_menu").click(function(){
+				$(".wrap").toggleClass("show_menu");
+				$(".btn_toggle_menu").toggleClass("on");
+			});
+		}
+		
+		// GNB MENU
+		$(".gnb_menu a").click(function(){
+			if(!$(this).parent().hasClass("on")){
+				$(this).parent().addClass("on").siblings().removeClass("on");
+			}
+		});
+		$(".dep2 li a").click(function(){ 
+			var pTop = $(this).parent().position().top;
+			$(this).siblings().css("top", pTop + "px");
+		});
+		$(".dep2").mouseleave(function(){
+			$(this).parent().removeClass("on");
+			$(this).children().removeClass("on");
+		});
+		
+		// 검색영역 show/hide
+		$(".btn_all_search").click(function(){
+			
+			$(".search_field").toggleClass("active");
+		});
+		
+		// 탭 타이틀 on/off
+		$(".tab_tit a").click(function(){
+			$(this).parent().addClass("on").siblings().removeClass("on");
+		});
+		
+		// 트리뷰 접기
+		$(".btn_fold").click(function(){
+			$(this).addClass("on");
+			$(".btn_fold_list").removeClass("on");
+		});
+		// 트리뷰 펼치기
+		$(".btn_fold_list").click(function(){
+			$(this).addClass("on");
+			$(".btn_fold").removeClass("on");
+		});
+		
+		// USER NAME CLICK
+		$(".btn_mypage").click(function(){
+			$(".mypage .items").toggleClass("on");
+		});
+		
+//		scwin.setUserInfo();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	// Page Sample 메뉴선택시 탭추가
+	scwin.loadPageSample = function(title, url){ 
+		var tLabel = title;
+		var tValue = url.replaceAll("/", "");
+		tValue = tValue.replace(".", "");
+		
+		if(status == "SDI"){
+			if(tValue != "") {  //받아온 value값이 비어있지않으면..
+				var tabObj = {	//json형태의 속성값을 tabObj 이용하여 설정
+				    closable : "true",	//탭 닫기 기능 제공
+				    openAction : "exist", // exist 는 기존 탭을 갱신, new 는 항상 새로, select는 동일 id 가 존재하면 선택
+				    label : tLabel	//label값은 tLabel변수의 값을 대입한다.
+			    };
+			   	
+			    var classObj = {	//json형태의 속성값을 classObj에서 설정
+				    contentsClass : "w2tabcontrol_contents",
+				    frameMode : "wframe",
+				    src : url	//탭콘테이너의 url은 treeview의 value에서 가져온다.
+				};
+				    
+			   	tabc_layout.addTab( tValue, tabObj, classObj );
+			   	var tabindex = tabc_layout.getTabIndex( tValue );
+			   	tabc_layout.SelectedTabIndex( tabindex );
+			}
+		}else if(status == "MDI"){
+			if(tValue != "") {  //받아온 value값이 비어있지않으면..
+				windowContainer1.createWindow( tLabel , null , tValue);
+			}	
+		}
+	};
+	
+	scwin.setUserInfo = function() {
+		var userInfo = $p.local.getItem("userInfo");
+		$p.local.removeItem("userInfo");
+		dlt_G0.setJSON(JSON.parse(userInfo));
+		WebSquare.ModelUtil.setInstanceNode(dlt_G0.getXML(), "USER_INFO", "", "replace");
+		scwin.renderTopMenu();
+	};
+	
+	scwin.renderTopMenu = function() {
+		var userNm = _util.getSessionInfo().SESSION_USER_KRNM;
+		if(userNm == ""){
+			userNm = "홍길동";
+		}
+		mf_wf_header_ac_mypage.setValue(userNm);
+/*		_request.get("/menu/getTopMenuList", {
+			data : {
+				normal : {
+					GBN : parameter.gbn
+				}
+			},
+			success : function(data) {
+				var group = _util.groupBy(data.out, 'MainNm');
+				var count = 0;
+				for(var key in group) {
+					if(count == 5) break;
+					
+					var index = header_gen1.insertChild();
+					var gen1_li = header_gen1.getChild(index, 'gen1_li');
+					var gen1_a = header_gen1.getChild(index, 'gen1_a');
+						gen1_a.setValue(key);
+					var gen2 = header_gen1.getChild(index, 'gen2');
+					gen1_li_arr.push(gen1_li);
+					group[key].forEach((function(gen1_li_index) {
+						return function(menu) {
+							var index = gen2.insertChild();
+							var gen2_a = gen2.getChild(index, 'gen2_a');
+							gen2_a.setValue(menu.SystemNm);
+							gen2_a.bind('click', function() {
+								//asideArea();
+								aside_treeTitle.setValue(gen2_a.getValue());
+								scwin.resetTopActive();
+								gen1_li_arr[gen1_li_index].addClass('current');
+								renderGNB();
+								scwin.renderLeftMenu(menu);
+							});
+							renderGNB();
+						}
+					})(index));
+					gen1_a.bind('click', (function(li) {
+						return function() {
+							
+							scwin.resetTopActive();
+							li.addClass('current');
+							renderGNB();
+						}
+					})(gen1_li));
+					count ++;
+				}
+			}
+		});		*/
+		scwin.fn_setMenu("G1");
+//		scwin.fn_setLeftMenu("G1");
+//		scwin.fn_setMyMenu();
+	};
+	
+	scwin.renderLeftMenu = function(topMenu) {
+//		_request.get("/menu/getLeftMenuList", {
+//			data : {
+//				normal : {
+//					MAIN_CD : topMenu.MainCd,
+//					SYSTEM_CD : topMenu.SystemCd
+//				}
+//			},
+//			success : function(data) {
+//				asideArea();
+//				aside.show();
+//				left_toggleBtn.show();
+//				aside_leftMenuDataList.removeAll();
+//				appendedEobmuNm.length = 0;
+//				var group = _util.groupBy(data.out, 'SubsystemNm');
+//				for(var key in group) {
+//					var insertedIndex = aside_leftMenuDataList.insertRow();
+//					aside_leftMenuDataList.setCellData(insertedIndex, 'ProgramNm', group[key][0].SubsystemNm);
+//					aside_leftMenuDataList.setCellData(insertedIndex, 'depth', 1); 
+//					
+//					group[key].forEach(function(menu, index) {
+//						if(appendedEobmuNm.indexOf(menu.SubsystemCd + menu.EobmuNm) == -1) {
+//							var insertedIndex = aside_leftMenuDataList.insertRow();
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'ProgramNm', menu.EobmuNm);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'depth', 2);
+//							appendedEobmuNm.push(menu.SubsystemCd + menu.EobmuNm);
+//						}
+//						
+//						if(menu.Program.indexOf("HIDDEN") == -1) {
+//							var insertedIndex = aside_leftMenuDataList.insertRow();
+//							var name = menu.ProgramNm.match(/[^a-zA-Z가-힣]/) && menu.ProgramNm.match(/[^a-zA-Z가-힣]/).index == 0 ? menu.ProgramNm.substr(1) : menu.ProgramNm;
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'Program', menu.Program);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'ProgramNm', name);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'ProgramId', menu.ProgramId);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'MainNm', menu.MainNm);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'MainCd', menu.MainCd);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'SystemNm', menu.SystemNm);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'SystemCd', menu.SystemCd);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'SubsystemNm', menu.SubsystemNm);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'EobmuNm', menu.EobmuNm);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'depth', 3);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'seq', menu.seq);
+//							aside_leftMenuDataList.setCellData(insertedIndex, 'UseGb', menu.UseGb);
+//						}
+//					});
+//					
+//				}
+//				aside_leftMenuTreeView.refreshItemArr();
+//				for (var i = 0; i < 50; i++) {
+//					
+//					var clickedMenu = aside_leftMenuDataList.getRowJSON(i);	
+//					if (clickedMenu.ProgramId != '') {
+//						var program = clickedMenu.Program.replace(/\..*/g, function(a,b,c,d) {
+//							return ".xml";
+//						});	
+//						var isCSProgram = program.toLowerCase().endsWith('contents.xml');
+//						
+//						if(program) {
+//							if(isCSProgram) {
+//								program = '/GATE/'+(clickedMenu.ProgramId+'.xml');
+//							} 
+//						}
+//						scwin.addTab(clickedMenu.ProgramNm, clickedMenu.ProgramId, program, clickedMenu);
+//						break;
+//					}
+//					
+//				}
+//			}
+//		});
+	};
+	
+	scwin.ac_tab_allclose_onclick = function() {
+		_util.confirm("탭을 모두 닫으시겠습니까?", function() {
+			for( var idx = tabc_layout.getTabCount()-1 ; idx >= 0 ; idx--){
+				tabc_layout.deleteTab( idx );
+			}
+		});
+	};
+	
+	scwin.fn_setMenu = function(se) {
+		mf_wf_header_gr_menu.removeAll();
+		for(var idx=0; idx<eval("dlt_" + se).getTotalRow(); idx++){
+			mf_wf_header_gr_menu.insertChild(idx);
+			var gr_menu_li = mf_wf_header_gr_menu.getChild(idx, "gr_menu_li");
+			var gr_menu_a = mf_wf_header_gr_menu.getChild(idx, "gr_menu_a");
+			gr_menu_a.setValue(eval("dlt_" + se).getCellData(idx, "DS_Menu"));
+			gr_menu_a.bind("click", (function(li) {
+				return function() {
+					_util.alert(eval("dlt_" + se).getCellData(li.options.g_index, "DS_Menu"), "info");
+				}
+			})(gr_menu_li));
+		}
+	};
+	
+	scwin.fn_setLeftMenu = function(se) {
+		var url = "/menu/getLeftMenuList";
+		_request.get(url, {
+			data : {
+				normal : {
+//					ID_Sabun : _util.getSessionInfo().SESSION_USER_KRNM
+					CD_Sytem : ""
+				}
+			},
+			success : function(data) {
+				mf_wf_side_dlt_leftMenu.removeAll();
+				mf_wf_side_dlt_leftMenu.setJSON(data.out);
+				var columnInfo = {label : "DS_Program"
+								, value : "ID_Program"
+								, depth : "NO_Level"}
+//				mf_wf_side_tw_menu.setNodeSet("data:mf_wf_side_dlt_leftMenu", columnInfo);
+			}
+		});
+	};
+	
+	scwin.fn_setMyMenu = function() {
+		_request.get("/menu/getMyMenuList", {
+			data : {
+				normal : {
+					CD_Sytem : ""
+				}
+			},
+			success : function(data) {
+				mf_wf_side_dlt_myMenu.removeAll();
+				mf_wf_side_dlt_myMenu.setJSON(data.out);
+			}
+		});
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="wrap show_menu user_color0" id="" style="">
+    		<xf:group style="" id="" class="box_header">
+    			<w2:wframe style="position: relative;" id="wf_header" class="header" scope="true" src="/ui/inc/header.xml"></w2:wframe>
+    			<xf:group style="display:none;" id="" class="box_quicklink">
+    				<xf:group style="" id="" class="quicklink" tagname="ul">
+
+    					<xf:group style="width: 48px;height: 48px;display: inline-block;" id="" tagname="li">
+    						<xf:trigger class="btn_quick btn_home" id="" style="" type="button">
+    							<xf:label><![CDATA[home]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_call" id="" style="" type="button">
+    							<xf:label><![CDATA[call]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_schd" id="" style="" type="button">
+    							<xf:label><![CDATA[schd]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_mail" id="" style="" type="button">
+    							<xf:label><![CDATA[mail]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_mess" id="" style="" type="button">
+    							<xf:label><![CDATA[mess]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_shch" id="" style="" type="button">
+    							<xf:label><![CDATA[shch]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_phone" id="" style="" type="button">
+    							<xf:label><![CDATA[phone]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_down" id="" style="" type="button">
+    							<xf:label><![CDATA[down]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group id="" style="width: 48px;height: 48px;display: inline-block;" tagname="li">
+    						<xf:trigger class="btn_quick btn_ask" id="" style="" type="button">
+    							<xf:label><![CDATA[ask]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="box_usercolor" id=""
+    				style="display:none;">
+    				<w2:textbox id="" label="사용자 Color" style="" class="tit"></w2:textbox>
+    				<xf:select1 appearance="full" class="userColor_radio" cols="" disabled="" id="" ref="" renderType="radiogroup" rows=""
+    					selectedIndex="1" style="">
+    					<xf:choices>
+    						<xf:item>
+    							<xf:label><![CDATA[Black]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[Blue]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[Green]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[Yellow]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    						<xf:item>
+    							<xf:label><![CDATA[White]]></xf:label>
+    							<xf:value></xf:value>
+    						</xf:item>
+    					</xf:choices>
+    				</xf:select1>
+
+    			</xf:group>
+
+    		</xf:group>
+    		
+    		<xf:group class="container" id="" style="">
+    			<xf:group style="" id="" class="contents">
+    				<w2:tabControl useTabKeyOnly="true" id="tabc_layout" useMoveNextTabFocus="false" useConfirmMessage="false"
+    					confirmTrueAction="exist" confirmFalseAction="new" alwaysDraw="false" style="" class="tabc_layout" hiddenTab="" tabPosition=""
+    					closable="true" useAccessibilityMenu="false" tableRender="" tabScroll="true" adaptive="layout" adaptiveThreshold="1024">
+    					<w2:tabs disabled="false" style="" id="tabs1" label="메인화면" closable="true" useATagBtn=""></w2:tabs>
+    					<w2:tabs disabled="false" style="" id="tabs2" label="페이지샘플"></w2:tabs>
+    					<w2:tabs disabled="false" style="" id="tabs3" label="템플릿"></w2:tabs>
+    					<w2:content alwaysDraw="false" style="" id="content1" src="/ui/system/main.xml" scope="true"></w2:content>
+    					<w2:content alwaysDraw="true" style="" id="content2" scope="true" src="/ui/system/pagemain.xml"></w2:content>
+    					<w2:content alwaysDraw="false" style="" id="content3" src="/ui/template/template.xml"></w2:content>
+    				</w2:tabControl>
+    				<w2:anchor outerDiv="false" style="" id="ac_tab_allclose" class="tab_allclose" ev:onclick="scwin.ac_tab_allclose_onclick">
+    					<xf:label><![CDATA[탭전체닫기]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    		</xf:group>
+    		<w2:wframe style="" id="wf_side" class="side" scope="true" src="/ui/inc/side.xml"></w2:wframe>
+    		<xf:group style="" id="" class="dim"></xf:group>
+    	</xf:group>
+    </body>
+</html>

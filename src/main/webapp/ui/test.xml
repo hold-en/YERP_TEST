@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<!--<?xml-stylesheet href="/kukudocs_webeditor_1.5/stylesheets/editor_style.css" type="text/css"?>-->
+<!--<?xml-stylesheet href="/kukudocs_webeditor_1.5/stylesheets/kk_webEditor_min.css" type="text/css"?>-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataMap baseNode="map" id="dlt_G0" style="">
+            		<w2:keyInfo>
+            			<w2:key dataType="text" id="TY_Check" name="TY_Check"></w2:key>
+            			<w2:key dataType="text" id="TY_InitMenu" name="TY_InitMenu"></w2:key>
+            			<w2:key dataType="text" id="TY_Jojik_Part" name="TY_Jojik_Part"></w2:key>
+            			<w2:key dataType="text" id="TY_Menu" name="TY_Menu"></w2:key>
+            			<w2:key dataType="text" id="ID_Sabun" name="ID_Sabun"></w2:key>
+            			<w2:key dataType="text" id="DS_Name" name="DS_Name"></w2:key>
+            			<w2:key dataType="text" id="CD_Position" name="CD_Position"></w2:key>
+            			<w2:key dataType="text" id="DS_Position" name="DS_Position"></w2:key>
+            			<w2:key dataType="text" id="CD_Belong_Jojik" name="CD_Belong_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Belong_Jojik" name="DS_Belong_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Work_Jojik" name="CD_Work_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Work_Jojik" name="DS_Work_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Cost_Jojik" name="CD_Cost_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Cost_Jojik" name="DS_Cost_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Real_Jojik" name="CD_Real_Jojik"></w2:key>
+            			<w2:key dataType="text" id="CD_Unify_Jojik" name="CD_Unify_Jojik"></w2:key>
+            			<w2:key dataType="text" id="DS_Unify_Jojik" name="DS_Unify_Jojik"></w2:key>
+            			<w2:key dataType="text" id="NO_Mobile_Tel" name="NO_Mobile_Tel"></w2:key>
+            			<w2:key dataType="text" id="NO_Company_Tel" name="NO_Company_Tel"></w2:key>
+            			<w2:key dataType="text" id="NO_Company_Ext" name="NO_Company_Ext"></w2:key>
+            			<w2:key dataType="text" id="DT_Login" name="DT_Login"></w2:key>
+            			<w2:key dataType="text" id="DT_Enter" name="DT_Enter"></w2:key>
+            			<w2:key dataType="text" id="E_Mail" name="E_Mail"></w2:key>
+            			<w2:key dataType="text" id="YN_JojikTop" name="YN_JojikTop"></w2:key>
+            			<w2:key dataType="text" id="TM_PayCheckPass" name="TM_PayCheckPass"></w2:key>
+            		</w2:keyInfo>
+            	</w2:dataMap>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<col1><![CDATA[<p><span>test</span></p>]]></col1>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+                
+	    <script type="text/javascript" src="/kukudocs_webeditor_1.5/externalLib/jquery-1.9.1.js"></script>
+	    <script type="text/javascript" src="/kukudocs_webeditor_1.5/externalLib/jquery-ui-1.11.4.min.js"></script>
+	    <script type="text/javascript" src="/kukudocs_webeditor_1.5/javascripts/build/Editor.bundle.js"></script>
+	    
+	    <link rel="stylesheet" href="/kukudocs_webeditor_1.5/stylesheets/editor_style.css"/>
+	    <link rel="stylesheet" href="/kukudocs_webeditor_1.5/stylesheets/kk_webEditor_min.css"/>
+        
+        <script type="text/javascript" lazy="false"><![CDATA[
+	
+	scwin.onpageload = function() {
+		var imgPath = "/test";
+		var imgNm = "프레임 상단 로고 수정.JPG";
+		var imgUrl = "/template/ESCA_PR_MultiUpdate_Download?dir=" + imgPath + "&name=" + encodeURIComponent(imgNm);
+		var pdfPath = "/test";
+		var pdfNm = "5_webeditor_dev_manual_v1.5.pdf";
+		var pdfUrl = "/template/ESCA_PR_MultiUpdate_PdfView?dir=" + pdfPath + "&name=" + encodeURIComponent(pdfNm);
+//		console.log(imgUrl);
+		im_test.setSrc(imgUrl);
+		if_test.setSrc(pdfUrl);
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group id="" class="sub_contents">
+    		<xf:group id="">
+    			<xf:image src="" style="width:300px;height:200px;" id="im_test"></xf:image>
+    			<w2:iframe src="" style="width: 500px;height: 300px;" id="if_test"></w2:iframe>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

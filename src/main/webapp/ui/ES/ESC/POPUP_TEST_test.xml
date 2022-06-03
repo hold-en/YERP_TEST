@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_vertical_guides="" meta_horizontal_guides="">
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="ds_ProgramID" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="ID_Program" name="프로그램 ID" dataType="text"></w2:column>
+            			<w2:column id="DS_Program" name="프로그램명" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		requires("uiplugin.popup");
+//		var insertedIndex = ds_ProgramID.insertRow(0);
+//		ds_ProgramID.setRowPosition(0);		
+//		ds_ProgramID.setFocusedCell(insertedIndex, 0);
+
+
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	
+	
+	scwin.fnInsert_onClick = function() {
+		console.log("fnInsert_onClick");
+		
+		var insertedIndex = ds_ProgramID.insertRow();
+		
+		ds_ProgramID.setRowPosition(insertedIndex);	
+//		gd_01.setFocusedCell(insertedIndex, 0);
+	}
+	
+	
+	
+	scwin.trigger1_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 820;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup1",
+			title : "테스트11",
+			url : "/ui/ES/ESC/ESCA_PR_CodeFind_Program_test.xml",	
+			param : {
+				CD_System : txtCD_System.getValue(),
+				DS_System : txtDS_System.getValue()
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	//팝업정보삽입
+	_util.addCallbackListener({
+		testPopup1 : function(item) {
+			console.log(item);
+			txtID_Program.setValue(item.ID_Program);
+			txtDS_Program.setValue(item.DS_Program);
+//			ds_ProgramID.setRowPosition(0);	
+//			ds_ProgramID.setCellData(0, ID_Program, item.ID_Program);
+//			ds_ProgramID.setCellData(0, ID_Program, item.ID_Program);
+//			ds_ProgramID.setCellData(0, DS_Program, item.DS_Program);
+			
+		},
+		testPopup4 : function(item) {
+			console.log(item);
+			txtID_Program.setValue(item.ID_Program);
+			txtDS_Program.setValue(item.DS_Program);			
+		}
+	});
+	
+	
+	scwin.trigger3_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 820;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup2",
+			title : "테스트22",
+			url : "/ui/ES/ESC/ESCA_PR_CodeFind_System.xml",	
+			param : {
+				CD_System : txtCD_System.getValue(),
+				DS_System : txtDS_System.getValue()
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	
+	// 화면 이동 버튼		
+	scwin.btnTran_onclick = function(value,nodeElement,index) {
+		var tabObj = {	//json형태의 속성값을 tabObj 이용하여 설정
+//			label : this.getSelectedLabel(),	//label값은 tLabel변수의 값을 대입한다.
+			label : "ESCA_PR_CodeFind_Program",	//label값은 tLabel변수의 값을 대입한다.
+			openAction : "select", // exist 는 기존 탭을 갱신, new 는 항상 새로, select는 동일 id 가 존재하면 선택
+			closable : "true"	//탭 닫기 기능 제공
+		};
+		
+		var classObj = {	//json형태의 속성값을 classObj에서 설정
+//			contentsClass : "w2tabcontrol_contents",
+			src : value,	//탭콘테이너의 url은 treeview의 value에서 가져온다.
+			frameMode : "wframe",
+			scope : true,
+			alwaysDraw : "true"
+		};
+//		var tValue = value.replaceAll("/", "");
+//		tValue = tValue.replace(".", "");
+		var tValue = "/ui/ES/ESC/ESCA_PR_CodeFind_Program.xml";
+		tValue = tValue.replaceAll("/", "");
+		tValue = tValue.replace(".", "");
+		$p.parent().tabc_layout.addTab( tValue, tabObj, classObj );
+		var tabindex = $p.parent().tabc_layout.getTabIndex( tValue );
+		$p.parent().tabc_layout.setSelectedTabIndex( tabindex );
+		var data = {};
+		data.menuInfo = {
+//			menuNm : this.getSelectedLabel(),
+			menuNm : "ESCA_PR_CodeFind_Program",
+			menuCode : tValue,
+			src : value
+		};
+		_util.pushState(data);
+			
+	};
+	
+	
+	scwin.trigger4_onclick = function(e) {
+		com.win.alert("sss");
+	};
+	
+	scwin.ESZA_PR_Sawon_List_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 800;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup3",
+			title : "ESZA_PR_Sawon_List.xml",
+			url : "/ui/ES/ESZ/ESZA_PR_Sawon_List.xml",	
+			param : {
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.ESZA_PR_Acnt_Code_Find_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 800;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup4",
+			title : "ESZA_PR_Acnt_Code_Find.xml",
+			url : "/ui/ES/ESZ/ESZA_PR_Acnt_Code_Find.xml",	
+			param : {
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	
+	scwin.ESZA_PR_Acnt_Code_Proj_Find_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 800;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup5",
+			title : "ESZA_PR_Acnt_Code_Proj_Find.xml",
+			url : "/ui/ES/ESZ/ESZA_PR_Acnt_Code_Proj_Find.xml",	
+			param : {
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.ESZA_PR_Acnt_Code_Proj_Find_IN_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 800;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup6",
+			title : "ESZA_PR_Acnt_Code_Proj_Find_IN.xml",
+			url : "/ui/ES/ESZ/ESZA_PR_Acnt_Code_Proj_Find_IN.xml",	
+			param : {
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.ESZA_PR_Book_Find_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 800;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "testPopup7",
+			title : "ESZA_PR_Book_Find.xml",
+			url : "/ui/ES/ESZ/ESZA_PR_Book_Find.xml",	
+			param : {
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.ESZA_PR_CodeFind_AccountCode_onclick = function(e) {
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 800;
+		var popHei = 830;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		var options = {
+			id : "pop_ESZA_PR_CodeFind_AccountCode",
+			title : "ESZA_PR_CodeFind_AccountCode.xml",
+			url : "/ui/ES/ESZ/ESZA_PR_CodeFind_AccountCode.xml",	
+			param : {
+				parCD_Acnt : '10'
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft
+		}
+		_util.openPopup(options);
+	};
+	_util.addCallbackListener({
+		pop_ESZA_PR_CodeFind_AccountCode : function(item) {
+			console.log(item);
+			txtID_Program.setValue(item.CD_ACNT);
+			txtDS_Program.setValue(item.DS_ACNT);
+			
+		}
+	});
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="dfbox" id="" style="">
+    		<xf:group class="fl" id="" style="">
+    			<w2:wframe class="btnbox_grid" id="btn_Box" scope="true" src="/ui/wframe/mainBtnMng.xml"
+    				style="display: inline-block;margin-right: 5px;">
+    			</w2:wframe>
+    		</xf:group>
+    		<xf:group class="fr" id="" style="">
+    			<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    				<xf:label><![CDATA[작업버튼]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    	<xf:group class="pop_contents" id="" style="">
+    		<xf:group class="tbbox" id="" style="margin: 30px 0px 0px 0px;">
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:150px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="시스템코드" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" disabled="false" id="txtCD_System" placeholder="" style="width:100%;"></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th" style="width: 150px">
+    						<w2:attributes></w2:attributes>
+    						<w2:textbox class="" id="" label="시스템명" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes></w2:attributes>
+    						<xf:input class="" id="txtDS_System" placeholder="" style="width:100%;" disabled="false"></xf:input>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style=""></xf:group>
+    		<xf:group class="tbbox" id="" style="margin: 0px 0px 0px 0px">
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:150px;" tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th " style="" tagname="th">
+    						<w2:textbox class="" id="" label="프로그램 ID" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" style="" tagname="td">
+    						<xf:input class="" ev:onkeydown="scwin.txtID_Program_onkeydown" id="txtID_Program" placeholder=""
+    							style="width:486px;" ref="data:ds_ProgramID.ID_Program">
+    						</xf:input>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr">
+    					<xf:group class="w2tb_th " tagname="th">
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:textbox class="" id="" label="프로그램명" ref="" style="" userData2=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>1</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input class="" ev:onclick="scwin.txtDS_Program_onclick" ev:onkeydown="scwin.txtDS_Program_onkeydown"
+    							id="txtDS_Program" placeholder="" style="width:100%;" ref="data:ds_ProgramID.DS_Program">
+    						</xf:input>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" autoFitMinWidth="968" checkReadOnlyOnPasteEnable="" class="wq_gvw"
+    				dataList="data:ds_ProgramID" defaultCellHeight="20" id="" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="true"
+    				rowNumWidth="50" rowStatusHeaderValue="상태" rowStatusVisible="true" rowStatusWidth="50" scrollByColumn="false"
+    				scrollByColumnAdaptive="false" style="height: 150px;" visibleRowNum="all">
+    				<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header2" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="프로그램 ID" width="70">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" value="프로그램명" width="70">
+    						</w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody2" style="">
+    					<w2:row id="row4" style="">
+    						<w2:column blockSelect="false" displayMode="label" id="ID_Program" inputType="text" removeBorderStyle="false"
+    							style="height:34px;" width="70">
+    						</w2:column>
+    						<w2:column blockSelect="false" displayMode="label" id="DS_Program" inputType="text" removeBorderStyle="false"
+    							style="height:20px" width="70">
+    						</w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group>
+    		<xf:group id="" class="btncbox">
+    			<xf:trigger style="" id="trigger1" type="button" class="btn_cm " ev:onclick="scwin.trigger1_onclick">
+    				<xf:label><![CDATA[팝업조회]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger style="" id="" type="button" class="btn_cm ">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    		<xf:group class="btncbox" id="" style="">
+    			<xf:trigger class="btn_cm " id="trigger3" style="" type="button" ev:onclick="scwin.trigger3_onclick">
+    				<xf:label><![CDATA[팝업조회2]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="" style="" type="button">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+
+    		<xf:group class="btncbox" id="" style="">
+    			<xf:trigger class="btn_cm " id="btnTran" style="" type="button" ev:onclick="scwin.btnTran_onclick">
+    				<xf:label><![CDATA[화면이동]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="trigger4" style="" type="button" ev:onclick="scwin.trigger4_onclick">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+
+    		<xf:group class="btncbox" id="" style="">
+    			<xf:trigger class="btn_cm " id="ESZA_PR_Sawon_List" style="" type="button" ev:onclick="scwin.ESZA_PR_Sawon_List_onclick">
+    				<xf:label><![CDATA[ESZA_PR_Sawon_List.xml]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " ev:onclick="scwin.trigger4_onclick" id="trigger6" style="" type="button">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+
+    	</xf:group>
+
+    	<xf:group class="btncbox" id="" style="">
+    		<xf:trigger class="btn_cm " id="ESZA_PR_Acnt_Code_Find" style="" type="button"
+    			ev:onclick="scwin.ESZA_PR_Acnt_Code_Find_onclick">
+    			<xf:label><![CDATA[ESZA_PR_Acnt_Code_Find.xml]]></xf:label>
+    		</xf:trigger>
+    		<xf:trigger class="btn_cm " ev:onclick="scwin.trigger4_onclick" id="trigger8" style="" type="button">
+    			<xf:label><![CDATA[취소]]></xf:label>
+    		</xf:trigger>
+    	</xf:group>
+    	<xf:group class="btncbox" id="" style="">
+    		<xf:trigger class="btn_cm " id="ESZA_PR_Acnt_Code_Proj_Find" style="" type="button"
+    			ev:onclick="scwin.ESZA_PR_Acnt_Code_Proj_Find_onclick">
+    			<xf:label><![CDATA[ESZA_PR_Acnt_Code_Proj_Find.xml]]></xf:label>
+    		</xf:trigger>
+    		<xf:trigger class="btn_cm " ev:onclick="scwin.trigger4_onclick" id="trigger10" style="" type="button">
+    			<xf:label><![CDATA[취소]]></xf:label>
+    		</xf:trigger>
+    	</xf:group>
+    	<xf:group class="btncbox" id="" style="">
+    		<xf:trigger class="btn_cm " id="ESZA_PR_Acnt_Code_Proj_Find_IN" style="" type="button"
+    			ev:onclick="scwin.ESZA_PR_Acnt_Code_Proj_Find_IN_onclick">
+    			<xf:label><![CDATA[ESZA_PR_Acnt_Code_Proj_Find_IN.xml]]></xf:label>
+    		</xf:trigger>
+    		<xf:trigger class="btn_cm " ev:onclick="scwin.trigger4_onclick" id="trigger12" style="" type="button">
+    			<xf:label><![CDATA[취소]]></xf:label>
+    		</xf:trigger>
+    	</xf:group>
+    	<xf:group class="btncbox" id="" style="">
+    		<xf:trigger class="btn_cm " id="ESZA_PR_Book_Find" style="" type="button" ev:onclick="scwin.ESZA_PR_Book_Find_onclick">
+    			<xf:label><![CDATA[ESZA_PR_Book_Find.xml]]></xf:label>
+    		</xf:trigger>
+    		<xf:trigger class="btn_cm " ev:onclick="scwin.trigger4_onclick" id="trigger14" style="" type="button">
+    			<xf:label><![CDATA[취소]]></xf:label>
+    		</xf:trigger>
+    	</xf:group>
+    	<xf:group class="btncbox" id="" style="">
+    		<xf:trigger class="btn_cm " id="ESZA_PR_CodeFind_AccountCode" style="" type="button" ev:onclick="scwin.ESZA_PR_CodeFind_AccountCode_onclick">
+    			<xf:label><![CDATA[ESZA_PR_CodeFind_AccountCode.xml]]></xf:label>
+    		</xf:trigger>
+    	</xf:group>
+    </body>
+</html>

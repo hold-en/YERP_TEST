@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : userColor
+	// 프로그램 명    : 사용자설정
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_popupId;
+	var G_parameter;
+	var G_userColor;
+	var G_menuSe;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		// POP-UP 화면 호출시 필수
+		requires("uiplugin.popup");
+		G_popupId = $p.getParameter("popupID");
+		// 부모창에서 넘겨준 파라미터
+		G_parameter = _util.getPopupParameter();
+		G_userColor = G_parameter.userColor;
+		G_menuSe = G_parameter.menuSe;
+		rd_color.setValue(G_userColor);
+		sb_menuSe.setValue(G_menuSe);
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+//	scwin.rd_color_onchange = function(info) {
+//		rd_color.getValue()
+//		$p.parent().$p.parent().gp_index.changeClass(oldClassName, "user_color" + rd_color.getValue());
+//	};
+	
+	scwin.rd_color_onviewchange = function(info) {
+//		console.log(info);
+//		info.value
+		$p.parent().$p.parent().gp_index.changeClass("user_color" + G_userColor, "user_color" + info.value);
+		G_userColor = info.value;
+	};
+	
+	scwin.tg_conf_onclick = function(e) {
+		var jsonData = {
+			   userColor : rd_color.getValue()
+			 , menuSe : sb_menuSe.getValue()
+		};
+		_util.runCallbackForPopup(G_popupId, jsonData);
+	};
+	
+	scwin.tg_close_onclick = function(e) {
+		$p.parent().$p.parent().gp_index.changeClass("user_color" + rd_color.getValue(), "user_color" + G_parameter.userColor);
+		$p.parent().$p.parent().scwin.fn_setMenu(G_parameter.menuSe);
+		$p.parent().$p.parent().scwin.fn_setLeftMenu(G_parameter.menuSe);
+		$p.closePopup(G_popupId);
+	};
+	
+	scwin.sb_menuSe_onviewchange = function(info) {
+//		console.log(info);
+		$p.parent().$p.parent().scwin.fn_setMenu(info.newValue);
+		$p.parent().$p.parent().scwin.fn_setLeftMenu(info.newValue);
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    <xf:group id="" class="pop_contents">
+    	<xf:group style="" id="" class="tbbox">
+    		<xf:group adaptive="" adaptiveThreshold="" tagname="table" style="" tabIndex="" id="" class="w2tb tb">
+    			<w2:attributes>
+    				<w2:summary></w2:summary>
+    			</w2:attributes>
+    			<xf:group tagname="colgroup">
+    				<xf:group style="" tagname="col"></xf:group>
+    			</xf:group>
+    			<xf:group tagname="tr" style="">
+    				<xf:group tagname="td" style="" class="w2tb_td">
+    					<w2:attributes>
+    						<w2:colspan>1</w2:colspan>
+    						<w2:rowspan>1</w2:rowspan>
+    					</w2:attributes>
+    					<xf:select1 appearance="full" cols="" disabled="" id="rd_color" ref="" renderType="radiogroup" rows=""
+    						selectedIndex="0" style="" class="userColor_radio" ev:onviewchange="scwin.rd_color_onviewchange">
+    						<xf:choices>
+    							<xf:item>
+    								<xf:label><![CDATA[Black]]></xf:label>
+    								<xf:value><![CDATA[0]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[Blue]]></xf:label>
+    								<xf:value><![CDATA[1]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[Green]]></xf:label>
+    								<xf:value><![CDATA[2]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[Yellow]]></xf:label>
+    								<xf:value><![CDATA[3]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[White]]></xf:label>
+    								<xf:value><![CDATA[4]]></xf:value>
+    							</xf:item>
+    						</xf:choices>
+    					</xf:select1>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group tagname="tr" style="">
+    				<xf:group class="w2tb_td" tagname="td">
+    					<w2:attributes></w2:attributes>
+    					<xf:select1 allOption="" appearance="minimal" chooseOption="" direction="auto" disabled="false"
+    						disabledClass="w2selectbox_disabled" ev:onviewchange="scwin.sb_menuSe_onviewchange" id="sb_menuSe" ref="" style="width: 100px;"
+    						submenuSize="auto">
+    						<xf:choices>
+    							<xf:item>
+    								<xf:label><![CDATA[업무별]]></xf:label>
+    								<xf:value><![CDATA[G1]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[기능별]]></xf:label>
+    								<xf:value><![CDATA[G2]]></xf:value>
+    							</xf:item>
+    						</xf:choices>
+    					</xf:select1>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    	<xf:group class="btnbox tac" id="" style="">
+    		<xf:trigger class="btn_ext btn_add" ev:onclick="scwin.tg_conf_onclick" id="tg_conf" style="" type="button">
+    				<xf:label><![CDATA[확인]]></xf:label>
+    			</xf:trigger><xf:trigger class="btn_ext btn_del" ev:onclick="scwin.tg_close_onclick" id="tg_close" style="" type="button">
+    				<xf:label><![CDATA[닫기]]></xf:label>
+    			</xf:trigger>
+    	</xf:group>
+    </xf:group></body>
+</html>

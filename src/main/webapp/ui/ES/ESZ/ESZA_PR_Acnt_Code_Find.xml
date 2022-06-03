@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dl_gubun" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="code" name="코드" dataType="text" length="1"></w2:column>
+            			<w2:column id="desc" name="구분" dataType="text" length="256"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<code><![CDATA[DS_ACNT]]></code>
+            				<desc><![CDATA[계정코드명]]></desc>
+            			</w2:row>
+            			<w2:row>
+            				<code><![CDATA[CD_ACNT]]></code>
+            				<desc><![CDATA[계정코드]]></desc>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dl_code" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CD_ACNT" name="코드" dataType="text" length=""></w2:column>
+            			<w2:column id="DS_ACNT" name="name2" dataType="text"></w2:column>
+            			<w2:column id="GR_CODE" name="name3" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT1" name="name4" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT2" name="name5" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT3" name="name6" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT4" name="name7" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT5" name="name8" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT6" name="name9" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT7" name="name10" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT8" name="name11" dataType="text"></w2:column>
+            			<w2:column id="CD_CTL_OPT9" name="name12" dataType="text"></w2:column>
+            			<w2:column id="CD_ACNT_OLD" name="name13" dataType="text"></w2:column>
+            			<w2:column id="ID_DEB_CRE" name="name14" dataType="text"></w2:column>
+            			<w2:column id="GR_LEVEL" name="name15" dataType="text"></w2:column>
+            			<w2:column id="DS_ACNT_2" name="코드명" dataType="text" length=""></w2:column>
+            			<w2:column id="DEB_CRE" name="구분" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+    //========================================================
+	// 전역변수
+	//========================================================
+	var G_popupId;
+	var G_parameter;
+	var G_01_index = -1;
+        
+        
+    //========================================================
+	// 화면 LOAD
+	//========================================================    
+	scwin.onpageload = function() {
+		requires("uiplugin.popup");
+		G_popupId = $p.getParameter("popupID");
+		G_parameter = _util.getPopupParameter();
+		
+		scwin.selectData();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	scwin.selectData = function() {
+		_request.get("/ESZ/ESZA_BC_AcntCode_Find",{
+			data : {
+				normal : {					
+					parGUBUN : ''
+				}
+			},
+			success : function(res) {
+				dl_code.setJSON(res.out[0]);
+			}			
+		});
+	};
+	
+	
+	scwin.txt_keyword_onchange = function(info) {
+		//scwin.selectData();
+	};
+	
+	scwin.txt_keyword_onkeydown = function(e) {
+		if((e.charCode || e.keyCode) == 13){
+			dl_code.clearFilter();
+			
+			if(cbo_gubun.getValue() == 'DS_ACNT'){
+				dl_code.setColumnFilter(
+					{type:'row', colIndex:'DS_ACNT', key:txt_keyword.getValue().toString(), condition:'and'}										
+				);
+			}
+			if(cbo_gubun.getValue() == 'CD_ACNT'){
+				dl_code.setColumnFilter(
+					{type:'regExp', colIndex:'CD_ACNT', key:new RegExp('^' + txt_keyword.getValue()), condition:'and'}
+				);
+			}
+
+		}	
+	};
+	
+	scwin.gd_01_onrowindexchange = function(row,oldRow) {
+		G_01_index = row;
+	};
+	
+	scwin.gd_01_oncelldblclick = function(row,col,colId) {
+		_util.runCallbackForPopup(G_popupId, dl_code.getRowJSON(row));
+	};
+	
+	scwin.btn_confirm_onclick = function(e) {
+		if(-1 == G_01_index) {
+			$p.closePopup();
+		} else {
+			//console.log(dl_code.getRowJSON(G_01_index));
+			_util.runCallbackForPopup(G_popupId, dl_code.getRowJSON(G_01_index));
+		}
+	};
+	
+	scwin.btn_close_onclick = function(e) {
+		$p.closePopup();
+	};
+	
+	
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="pop_contents" id="" style="">
+    		<xf:group class="tbbox" id="" style="margin: 15px 0px 0px 0px;">
+    			<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="margin: 30px 0px 0px 0px;" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:20%;" tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:20%;"></xf:group><xf:group tagname="col" style="width:20%;"></xf:group><xf:group style="width:40%;" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th " style="" tagname="th">
+    						<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabled="false"
+    							disabledClass="w2selectbox_disabled" id="cbo_gubun" ref="" renderType="" style="width:100%;" submenuSize="auto">
+    							<xf:choices>
+    								<xf:itemset nodeset="data:dl_gubun">
+    									<xf:label ref="desc"></xf:label>
+    									<xf:value ref="code"></xf:value>
+    								</xf:itemset>
+    							</xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    					<xf:group class="w2tb_td" style="" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input class="" id="txt_keyword" placeholder="" style="width:100%;" ev:onchange="scwin.txt_keyword_onchange" ev:onkeydown="scwin.txt_keyword_onkeydown"></xf:input>
+    					</xf:group></xf:group></xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dl_code" defaultCellHeight="20"
+    				ev:oncelldblclick="scwin.gd_01_oncelldblclick" id="gd_01"
+    				keepDefaultColumnWidth="false" rowNumVisible="false" rowNumWidth="50" rowStatusVisible="false" rowStatusWidth="50"
+    				scrollByColumn="false" scrollByColumnAdaptive="false" style="height:500px;" visibleRowNum="25" useFilterList="false" readOnly="true" ev:onrowindexchange="scwin.gd_01_onrowindexchange">
+    				<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    				<w2:header style="" id="header2">
+    					<w2:row style="" id="row3">
+    						<w2:column width="100" inputType="text" style="height:20px" id="column27" value="코드" displayMode="label"></w2:column>
+    						<w2:column width="200" inputType="text" style="height:20px" id="column26" value="코드명" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:20px" id="column25" value="구분" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody style="" id="gBody2">
+    					<w2:row style="" id="row4">
+    						<w2:column width="100" inputType="text" style="height:20px" id="CD_ACNT" displayMode="label"></w2:column>
+    						<w2:column width="200" inputType="text" style="height:20px" id="DS_ACNT_2" displayMode="label"></w2:column>
+    						<w2:column width="100" inputType="text" style="height:20px" id="DEB_CRE" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group>
+    		<xf:group class="btncbox" id="">
+    			<xf:trigger class="btn_cm " id="btn_confirm" style="" type="button" ev:onclick="scwin.btn_confirm_onclick">
+    				<xf:label><![CDATA[확인]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="btn_close" style="" type="button" ev:onclick="scwin.btn_close_onclick">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

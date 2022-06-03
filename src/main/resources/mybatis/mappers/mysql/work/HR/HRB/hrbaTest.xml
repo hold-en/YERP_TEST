@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="swtest">
+   <resultMap type="jsonObject" id="ds_List"></resultMap>
+   <resultMap type="jsonObject" id="ds_Attend"></resultMap>
+   <resultMap type="jsonObject" id="ds_Vaca"></resultMap>
+   <select id="hrbaTest" parameterType="jsonObject" resultMap="ds_List,ds_Attend,ds_Vaca" statementType="CALLABLE">
+		{CALL dbo.HRBA_SP_Personal_YearAttend_Select(
+			   #{ID_Sabun}
+			 , #{YR_Year}			   
+		)}
+	</select>
+	
+	
+</mapper>

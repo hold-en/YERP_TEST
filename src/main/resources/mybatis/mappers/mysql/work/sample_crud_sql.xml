@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sample">
+
+	<select id="sample_crud_01_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCC_SP_Common_Code_Find(
+			   #{ID_Code}
+			 , #{YN_Use}
+		)}
+	</select>
+	
+	<select id="sample_crud_01_I0" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.ESCC_SP_Common_Code_Save(
+			   'I'
+			 , #{ID_Code}
+			 , #{ID_Sub}
+			 , #{SN_Seq}
+			 , #{DS_Code}
+			 , #{RM_Remark}
+			 , #{OLD_Code}
+			 , #{YN_Use}
+		)}
+	</select>
+	
+	<select id="sample_crud_01_U0" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.ESCC_SP_Common_Code_Save(
+			   'U'
+			 , #{ID_Code}
+			 , #{ID_Sub}
+			 , #{SN_Seq}
+			 , #{DS_Code}
+			 , #{RM_Remark}
+			 , #{OLD_Code}
+			 , #{YN_Use}
+		)}
+	</select>
+	
+	<select id="sample_crud_01_D0" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.ESCC_SP_Common_Code_Save(
+			   'D'
+			 , #{ID_Code}
+			 , #{ID_Sub}
+			 , #{SN_Seq}
+			 , #{DS_Code}
+			 , #{RM_Remark}
+			 , #{OLD_Code}
+			 , #{YN_Use}
+		)}
+	</select>
+
+</mapper>

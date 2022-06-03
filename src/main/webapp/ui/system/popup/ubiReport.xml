@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : userColor
+	// 프로그램 명    : 사용자설정
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_popupId;
+	var G_parameter;
+	var G_report;
+	var G_streamdata;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		// POP-UP 화면 호출시 필수
+		requires("uiplugin.popup");
+		G_popupId = $p.getParameter("popupID");
+		// 부모창에서 넘겨준 파라미터
+		G_parameter = _util.getPopupParameter();
+		G_report = G_parameter.report;
+		G_streamdata = G_parameter.streamdata;
+		
+		if_ubiReprot.setSrc("/ui/system/popup/report.html");
+		
+		var reportArea = if_ubiReprot.getWindow();
+		
+//		if_ubiReprot.getWindow().setFile(G_report);
+//		if_ubiReprot.getWindow().setdata(G_streamdata);
+		reportArea.submitForm(G_report, G_streamdata);
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="pop_contents" id="" style="">
+    		<w2:iframe src="" style="width: 100%;height: 700px;" id="if_ubiReprot"></w2:iframe>
+    	</xf:group>
+    </body>
+</html>

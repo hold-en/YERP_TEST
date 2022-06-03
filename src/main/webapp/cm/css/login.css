@@ -1,0 +1,205 @@
+/* ************************************
+*                login 
+***************************************/
+.login_page {
+	width: 1240px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.login_page .log_tt {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.login_page .log_tt h1 {
+	color: #e6f3fe;
+	font-size: 48px;
+}
+
+.login_page .flex_box_wrap {
+	overflow: hidden;
+	display: flex;
+	border-radius: 30px;
+	background: #fff;
+	border: 3px solid #dbdbdb;
+}
+
+.login_page .logo_area {
+	background: #133481;
+	width: 320px;
+	margin-left: 60px;
+	text-align: center;
+	padding-top: 135px;
+}
+
+.login_page .logo_area .main_logo {
+	width: 170px;
+	height: 132px;
+	background: url(/cm/images/logo_login.png) no-repeat center;
+	margin: 0 auto 20px;;
+}
+
+.login_page .logo_area .txtLogo {
+	width: 153px;
+	height: 62px;
+	background: url(/cm/images/text_logo_login.png) no-repeat center;
+	margin: 0 auto;
+}
+
+.login_page .logo_area .download {
+	padding-left: 10px;
+	width: 215px;
+	color: #fff;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #fff;
+	margin: 85px auto 0;
+}
+
+.login_page .logo_area .download:before {
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(/cm/images/download.png) no-repeat center;
+	position: relative;
+	top: 3px;
+	margin-right: 10px;
+}
+/* 우측로그인입력창 */
+.login_page .log_input_area .top_bg {
+	background: #ecf4fb;
+	padding: 35px 60px 35px 60px;
+	width: 740px;
+}
+
+.login_page .log_input_area .textList {
+	padding: 0;
+}
+
+.login_page .log_input_area .textList .red {
+	font-size: 18px;
+}
+
+.login_page .log_input_area .radio_area {
+	padding-left: 100px;
+}
+
+.login_page .log_input_area .radio_area .w2radio_item {
+	margin: 12px 22px 0 0;
+}
+
+.login_page .log_input_area .radio_area .w2radio .w2radio_label {
+	font-size: 16px;
+}
+
+.login_page .w2checkbox .w2checkbox_label{
+	font-size: 15px;
+    box-sizing: border-box;
+}
+
+.login_page .w2checkbox .w2checkbox_item{
+	height: 35px;
+	padding-left: 0;
+    line-height: 35px;
+}
+.cst_chk .w2checkbox_input, .radio_grp input[type="radio"] {
+	display: none;
+}
+
+.cst_chk .w2checkbox_input+label, .radio_grp input[type="radio"]+label {
+	padding-left: 35px;
+}
+
+.cst_chk .w2checkbox_input+label:before, .radio_grp input[type="radio"]+label:before{
+	display: inline-block;
+	background-color: #fff;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 6px;
+	left: 0;
+	border: 1px solid #9d9d9d;
+	border-radius: 13px;
+}
+
+.cst_chk .w2checkbox_input:checked+label:before, .radio_grp input[type="radio"]:checked+label:before{
+	content: "";
+	display: block;
+	background: #fff url(/cm/images/chk.png) no-repeat center;
+	background-color: #fff !important;
+}
+
+.cst_chk .w2checkbox_input+label:before {
+	border-radius: 3px;
+	top: 5px;
+}
+
+.login_page .login_area {
+	width: 740px;
+	margin: 58px 60px 68px 60px;
+}
+
+.login_page .login_area .txt {
+	font-size: 21px;
+	font-weight: 500;
+	letter-spacing: -.5px;
+}
+
+.login_page .login_area .log_tb th {
+	background: none;
+	border: 0;
+	text-align: left;
+	font-weight: normal;
+	padding-bottom: 15px;
+}
+
+.login_page .login_area .log_tb th .w2span {
+	letter-spacing: -4px;
+	font-size: 24px;
+	padding-bottom: 15px;
+}
+
+.login_page .login_area .log_tb td {
+	border: 0;
+	padding-bottom: 15px;
+	padding-top: 0;
+}
+
+.login_page .login_area .log_tb td .w2input {
+	width: 100%;
+	border: 0;
+	background: #efefef;
+	color: #6b6b6b;
+	height: 50px;
+	padding-left: 24px;
+	font-size: 20px;
+}
+
+.login_page .login_area .btn {
+	display: block;
+	border: 0;
+	width: 174px;
+	height: 120px;
+	text-align: center;
+	color: #fff;
+	background: #ff8519;
+	font-size: 28px;
+	margin-left: 20px;
+}
+
+.login_page .login_area .btmBox .find_area .w2anchor2 {
+	font-size: 16px;
+}
+
+.login_page .login_area .btmBox .find_area .w2anchor2:first-child:after
+	{
+	content: "|";
+	display: inline-block;
+	margin: 0 18px;
+	color: #cecece;
+}

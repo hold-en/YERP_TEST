@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    <xf:group id="" class="pop_contents">
+    	<xf:group style="" id="" class="tbbox">
+    		<xf:group adaptive="" adaptiveThreshold="" tagname="table" style="" tabIndex="" id="" class="w2tb tb">
+    			<w2:attributes>
+    				<w2:summary></w2:summary>
+    			</w2:attributes>
+    			<xf:group tagname="colgroup">
+    				<xf:group tagname="col" style="width:100px;"></xf:group>
+    				<xf:group style="" tagname="col"></xf:group>
+    			</xf:group>
+    			<xf:group tagname="tr" style="">
+    				<xf:group tagname="th" style="" class="w2tb_th">
+    					<w2:textbox ref="" style="" userData2="" id="" label="메인화면"></w2:textbox>
+    				</xf:group>
+    				<xf:group tagname="td" style="" class="w2tb_td">
+    					<w2:attributes>
+    						<w2:colspan>1</w2:colspan>
+    						<w2:rowspan>1</w2:rowspan>
+    					</w2:attributes>
+    					<xf:select1 appearance="full" cols="" disabled="" id="" ref="" renderType="radiogroup" rows="" selectedIndex="1"
+    						style="">
+    						<xf:choices>
+    							<xf:item>
+    								<xf:label><![CDATA[Tab View]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[Multi View]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    						</xf:choices>
+    					</xf:select1>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group tagname="tr" style="">
+    				<xf:group tagname="th" style="" class="w2tb_th">
+    					<w2:textbox ref="" style="" userData2="" id="" label="단축키 설정"></w2:textbox>
+    				</xf:group>
+    				<xf:group tagname="td" style="" class="w2tb_td"><xf:group id="" class="flex" style="align-items:center;justify-content:space-between;"><xf:select1 ref="" appearance="full" disabled="" style="" id="" renderType="radiogroup" rows="" cols="" selectedIndex="1">
+    						<xf:choices>
+    							<xf:item>
+    								<xf:label><![CDATA[사용]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[미사용]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    						</xf:choices>
+    					</xf:select1><xf:trigger ev:onclick="scwin.openPopup_onclick" style="" id="trigger1" type="button" class="btn_cm nega small">
+    						<xf:label><![CDATA[설정]]></xf:label>
+    					</xf:trigger></xf:group></xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    	<xf:group class="btnbox" id="" style="">
+    		<xf:group class="fr" id="">
+    			<xf:trigger class="btn_cm" id="" style="" type="button">
+    				<xf:label><![CDATA[저장]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm" id="" style="" type="button">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </xf:group></body>
+</html>

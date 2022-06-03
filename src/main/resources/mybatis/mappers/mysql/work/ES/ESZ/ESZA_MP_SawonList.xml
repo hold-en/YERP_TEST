@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ES.ESZ">
+	
+	<select id="ESZA_MP_SawonList_Select" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.HRAA_SP_Human_Select(
+			   ''
+			 , ''
+			 , ''
+			 , ''
+			 , ''
+			 , ''
+			 , ''
+			 , #{parTY_Jojik}
+			 , '' 
+			 <!-- #{id_Sabun}
+			 , #{ds_Name}
+			 , #{cd_Posi}
+			 , #{cd_B_Jojik}
+			 , #{cd_W_Jojik}
+			 , #{gb_Jaejik}
+			 , #{cd_Comp}
+			 , #{parTY_Jojik}
+			 , #{cd_Tree}  -->
+		)}
+	</select>
+	
+</mapper>

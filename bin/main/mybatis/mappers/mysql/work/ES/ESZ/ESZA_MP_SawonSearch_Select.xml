@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="swtest">
+
+	<select id="esza_JojikSelect_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCC_SP_Common_JojikSelect(
+			   #{CD_Jojik}
+			 , #{DS_Jojik}
+			 , #{TY_State}
+			 , #{TY_Part}
+			 , #{DT_Ver_Start}
+			 , #{TY_Jojik}
+			 , #{TY_JojikClass}
+			   
+		)}
+	</select>
+	
+	
+	<select id="esza_SawonSelect_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.HRAA_SP_Common_Sawon_Find(
+			   #{id_Sabun}
+			 , #{ds_Name}
+			 , #{gb_Jaejik}
+			 , #{cd_Jojik}
+			 , #{cd_Sosok}
+			   
+		)}
+	</select>
+	
+	<!-- <select id="gebd_HealthMaster_I0" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.GEBD_SP_HealthMaster_Save(
+			   'I'
+			 , #{ID_Sabun}
+			 , #{DT_Start}
+			 , #{DT_End}
+			 , #{YM_Start_Old}
+			 , #{YM_Start}
+			 , #{YM_End}
+			 , #{AM_Supply}
+			 , #{AM_Deduct}
+			 , #{DS_Shop_Name}
+			 , #{DS_Shop_Tel}
+			 , #{TY_Gubun}
+			 , #{RM_Remarks}
+			 , ''
+		)}
+	</select>
+	
+	<select id="gebd_HealthMaster_U0" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.GEBD_SP_HealthMaster_Save(
+			   'U'
+			 , #{ID_Sabun}
+			 , #{DT_Start}
+			 , #{DT_End}
+			 , #{YM_Start_Old}
+			 , #{YM_Start}
+			 , #{YM_End}
+			 <if test="AM_Supply != NULL and AM_Supply != ''">			 
+			 , #{AM_Supply}
+			 </if>
+			 <if test="AM_Supply == ''">			 
+			 , null
+			 </if>		
+			 <choose><when test="AM_Deduct == ''"> , null</when>
+			 		<otherwise>, #{AM_Deduct}</otherwise></choose>
+			 , #{DS_Shop_Name}
+			 , #{DS_Shop_Tel}
+			 , #{TY_Gubun}
+			 , #{RM_Remarks}
+			 , ''
+		)}
+	</select>
+	
+	<select id="gebd_HealthMaster_D0" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.GEBD_SP_HealthMaster_Save(
+			   'D'
+			  , #{ID_Sabun}
+			 , #{DT_Start}
+			 , #{DT_End}
+			 , #{YM_Start_Old}
+			 , #{YM_Start}
+			 , #{YM_End}
+			 , ${AM_Supply}
+			 , ${AM_Deduct}
+			 , #{DS_Shop_Name}
+			 , #{DS_Shop_Tel}
+			 , #{TY_Gubun}
+			 , #{RM_Remarks}
+			 , ''
+		)}
+	</select>
+ -->
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="pop_contents" id="" style="">
+    		<xf:group class="lybox alt" id="" style="">
+    			<xf:group class="ly_column col_2" id="" style="">
+    				<xf:group class="alt_2" id="" style=""></xf:group>
+    			</xf:group>
+    			<xf:group class="ly_column col_8" id="">
+    				<xf:textarea id="" style="width:100%;height:200px;"></xf:textarea>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="btnbox tac" id="" style="">
+    			<xf:trigger class="btn_ext" id="" style="" type="button">
+    				<xf:label><![CDATA[예 (Y)]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_ext" id="" style="" type="button">
+    				<xf:label><![CDATA[아니요 (N)]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_ext" id="" style="" type="button">
+    				<xf:label><![CDATA[취소 (C)]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

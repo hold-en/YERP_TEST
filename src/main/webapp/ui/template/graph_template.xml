@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/contents.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style="">
+    		<xf:group class="dfbox" id="" style="">
+    			<xf:group class="fl" id="" style=""><xf:trigger class="btn_ext btn_down" id="" style="" type="button">
+    					<xf:label><![CDATA[다운로드]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_print" id="" style="" type="button">
+    					<xf:label><![CDATA[인쇄]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_xlsx" id="" style="" type="button">
+    					<xf:label><![CDATA[엑셀]]></xf:label>
+    				</xf:trigger>
+    				
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[상세조회]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="shbox" id="" style="">
+    			<xf:group class="shbox_inner" id="" style="">
+    				<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tb " id="" style="" tagname="table">
+    					<w2:attributes>
+    						<w2:summary></w2:summary>
+    					</w2:attributes>
+    					<xf:group tagname="colgroup">
+    						<xf:group style="width:80px;" tagname="col"></xf:group>
+    						<xf:group style="width:467px;" tagname="col"></xf:group>
+    						<xf:group style="width:80px;" tagname="col"></xf:group>
+    						<xf:group tagname="col" style="width:400px;"></xf:group>
+    						<xf:group style="" tagname="col"></xf:group>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="tr">
+    						<xf:group class="w2tb_th" style="" tagname="th">
+    							<w2:textbox class="" id="" label="기준년도" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group class="w2tb_td" style="" tagname="td">
+    							<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabled="false"
+    								disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width:100px;" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[2021년]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[2019년]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[2018년]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    							<xf:select1 appearance="full" cols="" disabled="" id="" ref="" renderType="radiogroup" rows=""
+    								selectedIndex="1" style="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[전체]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[설계]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[감리]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    							<xf:select1 appearance="full" cols="" disabled="" id="" ref="" renderType="radiogroup" rows=""
+    								selectedIndex="1" style="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[전체]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[국내]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[해외]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="w2tb_th" style="" tagname="th">
+    							<w2:textbox class="" id="" label="주관부서" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group class="w2tb_td" id="" style="" tagname="td">
+    							<xf:group id="" class="flex">
+    								<xf:input style="width:100%;" id="" placeholder="" class=""></xf:input>
+    								<xf:trigger style="" id="" type="button" class="btn_search type02">
+    									<xf:label><![CDATA[Search]]></xf:label>
+    								</xf:trigger>
+    								<w2:span label="당년도 기준" style="" id=""></w2:span>
+    								<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    									renderDiv="true" renderType="" rightAlign="false" style="width: 120px;" class="flex_no">
+    								</w2:inputCalendar>
+    								<w2:span id="" label="까지" style=""></w2:span>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group tagname="td" id="" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="btn_shbox" id="" style="">
+    				<xf:trigger class="btn_cm sch" disabled="" escape="false" id="" style="" type="button">
+    					<xf:label><![CDATA[조회]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="lybox col2" id="" style="">
+    			<xf:group class="ly_column" id="" style="">
+    				<w2:fusionchart accessibility="false" drawType="javascript" runflashAt="IE6,IE7,IE8" seriesType="simple"
+    					chartType="Column2D" style="width: 100%;height: 535px;margin-top: 15px;" id="" ref="data:dataList1">
+    				</w2:fusionchart>
+    			</xf:group>
+    			<xf:group class="ly_column" id="" style="">
+    				<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    					<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw"
+    						dataList="data:dataList1" defaultCellHeight="34" id="" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="false"
+    						rowNumWidth="50" rowStatusHeaderValue="상태" rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false"
+    						scrollByColumnAdaptive="false" style="height:535px;" visibleRowNum="all">
+    						<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    						<w2:header id="header2" style="">
+    							<w2:row style="" id="row6">
+    								<w2:column width="70" inputType="text" style="height:34px;" id="column29" value="구분" displayMode="label"
+    									colSpan="" rowSpan="2" fixColumnWidth="true">
+    								</w2:column>
+    								<w2:column width="140" inputType="text" style="height:34px;" id="column28" value="전년도"
+    									displayMode="label" colSpan="2" rowSpan="">
+    								</w2:column>
+    								<w2:column width="140" inputType="text" style="height:34px;" id="column26" value="당년도"
+    									displayMode="label" colSpan="2" rowSpan="">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row id="row3" style="">
+    								<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="월별" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="누적액" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="월별" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="column7" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="누적액" width="120">
+    								</w2:column>
+    							</w2:row>
+    						</w2:header>
+    						<w2:gBody id="gBody2" style="">
+    							<w2:row id="row4" style="">
+    								<w2:column blockSelect="false" displayMode="label" id="col1" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="70" value="1월">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col2" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120" value="">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col3" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col4" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col5" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row22">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column109" value="2월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column108" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column107" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column106" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column105" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row23">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column114" value="3월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column113" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column112" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column111" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column110" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row24">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column119" value="4월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column118" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column117" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column116" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column115" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row25">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column124" value="5월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column123" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column122" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column121" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column120" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row26">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column129" value="6월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column128" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column127" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column126" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column125" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row27">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column134" value="7월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column133" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column132" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column131" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column130" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row28">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column139" value="8월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column138" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column137" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column136" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column135" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row29">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column144" value="9월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column143" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column142" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column141" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column140" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row30">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column149" value="10월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column148" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column147" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column146" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column145" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row31">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column154" value="11월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column153" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column152" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column151" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column150" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row style="" id="row32">
+    								<w2:column width="70" inputType="text" style="height:24px;" id="column159" value="12월"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column158" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column157" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column156" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:24px;" id="column155" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    						</w2:gBody>
+    						<w2:footer style="" id="footer1">
+    							<w2:row style="" id="row5">
+    								<w2:column width="70" inputType="text" style="height:34px;" id="column20" value="합계"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column19" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column18" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column17" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column16" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    						</w2:footer>
+    					</w2:gridView>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

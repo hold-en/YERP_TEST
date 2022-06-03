@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" id="dlt_01" repeatNode="map" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CD_Jojik" name="CD_Jojik" dataType="text"></w2:column>
+            			<w2:column id="CD_Bonbu_Jojik" name="CD_Bonbu_Jojik" dataType="text"></w2:column>
+            			<w2:column id="CD_Upper_Jojik" name="CD_Upper_Jojik" dataType="text"></w2:column>
+            			<w2:column id="DS_DisplayJojik" name="DS_DisplayJojik" dataType="text"></w2:column>
+            			<w2:column id="DS_JojikName" name="DS_JojikName" dataType="text"></w2:column>
+            			<w2:column id="DS_Bonbu" name="DS_Bonbu" dataType="text"></w2:column>
+            			<w2:column id="TY_Jojik" name="TY_Jojik" dataType="text"></w2:column>
+            			<w2:column id="TY_JOJIK_PART" name="TY_JOJIK_PART" dataType="text"></w2:column>
+            			<w2:column id="DS_Status" name="DS_Status" dataType="text"></w2:column>
+            			<w2:column id="TY_Locate" name="TY_Locate" dataType="text"></w2:column>
+            			<w2:column id="YN_OnLine" name="YN_OnLine" dataType="text"></w2:column>
+            			<w2:column id="YN_StandBy" name="YN_StandBy" dataType="text"></w2:column>
+            			<w2:column id="CD_Project" name="CD_Project" dataType="text"></w2:column>
+            			<w2:column id="TY_JojikClass" name="TY_JojikClass" dataType="text"></w2:column>
+            			<w2:column id="DS_Address" name="DS_Address" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : searchDept_p
+	// 프로그램 명    : 부서 팝업 탬플릿
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var G_popupId;
+	var G_parameter;
+	var G_01_index = -1;
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		// POP-UP 화면 호출시 필수
+		requires("uiplugin.popup");
+		G_popupId = $p.getParameter("popupID");
+		// 부모창에서 넘겨준 파라미터
+		G_parameter = _util.getPopupParameter();
+		ipF_DS_Jojik.setValue(G_parameter.DS_Client);
+		
+		scwin.fn_setEvent();
+		
+		scwin.fn_pre01_F0();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 조회조건
+	//========================================================
+	
+	//========================================================
+	// 버튼 이벤트
+	//========================================================
+	scwin.fn_setEvent = function() {
+		tg_conf.bind("onclick", function(e){scwin.sendData();});
+		tg_cancle.bind("onclick", function(e){});
+		tg_close.bind("onclick", function(e){scwin.closePopup();});
+	}
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	scwin.ipF_CD_Jojik_onkeydown = function(e) {
+		if(e.keyCode == 13) {
+			scwin.fn_pre01_F0();
+		}
+	};
+	
+	scwin.ipF_DS_Jojik_onkeydown = function(e) {
+		if(e.keyCode == 13) {
+			scwin.fn_pre01_F0();
+		}
+	};
+	
+	scwin.gd_01_oncelldblclick = function(row,col,colId) {
+		_util.runCallbackForPopup(G_popupId, dlt_01.getRowJSON(row));
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	// 조회
+	scwin.fn_pre01_F0 = function() {
+		// 조회시 validation 호출
+		var result = scwin.fn_selectValidation();
+		
+		// 에러일때 처리
+		if(!result) return;
+		
+		// 정상일때 처리
+		scwin.fn_exe01_F0();
+	}
+	
+	scwin.fn_exe01_F0 = function() {
+		_request.get("/system/popup/searchDept_p_01_F0", {
+			data : {
+				normal : {
+					   CD_Jojik : ipF_CD_Jojik.getValue()
+					 , DS_Jojik : ipF_DS_Jojik.getValue()
+					 , TY_State : "A"
+					 , TY_Part : ""
+					 , DT_Ver_Start : ""
+					 , TY_Jojik : "N"
+				}
+			},
+			success : function(res) {
+				dlt_01.setJSON(res.out);
+				gd_01.setFocusedCell(0, 0, false);
+			}
+		})
+	};
+	
+	scwin.fn_selectValidation = function() {
+//		if(ipF_CD_Project.getValue() == "") {
+//			_util.alert("조회조건을 입력하세요.");
+//			ipF_CD_Project.focus();
+//			return false;
+//		}
+		
+		return true;
+	};
+	
+	scwin.sendData = function() {
+		if(-1 == G_01_index) {
+			$p.closePopup();
+		} else {
+			_util.runCallbackForPopup(G_popupId, dlt_01.getRowJSON(G_01_index));
+		}
+	};
+	
+	scwin.closePopup = function() {
+		$p.closePopup();
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="pop_contents" id="" style="">
+    		<xf:group class="tbbox" id="" style="">
+    					<xf:group adaptive="layout" adaptiveThreshold="600" class="w2tb tb" id="" style="" tagname="table">
+    						<w2:attributes>
+    							<w2:summary></w2:summary>
+    						</w2:attributes>
+    						<xf:group tagname="colgroup">
+    							<xf:group style="width:100px;" tagname="col"></xf:group>
+    							<xf:group tagname="col"></xf:group>
+    						</xf:group>
+    						<xf:group style="" tagname="tr">
+    							<xf:group class="w2tb_th" style="" tagname="th">
+    								<w2:textbox class="" id="" label="상태구분" ref="" style="" userData2=""></w2:textbox>
+    							</xf:group>
+    							<xf:group class="w2tb_td" style="" tagname="td">
+    								<w2:attributes>
+    									<w2:colspan>1</w2:colspan>
+    									<w2:rowspan>1</w2:rowspan>
+    								</w2:attributes>
+    								<xf:group id="" class="fl">
+    									<xf:select1 ref="" appearance="full" style="" id="" renderType="radiogroup" rows="1" class=""
+    										cols="" selectedIndex="0">
+    										<xf:choices>
+    											<xf:item>
+    												<xf:label><![CDATA[현재]]></xf:label>
+    												<xf:value><![CDATA[]]></xf:value>
+    											</xf:item>
+    											<xf:item>
+    												<xf:label><![CDATA[과거]]></xf:label>
+    												<xf:value><![CDATA[]]></xf:value>
+    											</xf:item>
+    											<xf:item>
+    												<xf:label><![CDATA[전체]]></xf:label>
+    												<xf:value><![CDATA[]]></xf:value>
+    											</xf:item>
+    										</xf:choices>
+    									</xf:select1>
+    								</xf:group>
+    								<xf:group id="" class="fr">
+    									<xf:select1 ref="" appearance="full" style="" id="" renderType="radiogroup" rows="1" class=""
+    										cols="" selectedIndex="0">
+    										<xf:choices>
+    											<xf:item>
+    												<xf:label><![CDATA[합사제외]]></xf:label>
+    												<xf:value><![CDATA[]]></xf:value>
+    											</xf:item>
+    											<xf:item>
+    												<xf:label><![CDATA[합사포함]]></xf:label>
+    												<xf:value><![CDATA[]]></xf:value>
+    											</xf:item>
+    										</xf:choices>
+    									</xf:select1>
+    								</xf:group>
+    							</xf:group></xf:group>
+    						<xf:group tagname="tr">
+    							<xf:group class="w2tb_th " tagname="th">
+    								<w2:attributes>
+    									<w2:scope>row</w2:scope>
+    								</w2:attributes>
+    								<w2:textbox class="" id="" label="조직분야" ref="" style="" userData2=""></w2:textbox>
+    							</xf:group>
+    							<xf:group class="w2tb_td" tagname="td">
+    								<w2:attributes>
+    									<w2:colspan>1</w2:colspan>
+    									<w2:rowspan>1</w2:rowspan>
+    								</w2:attributes>
+    								<xf:select1 appearance="full" class="" cols="" id="" ref="" renderType="radiogroup" rows="1"
+    									selectedIndex="0" style="">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[전체]]></xf:label>
+    											<xf:value><![CDATA[A]]></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[설계]]></xf:label>
+    											<xf:value><![CDATA[]]></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[일반감리]]></xf:label>
+    											<xf:value><![CDATA[]]></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[철도감리]]></xf:label>
+    											<xf:value><![CDATA[]]></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[관리]]></xf:label>
+    											<xf:value><![CDATA[]]></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group></xf:group>
+    						<xf:group style="" tagname="tr">
+    							<xf:group class="w2tb_th " tagname="th">
+    								<w2:attributes>
+    									<w2:scope>row</w2:scope>
+    								</w2:attributes>
+    								<w2:textbox class="" id="" label="부서코드" ref="" style="" userData2=""></w2:textbox>
+    							</xf:group>
+    							<xf:group class="w2tb_td" tagname="td">
+    								<w2:attributes></w2:attributes>
+    								<xf:input class="" id="ipF_CD_Jojik" placeholder="" style="width:120px;" ev:onkeydown="scwin.ipF_CD_Jojik_onkeydown"></xf:input>
+    							</xf:group>
+    						</xf:group>
+    					<xf:group tagname="tr">
+    						<xf:group tagname="th" class="w2tb_th ">
+    							<w2:attributes>
+    								<w2:scope>row</w2:scope>
+    							</w2:attributes>
+    							<w2:textbox class="" id="" label="부서명" ref="" style="" userData2=""></w2:textbox>
+    						</xf:group>
+    						<xf:group tagname="td" class="w2tb_td">
+    							<w2:attributes></w2:attributes>
+    							<xf:input class="" id="ipF_DS_Jojik" placeholder="" style="width:100%;" ev:onkeydown="scwin.ipF_DS_Jojik_onkeydown"></xf:input>
+    						</xf:group></xf:group></xf:group>
+    				</xf:group>
+    		<xf:group id="" class="gvwbox"><w2:gridView scrollByColumnAdaptive="false" dataList="data:dlt_01" scrollByColumn="false" style="height: 500px;" readOnly="true" autoFit="allColumn" id="gd_01" ev:oncelldblclick="scwin.gd_01_oncelldblclick" class="wq_gvw" defaultCellHeight="20" checkReadOnlyOnPasteEnable="">
+    			<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    			<w2:header style="" id="header2">
+    				<w2:row style="" id="row3">
+    					<w2:column removeBorderStyle="false" width="120" inputType="text" style="height:34px;" id="column12" value="부서코드" blockSelect="false" displayMode="label">
+    					</w2:column>
+    					<w2:column removeBorderStyle="false" width="250" inputType="text" style="height:34px;" id="column3" value="부서명" blockSelect="false" displayMode="label">
+    					</w2:column>
+    					<w2:column width="70" inputType="text" style="height:34px" id="column19" value="상태" displayMode="label"></w2:column>
+    				</w2:row>
+    			</w2:header>
+    			<w2:gBody style="" id="gBody2">
+    				<w2:row style="" id="row4">
+    					<w2:column removeBorderStyle="false" width="120" inputType="text" style="height:34px;" id="CD_Jojik" blockSelect="false" displayMode="label">
+    					</w2:column>
+    					<w2:column removeBorderStyle="false" width="250" inputType="text" style="height:20px" id="DS_JojikName" blockSelect="false" displayMode="label">
+    					</w2:column>
+    					<w2:column width="70" inputType="text" style="height:34px" id="DS_Status" displayMode="label"></w2:column>
+    				</w2:row>
+    			</w2:gBody>
+    		</w2:gridView></xf:group><xf:group class="btnbox" id="" style="">
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_add" id="tg_conf" style="" type="button">
+    					<xf:label><![CDATA[확인]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_cncl" id="tg_cancle" style="" type="button">
+    					<xf:label><![CDATA[취소]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_del" id="tg_close" style="" type="button">
+    					<xf:label><![CDATA[닫기]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

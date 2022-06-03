@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="system.component">
+
+	<resultMap id="obj1" type="jsonObject"></resultMap>
+	<resultMap id="obj2" type="jsonObject"></resultMap>
+
+	<select id="getDcGwamog" statementType="CALLABLE" resultType="jsonObject" parameterType="jsonObject">
+	{CALL dbo.SSG_SSG007S_SELECT(
+	#{Yy},
+	#{Haggi},
+	#{GwamogCd},
+	#{GwamogCdNm})}
+	 </select>
+	 
+	<select id="getDeptSdCode" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+	{CALL dbo.COR_SoSogByGwanliDDL_SELECT_PopUp(#{Sabeon},#{RoleUseYn})} 
+	</select>
+	
+	<select id="getDeptPsSdCode" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+	{CALL dbo.COR_SoSogByGwanliDDL_SPS_SELECT_PopUp(#{Sabeon},#{RoleUseYn})} 
+	</select>
+
+	 <select id="getJHJaeDan" statementType="CALLABLE" resultType="jsonObject" parameterType="jsonObject">
+	{CALL dbo.SJH_SJH000S_SELECT(
+	#{JaedanCd},
+	#{JaedanNm}
+	)}
+	 </select>
+	 
+	 <select id="getJangHakCdCorez19_1" statementType="CALLABLE" resultType="jsonObject" parameterType="jsonObject">
+	{CALL dbo.COR_CORZ19S_SELECT_1(
+	#{JhCd},
+	#{JhNm}
+	)}
+	 </select>
+	 
+	 <select id="getPsDeptCode" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COS_COR001S_SPS_SELECT(
+		#{Arg1},
+		#{Arg2},
+		#{txtSosogCd},
+		#{txtSosogNm},
+		#{LevelGb},
+		#{Sabeon},
+		#{RoleUseYn},
+		#{UseYn},
+		#{JuyaType},
+		#{OrderBy}
+		)}
+	</select>
+	
+	<select id="getPsStudents" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SPS_SELECT_PopUp(
+		#{txtHagbeon},
+		#{txtNm},
+		#{Sabeon},
+		#{ddlSosog},
+		#{RoleUseYn},
+		#{chkJoleopYn},
+		#{JuminNo}
+		)}
+	</select>
+	
+	<select id="getPsHjStudents" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT4_SPS(
+		#{Hagbeon},
+		#{Nm},
+		#{Sosogcd},
+		#{HjbdGb}
+		)}
+	</select>
+
+	<select id="getPsStudentsForArrow" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL
+		dbo.COR_CORZ05S_SELECT_4_SPS(
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon}
+		)}
+	</select>
+
+	<select id="getJangHakCd" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ19S_SELECT(
+		#{Yy},
+		#{Haggi},
+		#{JhCd},
+		#{JhNm},
+		#{SanhakGb}
+		)}
+	</select>
+
+	<select id="getCompany" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ04S_DCE_SELECT(
+		#{SanEobCheNm},
+		#{SaEobJaDiNo},
+		#{CEONm}
+		)}
+	</select>
+
+	<resultMap id="yearHakgi" type="jsonObject"></resultMap>
+	<select id="getYearHakgi" parameterType="jsonObject" resultMap="obj1,obj2" statementType="CALLABLE">
+		{CALL DUC_DEV.COR_YYHAGGI_SELECT(
+			   'S'
+			 , '1'
+			 , #{C_RESULT, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=yearHakgi}
+			 , #{OUT_ERR_CD, mode=OUT, jdbcType=VARCHAR, javaType=string}
+			 , #{OUT_ERR_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+		)}
+	</select>
+
+	<select id="getDeptCode" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COS_COR001S_SELECT(
+		#{Arg1},
+		#{Arg2},
+		#{txtSosogCd},
+		#{txtSosogNm},
+		#{LevelGb},
+		#{Sabeon},
+		#{RoleUseYn},
+		#{UseYn},
+		#{JuyaType},
+		#{OrderBy}
+		)}
+	</select>
+
+	<select id="getStudents" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT_PopUp(
+		#{txtHagbeon},
+		#{txtNm},
+		#{Sabeon},
+		#{ddlSosog},
+		#{RoleUseYn},
+		#{chkJoleopYn},
+		#{JuminNo}
+		)}
+	</select>
+	
+	<select id="getStudents3" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT_3(
+		#{Arg1},
+		#{Arg2},
+		#{Hagbeon},
+		#{Nm}
+		)}
+	</select>
+	
+	<select id="getSdStudents" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_14_SELECT_PopUp(
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon},
+		#{SosogCd},
+		#{RoleUseYn},
+		#{JoleopYn},
+		#{JuminNo},
+		#{Hagnyeon},
+		#{BanGb}
+		)}
+	</select>
+	
+	<select id="getPsSdStudents" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_14_SELECT_PopUp_SPS(
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon},
+		#{SosogCd},
+		#{RoleUseYn},
+		#{JoleopYn},
+		#{JuminNo},
+		#{Hagnyeon},
+		#{BanGb}
+		)}
+	</select>
+
+	<select id="getStudentsForArrow" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT_4(
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon}
+		)}
+	</select>
+	
+	<select id="getStudentsInfo2" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT_4(
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon}
+		)}
+	</select>
+	
+	<select id="getExtraInfo" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.SHJ_SHJ003I1_SELECT(
+		#{Hagbeon},
+		#{Nm}
+		)}
+	</select>
+	
+	<select id="getPsSdStudentsInfo" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT_4_SPS(
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon}
+		)}
+	</select>
+	
+	<select id="getPsSdExtraInfo" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.SPS_SHJ_SHJ003I1_SELECT(
+		#{Hagbeon},
+		#{Nm}
+		)}
+	</select>
+
+	<select id="getJiStudents" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ05S_SELECT4(
+		#{Hagbeon},
+		#{Nm},
+		#{SosogCd},
+		#{HjbdGb}
+		)}
+	</select>
+	
+	
+		<select id="getMulpoom" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.SSE_SSE026P5_SELECT(
+		#{Arg1},
+		#{GeonmulCd},
+		#{HosilCd},
+		#{SosogCd},
+		#{KeyWord}
+		)}
+	</select>
+	
+	<select id="getClassRoom" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ13S_SELECT(
+		#{Arg1},
+		#{Arg2},
+		#{GeonmulCd},
+		#{HosilCd},
+		#{HosilNm},
+		#{JeonsanYn}
+		)}
+	</select>	
+	
+	<select id="getSearchSugang" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.COR_CORZ24S_SELECT(
+		#{Yy},
+		#{Haggi},
+		#{Hagbeon},
+		#{Nm},
+		#{Sabeon}
+		)}
+	</select>		
+	
+	<select id="getDongAri" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL SHS_SHS005P_SELECT( #{DongaliNm}, #{DongaliCd}, #{Changeobyn} )}
+	</select>		
+	
+	<select id="getSosogInfo" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL COS_COR001S_SELECT( #{Arg1}, #{Arg2}, #{SosogCd}, #{SosogNm}, #{LevelGb}, #{Sabeon}, #{RoleUseYn}, #{UseYn}, #{JuyaType}, #{OrderBy} )}
+	</select>	
+	
+	<select id="getGroupPopup" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL SHS_SHS003P_GROUP_SELECT( #{Yy}, #{UserID}, #{WiwonCd}, #{WiwonNm})}
+	</select>		
+
+	<select id="getSearchPsGwamog" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.SPS_COR_CORZ17S_SELECT(
+		#{GwamogCd},
+		#{GwamogNm},
+		#{IsuGb}
+		)}
+	</select>		
+
+
+	<select id="getHoewonCd" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.SPS_SPS004P1_SELECT(
+		#{HoewonCd},
+		#{Nm},
+		#{StGb},
+		#{JuminNo}
+		)}
+	</select>	
+</mapper>
+
+  

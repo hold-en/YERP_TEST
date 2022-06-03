@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/all.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/login.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+        
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : 
+	// 프로그램 명    : 
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	var userColor = "3";
+	var menuSe = "G1";
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		$(function(){
+			$(".w2group.shortcut").mouseover(function(){
+				$(".header").find(".btn_box").slideDown();
+			});
+			
+			$(".btn_box").mouseleave(function(){
+				$(".btn_box").slideUp();
+			})
+			$(".w2group.set,.btn_mypage").mouseover(function(){
+				$(".btn_box").slideUp()
+			})
+		});
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	scwin.ChangepwdPopup_onclick = function(e) {
+		requires("uiplugin.popup"); 
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 500;
+		var popHei = 310;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		
+		var opts = {
+			"id" : "chgPassword",
+			"type" : "wframePopup",	// iframePopup, wframePopup
+			"width" : popWid + "px",
+			"height" : popHei + "px",
+			"top" : sumTop, 
+			"left" : sumLeft,
+			"popupName" : "비밀번호변경",
+			"modal" : true, 
+			"useIFrame" : false,
+			"title" : "focusTest",
+			"useATagBtn" : true,
+//			"frameMode" : "wframe"
+		};
+//		WebSquare.util.openPopup("/cm/xml/settingPassword.xml", opts);
+		$p.openPopup("/ui/system/popup/settingPassword.xml", opts);
+	};
+	
+	scwin.SettingPopup_onclick = function(e) {console.log($p.parent().userColor);
+		requires("uiplugin.popup"); 
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 590;
+		var popHei = 200;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		/*
+		var opts = {
+			"id" : "popup_window_wframe",
+			"type" : "wframePopup",
+			"width" : popWid + "px",
+			"height" : popHei + "px",
+			"top" : sumTop, 
+			"left" : sumLeft,
+			"popupName" : "사용자 Color 선택",
+			"modal" : true, 
+			"useIFrame" : false,
+			"title" : "focusTest",
+			"useATagBtn" : true,
+	//		"frameMode" : "wframe"
+		};*/
+//		WebSquare.util.openPopup("/xml/userColor.xml", opts);
+//		$p.openPopup("/ui/system/popup/userColor.xml", opts);
+		var options = {
+			id : "userSetting",
+			title : "사용자 설정",
+			url : "/ui/system/popup/userColor.xml",
+			param : {
+				   userColor : userColor
+				 , menuSe : menuSe
+			},
+			width : popWid,
+			height : popHei,
+			top : sumTop,
+			left : sumLeft,
+			useControl : true,
+			closeBtn : false,
+		}
+		_util.openPopup(options);
+	};
+	
+	scwin.ac_logout_onclick = function() {
+		_util.confirm("로그아웃하시겠습니까?", function() {
+			_request.post('/account/logout', {
+				defaultNotify: false,
+				confirm : false,
+				success : function (response) {
+					//로그아웃시 이동화면
+					if (response.out == "success") {
+						parent.parent.location.reload();
+					}
+				}
+			});
+		});
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	scwin.fn_getMenuSe = function(){
+		return menuSe;
+	};
+	
+	//팝업정보삽입
+	_util.addCallbackListener({
+		userSetting : function(item) {
+			userColor = item.userColor;
+			menuSe = item.menuSe;
+//		},
+//		chgPassword : function(item) {
+//			dlt_01.setCellData(0, "CD_Jojik", item.CD_Jojik);
+//			dlt_01.setCellData(0, "DS_Jojik", item.DS_JojikName);
+		}
+	});
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="linkarea" id="" style="">
+    		<w2:anchor class="btn_inspage" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[인스웨이브 홈페이지]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_wtechcenter" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[W-Tech Center]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_demosite" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[데모사이트]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_allmenu" id="" name="" outerDiv="false" style="">
+    			<xf:label><![CDATA[전체메뉴]]></xf:label>
+    		</w2:anchor>
+    	</xf:group>
+    	<w2:anchor class="btn_toggle_menu" ev:onclick="scwin.btnToggleMenu_onclick" href="" id="btn_toggle_menu" name="" outerDiv="false"
+    		style="">
+    		<xf:label><![CDATA[slide]]></xf:label>
+    	</w2:anchor>
+    	<xf:group class="" id="" style="" tagname="h1">
+    		<w2:anchor class="logo" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[유신 YOOSHIN]]></xf:label>
+    		</w2:anchor>
+    	</xf:group>
+    	<w2:generator class="gnb_menu" id="gr_menu" style="" tagname="ul">
+    		<xf:group class="" id="gr_menu_li" style="" tagname="li">
+    			<w2:anchor id="gr_menu_a" outerDiv="false" style="">
+    				<xf:label><![CDATA[수주관리]]></xf:label>
+    			</w2:anchor>
+    		</xf:group>
+    	</w2:generator>
+    	<xf:group class="option_box" id="" style="">
+    		<xf:group class="" id="" style="" tagname="ul">
+    			<xf:group class="on mypage" id="" style="" tagname="li">
+    				<w2:anchor class="btn_mypage" disabled="" ev:onclick="" id="ac_mypage" outerDiv="false" style="">
+    					<xf:label><![CDATA[HONG KIL DONG]]></xf:label>
+    				</w2:anchor>
+    				<xf:group class="items" id="" style="" tagname="ul">
+    					<xf:group class="" id="" style="" tagname="li">
+    						<w2:anchor ev:onclick="scwin.ChangepwdPopup_onclick" id="" outerDiv="false" style="">
+    							<xf:label><![CDATA[비밀번호 변경]]></xf:label>
+    						</w2:anchor>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="li">
+    						<w2:anchor class="" id="ac_logout" outerDiv="false" style="" ev:onclick="scwin.ac_logout_onclick">
+    							<xf:label><![CDATA[Logout]]></xf:label>
+    						</w2:anchor>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="shortcut" id="" style="" tagname="li">
+    				<w2:anchor class="btn_shortcut" id="" outerDiv="false" style="">
+    					<xf:label><![CDATA[Short cut]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    			<xf:group class="set" id="" style="" tagname="li">
+    				<w2:anchor class="btn_setting" ev:onclick="scwin.SettingPopup_onclick" id="trigger1" outerDiv="false" style="">
+    					<xf:label><![CDATA[Setting]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    	<xf:group style="" id="" class="btn_box">
+    		<w2:anchor outerDiv="false" style="" id="" class="btn_1">
+    			<xf:label><![CDATA[]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_2" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_3" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_4" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_5" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_6" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_7" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_8" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_9" id="" outerDiv="false" style="">
+    			<xf:label></xf:label>
+    		</w2:anchor>
+    	</xf:group>
+    	
+    </body>
+</html>

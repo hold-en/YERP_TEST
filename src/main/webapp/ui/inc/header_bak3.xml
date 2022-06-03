@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	scwin.ChangepwdPopup_onclick = function(e) {
+		requires("uiplugin.popup"); 
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 500;
+		var popHei = 310;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		
+		var opts = {
+			"id" : "popup_window_wframe",
+			"type" : "litewindow",
+			"width" : popWid + "px",
+			"height" : popHei + "px",
+			"top" : sumTop, 
+			"left" : sumLeft,
+			"popupName" : "비밀번호변경",
+			"modal" : true, 
+			"useIFrame" : false,
+			"title" : "focusTest",
+			"useATagBtn" : true,
+			"frameMode" : "wframe"
+		};
+		WebSquare.util.openPopup("/ui/system/popup/settingPassword.xml", opts);
+	};
+	
+	scwin.SettingPopup_onclick = function(e) {
+		requires("uiplugin.popup"); 
+		var winWid = $(window).width();
+		var winHei = $(window).height();
+		var popWid = 510;
+		var popHei = 140;
+		var sumLeft = (winWid - popWid) / 2;
+		var sumTop = (winHei - popHei) / 2;
+		
+		var opts = {
+			"id" : "popup_window_wframe",
+			"type" : "litewindow",
+			"width" : popWid + "px",
+			"height" : popHei + "px",
+			"top" : sumTop, 
+			"left" : sumLeft,
+			"popupName" : "사용자 Color 선택",
+			"modal" : true, 
+			"useIFrame" : false,
+			"title" : "focusTest",
+			"useATagBtn" : true,
+			"frameMode" : "wframe"
+		};
+		WebSquare.util.openPopup("/ui/system/popup/userColor.xml", opts);
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="linkarea" id="" style="">
+    		<w2:anchor class="btn_inspage" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[인스웨이브 홈페이지]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_wtechcenter" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[W-Tech Center]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_demosite" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[데모사이트]]></xf:label>
+    		</w2:anchor>
+    		<w2:anchor class="btn_allmenu" id="" name="" outerDiv="false" style="">
+    			<xf:label><![CDATA[전체메뉴]]></xf:label>
+    		</w2:anchor>
+    	</xf:group>
+    	<w2:anchor class="btn_toggle_menu" ev:onclick="scwin.btnToggleMenu_onclick" href="" id="btn_toggle_menu" name="" outerDiv="false"
+    		style="">
+    		<xf:label><![CDATA[slide]]></xf:label>
+    	</w2:anchor>
+    	<xf:group class="" id="" style="" tagname="h1">
+    		<w2:anchor class="logo" id="" outerDiv="false" style="">
+    			<xf:label><![CDATA[유신 YOOSHIN]]></xf:label>
+    		</w2:anchor>
+    	</xf:group>
+    	<xf:group class="gnb_menu" id="" style="" tagname="ul">
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[수주관리]]></xf:label>
+    			</w2:anchor>
+    			<xf:group class="dep2" id="" style="" tagname="ul">
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu ]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor class="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[사업관리]]></xf:label>
+    			</w2:anchor>
+    			<xf:group class="dep2" id="" style="" tagname="ul">
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor class="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[인력관리]]></xf:label>
+    			</w2:anchor>
+    			<xf:group class="dep2" id="" style="" tagname="ul">
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor class="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[일반관리]]></xf:label>
+    			</w2:anchor>
+    			<xf:group class="dep2" id="" style="" tagname="ul">
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="" id="" style="" tagname="li">
+    					<w2:anchor class="" id="" outerDiv="false" style="">
+    						<xf:label><![CDATA[Sub menu]]></xf:label>
+    					</w2:anchor>
+    					<xf:group class="dep3" id="" style="" tagname="ul">
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor ev:onclick="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 1]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    						<xf:group class="" id="" style="" tagname="li">
+    							<w2:anchor class="" id="" outerDiv="false" style="">
+    								<xf:label><![CDATA[메뉴 2]]></xf:label>
+    							</w2:anchor>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[문서관리]]></xf:label>
+    			</w2:anchor>
+    		</xf:group>
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[공통업무]]></xf:label>
+    			</w2:anchor>
+    		</xf:group>
+    		<xf:group class="" id="" style="" tagname="li">
+    			<w2:anchor id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[개인정보]]></xf:label>
+    			</w2:anchor>
+    		</xf:group>
+    	</xf:group>
+    	<xf:group class="option_box" id="" style="">
+    		<xf:group class="" id="" style="" tagname="ul">
+    			<xf:group class="on mypage" id="" style="" tagname="li">
+    				<w2:anchor class="btn_mypage" disabled="" ev:onclick="" id="" outerDiv="false" style="">
+    					<xf:label><![CDATA[HONG KIL DONG]]></xf:label>
+    				</w2:anchor>
+    				<xf:group class="items" id="" style="" tagname="ul">
+    					<xf:group class="" id="" style="" tagname="li">
+    						<w2:anchor ev:onclick="scwin.ChangepwdPopup_onclick" id="" outerDiv="false" style="">
+    							<xf:label><![CDATA[비밀번호 변경]]></xf:label>
+    						</w2:anchor>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="li">
+    						<w2:anchor class="" id="" outerDiv="false" style="">
+    							<xf:label><![CDATA[Logout]]></xf:label>
+    						</w2:anchor>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="shortcut" id="" style="" tagname="li">
+    				<w2:anchor class="btn_shortcut" id="" outerDiv="false" style="">
+    					<xf:label><![CDATA[Short cut]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    			<xf:group class="set" id="" style="" tagname="li">
+    				<w2:anchor class="btn_setting" ev:onclick="scwin.SettingPopup_onclick" id="trigger1" outerDiv="false" style="">
+    					<xf:label><![CDATA[Setting]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

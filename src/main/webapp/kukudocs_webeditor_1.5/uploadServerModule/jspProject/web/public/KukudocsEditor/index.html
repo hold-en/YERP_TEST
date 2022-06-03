@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>Kukudocs Editor</title>
+
+    <script type="text/javascript" src="/externalLib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/externalLib/jquery-ui-1.11.4.min.js"></script>
+
+    <script type="text/javascript" src="/javascripts/build/Editor.bundle.js"></script>
+    <script type="text/javascript" src="/javascripts/build/OperationSetting.bundle.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function Editor_Complete() {
+            console.log("Editor Load Complete !!!");
+        }
+
+        function Key_event() {
+            console.log("Key_event Call !!!");
+        }
+
+        function Mouse_event() {
+            console.log("Mouse_event Call !!!");
+        }
+
+        $(document).ready(function(){
+            window.kukuEditor = new KuKudocsEditor('editor', {
+//                jsPath : '/javascripts/build/OperationSetting.bundle.js',
+                minHeight : 0,
+                maxHeight : 0,
+                width : '100%',
+//                height : document.documentElement.clientHeight + 'px',
+                height : '100%',
+//                hiddenMenu : ['save', 'print'],
+                fileUploadURL: '/fileUpload',
+                publicPathURL: './',
+                Editor_Complete : Editor_Complete,
+//                Key_event : Key_event,
+//                Mouse_event : Mouse_event
+            });
+//            window.editor2 = new Editor('editor2', { height : '200px', width : '800px'});
+
+//            var s = $('#red').spinit({ height: 30, width: 100, min: 0, initValue: 40, max: 255, callback: onred, mask: 'Red', callback: onred });
+        });
+    </script>
+</head>
+<body>
+<textarea id="editor"></textarea>
+</body>
+</html>

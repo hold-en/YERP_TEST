@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dlt_leftMenu" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="CD_System" name="CD_System" dataType="text"></w2:column>
+            			<w2:column id="ID_Program" name="ID_Program" dataType="text"></w2:column>
+            			<w2:column id="DS_Program" name="DS_Program" dataType="text"></w2:column>
+            			<w2:column id="NO_Level" name="NO_Level" dataType="text"></w2:column>
+            			<w2:column id="RM_Order" name="RM_Order" dataType="text"></w2:column>
+            			<w2:column id="TY_Save" name="TY_Save" dataType="text"></w2:column>
+            			<w2:column id="TY_Select" name="TY_Select" dataType="text"></w2:column>
+            			<w2:column id="RM_FirstOrder" name="RM_FirstOrder" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" id="dlt_myMenu" repeatNode="map" saveRemovedData="true" style="">
+            		<w2:columnInfo>
+            			<w2:column dataType="text" id="CD_System" name="CD_System"></w2:column>
+            			<w2:column dataType="text" id="ID_Program" name="ID_Program"></w2:column>
+            			<w2:column dataType="text" id="DS_Program" name="DS_Program"></w2:column>
+            			<w2:column dataType="text" id="NO_Level" name="NO_Level"></w2:column>
+            			<w2:column dataType="text" id="RM_Order" name="RM_Order"></w2:column>
+            			<w2:column dataType="text" id="TY_Save" name="TY_Save"></w2:column>
+            			<w2:column dataType="text" id="TY_Select" name="TY_Select"></w2:column>
+            			<w2:column dataType="text" id="RM_FirstOrder" name="RM_FirstOrder"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+	//========================================================
+	// 프로그램 위치  : 
+	// 프로그램 ID    : 
+	// 프로그램 명    : 
+	// 프로그램 기능  : 
+	// 작 성 자       : 
+	// 작 성 일 자    : 
+	//--------------------------------------------------------
+	// 수정자 / 수정일자/ 수정내용 및 위치
+	//--------------------------------------------------------
+	
+	//========================================================
+	// 전역변수
+	//========================================================
+	
+	//========================================================
+	// 화면 LOAD
+	//========================================================
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	//========================================================
+	// 화면 이벤트
+	//========================================================
+	scwin.tw_menu_onlabelclick = function(value,nodeElement,index) {
+		var tabObj = {	//json형태의 속성값을 tabObj 이용하여 설정
+			"label" : this.getSelectedLabel(),	//label값은 tLabel변수의 값을 대입한다.
+			"openAction" : "exist", // exist 는 기존 탭을 갱신, new 는 항상 새로, select는 동일 id 가 존재하면 선택
+			"closable" : "true"	//탭 닫기 기능 제공
+		};
+		
+		var classObj = {	//json형태의 속성값을 classObj에서 설정
+//			"contentsClass" : "w2tabcontrol_contents",
+			"src" : value,	//탭콘테이너의 url은 treeview의 value에서 가져온다.
+			"frameMode" : "wframePreload",
+			"scope" : true,
+			"alwaysDraw": "true"
+		};
+		
+		var tValue = value.replaceAll("/", "");
+		tValue = tValue.replace(".", "");
+//		$p.parent().tabc_layout.addTab(
+//			tValue,
+//			{
+//				"label": this.getSelectedLabel(),
+//				"openAction": "exist",
+//				"closable": "true"
+//			},
+//			{
+//				"src": value, 
+//				"frameMode" : "wframePreload",
+//				"scope" : true, 
+//				"alwaysDraw": "true"
+//			}
+//		);
+		
+		$p.parent().tabc_layout.addTab( tValue, tabObj, classObj );
+		var tabindex = $p.parent().tabc_layout.getTabIndex( tValue );
+		$p.parent().tabc_layout.setSelectedTabIndex( tabindex );
+	};
+	
+	scwin.ac_leftMenu_onclick = function() {
+		var columnInfo = {label : "DS_Program"
+						, value : "ID_Program"
+						, depth : "NO_Level"}
+		tw_menu.setNodeSet("data:dlt_leftMenu", columnInfo);
+	};
+	
+	scwin.ac_myMenu_onclick = function() {
+		var columnInfo = {label : "DS_Program"
+						, value : "ID_Program"
+						, depth : "NO_Level"}
+		tw_menu.setNodeSet("data:dlt_myMenu", columnInfo);
+	};
+	
+	//========================================================
+	// 화면별 사용자 정의 함수
+	//========================================================
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="grp_tab" id="" style="">
+    		<xf:group class="shortcut_box" id="">
+    			<w2:anchor class="btn_all_search" id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[메뉴검색]]></xf:label>
+    			</w2:anchor>
+    			<w2:anchor class="btn_fold" id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[메뉴접기]]></xf:label>
+    			</w2:anchor>
+    			<w2:anchor class="btn_fold_list on" id="" outerDiv="false" style="">
+    				<xf:label><![CDATA[메뉴펼치기]]></xf:label>
+    			</w2:anchor>
+    		</xf:group>
+    		<xf:group class="tab_tit" id="" style="" tagname="ul">
+    			<xf:group class="on" id="" style="" tagname="li">
+    				<w2:anchor class="" ev:onclick="scwin.ac_leftMenu_onclick" id="ac_leftMenu" outerDiv="false" style="">
+    					<xf:label><![CDATA[전체메뉴]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    			<xf:group id="" style="" tagname="li">
+    				<w2:anchor ev:onclick="scwin.ac_myMenu_onclick" id="ac_myMenu" outerDiv="false" style="">
+    					<xf:label><![CDATA[마이메뉴]]></xf:label>
+    				</w2:anchor>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="search_field" id="">
+    			<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabled="false"
+    				disabledClass="w2selectbox_disabled" id="" ref="" renderType="native" style="" submenuSize="auto">
+    				<xf:choices></xf:choices>
+    			</xf:select1>
+    		</xf:group>
+    		<xf:group class="tab_con" id="" style="">
+    			<w2:treeview class="tw_menu" dataType="listed" id="tw_menu" lineShow="false" style="" tooltipGroupClass="false"
+    				ev:onlabelclick="scwin.tw_menu_onlabelclick">
+    				<w2:node>
+    					<w2:label><![CDATA[페이지샘플]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					<w2:node>
+    						<w2:label><![CDATA[샘플리스트]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						<w2:node>
+    							<w2:label><![CDATA[검색/그리드]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/search_grid.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[검색/테이블]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/search_table.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[검색/테이블/그리드]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/search_table_grid.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[검색/탭컨트롤]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/search_tab.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[검색/멀티그리드]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/search_multi_grid.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[검색/테이블/탭컨트롤]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/search_table_tab.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[트리뷰/그리드]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/treeview_grid.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[셔틀그리드(가로)]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/shuttle_grid_h.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[셔틀그리드(세로)]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/shuttle_grid_v.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[팝업창]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/popup.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[시스템메시지창]]></w2:label>
+    							<w2:value><![CDATA[/xml/pageSample/alert.xml]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    					</w2:node>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[샘플화면]]></w2:label>
+    					<w2:value><![CDATA[/template/template.xml]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[수주관리]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					<w2:node>
+    						<w2:label><![CDATA[수주정보]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						<w2:node>
+    							<w2:label><![CDATA[발주 정보 등록]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							<w2:node>
+    								<w2:label><![CDATA[발주 정보 등록1]]></w2:label>
+    								<w2:value><![CDATA[]]></w2:value>
+    								<w2:folder><![CDATA[]]></w2:folder>
+    								<w2:checkbox><![CDATA[]]></w2:checkbox>
+    								<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    								<w2:image><![CDATA[]]></w2:image>
+    								<w2:iconImage><![CDATA[]]></w2:iconImage>
+    								<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    								<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    								<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							</w2:node>
+    							<w2:node>
+    								<w2:label><![CDATA[발주 정보 등록2]]></w2:label>
+    								<w2:value><![CDATA[]]></w2:value>
+    								<w2:folder><![CDATA[]]></w2:folder>
+    								<w2:checkbox><![CDATA[]]></w2:checkbox>
+    								<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    								<w2:image><![CDATA[]]></w2:image>
+    								<w2:iconImage><![CDATA[]]></w2:iconImage>
+    								<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    								<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    								<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							</w2:node>
+    							<w2:node>
+    								<w2:label><![CDATA[발주 정보 등록3]]></w2:label>
+    								<w2:value><![CDATA[]]></w2:value>
+    								<w2:folder><![CDATA[]]></w2:folder>
+    								<w2:checkbox><![CDATA[]]></w2:checkbox>
+    								<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    								<w2:image><![CDATA[]]></w2:image>
+    								<w2:iconImage><![CDATA[]]></w2:iconImage>
+    								<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    								<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    								<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							</w2:node>
+    							<w2:node>
+    								<w2:label><![CDATA[발주 정보 등록4]]></w2:label>
+    								<w2:value><![CDATA[]]></w2:value>
+    								<w2:folder><![CDATA[]]></w2:folder>
+    								<w2:checkbox><![CDATA[]]></w2:checkbox>
+    								<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    								<w2:image><![CDATA[]]></w2:image>
+    								<w2:iconImage><![CDATA[]]></w2:iconImage>
+    								<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    								<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    								<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							</w2:node>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[수주 전 정보 등록]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[수주 전 정보 조회]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[년간 수주계획 등록]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[수주계획 일정 관리]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							<w2:node>
+    								<w2:label><![CDATA[수주계획 일정 관리1]]></w2:label>
+    								<w2:value><![CDATA[]]></w2:value>
+    								<w2:folder><![CDATA[]]></w2:folder>
+    								<w2:checkbox><![CDATA[]]></w2:checkbox>
+    								<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    								<w2:image><![CDATA[]]></w2:image>
+    								<w2:iconImage><![CDATA[]]></w2:iconImage>
+    								<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    								<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    								<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							</w2:node>
+    							<w2:node>
+    								<w2:label><![CDATA[수주계획 일정 관리2]]></w2:label>
+    								<w2:value><![CDATA[]]></w2:value>
+    								<w2:folder><![CDATA[]]></w2:folder>
+    								<w2:checkbox><![CDATA[]]></w2:checkbox>
+    								<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    								<w2:image><![CDATA[]]></w2:image>
+    								<w2:iconImage><![CDATA[]]></w2:iconImage>
+    								<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    								<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    								<w2:leafImage><![CDATA[]]></w2:leafImage>
+    							</w2:node>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[수주계획 관리]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    						<w2:node>
+    							<w2:label><![CDATA[수주계획 조회]]></w2:label>
+    							<w2:value><![CDATA[]]></w2:value>
+    							<w2:folder><![CDATA[]]></w2:folder>
+    							<w2:checkbox><![CDATA[]]></w2:checkbox>
+    							<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    							<w2:image><![CDATA[]]></w2:image>
+    							<w2:iconImage><![CDATA[]]></w2:iconImage>
+    							<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    							<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    							<w2:leafImage><![CDATA[]]></w2:leafImage>
+    						</w2:node>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[입찰정보]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[계약관리]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[청구관리]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[수금관리]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[감리기성]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[실적관리]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[사업관리]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[인력관리]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[일반관리]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[문서관리]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[공통업무]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    				</w2:node>
+    				<w2:node>
+    					<w2:label><![CDATA[개인정보]]></w2:label>
+    					<w2:value><![CDATA[]]></w2:value>
+    					<w2:folder><![CDATA[]]></w2:folder>
+    					<w2:checkbox><![CDATA[]]></w2:checkbox>
+    					<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    					<w2:image><![CDATA[]]></w2:image>
+    					<w2:iconImage><![CDATA[]]></w2:iconImage>
+    					<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    					<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    					<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					<w2:node>
+    						<w2:label><![CDATA[정보등록]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[문자/카드발송]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[개인통신]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[정보조회]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    					<w2:node>
+    						<w2:label><![CDATA[개인환경설정]]></w2:label>
+    						<w2:value><![CDATA[]]></w2:value>
+    						<w2:folder><![CDATA[]]></w2:folder>
+    						<w2:checkbox><![CDATA[]]></w2:checkbox>
+    						<w2:checkboxDisabled><![CDATA[]]></w2:checkboxDisabled>
+    						<w2:image><![CDATA[]]></w2:image>
+    						<w2:iconImage><![CDATA[]]></w2:iconImage>
+    						<w2:selectedImage><![CDATA[]]></w2:selectedImage>
+    						<w2:expandedImage><![CDATA[]]></w2:expandedImage>
+    						<w2:leafImage><![CDATA[]]></w2:leafImage>
+    					</w2:node>
+    				</w2:node>
+    			</w2:treeview>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

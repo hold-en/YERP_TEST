@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!--<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<setting name="callSettersOnNulls" value="true"/>
+	</settings>-->
+	<typeAliases>
+		<typeAlias alias="jsonObject" type="org.json.simple.JSONObject"/>
+	</typeAliases>
+	<typeHandlers>
+		<typeHandler jdbcType="BIT" javaType="java.lang.Boolean" handler="yerp.common.handler.BooleanTypeHandler"/>
+		<typeHandler jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" handler="yerp.common.handler.DateTypeHandler"/>
+	</typeHandlers>
+</configuration>

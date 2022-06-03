@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dl_gubun" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="code" name="코드" dataType="text" length="1"></w2:column>
+            			<w2:column id="desc" name="구분" dataType="text" length="256"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<code><![CDATA[DS_BOOK]]></code>
+            				<desc><![CDATA[도서명]]></desc>
+            			</w2:row>
+            			<w2:row>
+            				<code><![CDATA[NO_REGIST]]></code>
+            				<desc><![CDATA[등록번호]]></desc>
+            			</w2:row>
+            			<w2:row>
+            				<code><![CDATA[CD_PROJECT]]></code>
+            				<desc><![CDATA[사업번호]]></desc>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dl_code" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="NO_REGIST" name="등록번호" dataType="text" length="7"></w2:column>
+            			<w2:column id="DS_BOOK" name="도서명" dataType="text" length="100"></w2:column>
+            			<w2:column id="DS_AUTHOR" name="name3" dataType="text" length="45"></w2:column>
+            			<w2:column id="DS_TRANSLATOR" name="name4" dataType="text" length="45"></w2:column>
+            			<w2:column id="CD_LANGUAGE" name="name5" dataType="text" length="9"></w2:column>
+            			<w2:column id="NO_PAGE" name="name6" dataType="text" length="10"></w2:column>
+            			<w2:column id="SZ_BOOK" name="name7" dataType="text" length="10"></w2:column>
+            			<w2:column id="DS_PUBLISH_CO" name="name8" dataType="text" length="30"></w2:column>
+            			<w2:column id="DS_PUBLISH_AREA" name="name9" dataType="text" length="20"></w2:column>
+            			<w2:column id="YY_PUBLISH" name="name10" dataType="text" length="50"></w2:column>
+            			<w2:column id="DS_KEYWORD" name="name11" dataType="text" length="70"></w2:column>
+            			<w2:column id="DS_CONTENTS" name="name12" dataType="text" length="255"></w2:column>
+            			<w2:column id="CD_TECH_PART" name="name13" dataType="text" length="9"></w2:column>
+            			<w2:column id="NO_CLASS" name="name14" dataType="text" length="16"></w2:column>
+            			<w2:column id="DS_AUTHOR_SYMBOL" name="name15" dataType="text" length="50"></w2:column>
+            			<w2:column id="NO_VOLUME" name="name16" dataType="text" length="50"></w2:column>
+            			<w2:column id="CD_BOOK_GB" name="name17" dataType="text" length="9"></w2:column>
+            			<w2:column id="CD_CLASS" name="name18" dataType="text" length="9"></w2:column>
+            			<w2:column id="TY_NEW" name="name19" dataType="text" length="1"></w2:column>
+            			<w2:column id="TY_KMS" name="name20" dataType="text" length="1"></w2:column>
+            			<w2:column id="DT_INPUT" name="name21" dataType="text" length="16"></w2:column>
+            			<w2:column id="DT_UPDATE" name="name22" dataType="text" length="16"></w2:column>
+            		</w2:columnInfo>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+    //========================================================
+	// 전역변수
+	//========================================================
+	var G_popupId;
+	var G_parameter;
+	var G_01_index = -1;
+        
+    var G_pageNum=1;
+	var G_pageTotal=0;
+	var G_currentRow=0;
+	var G_recordCount=0;
+	var G_strLoadPage = 'first';   
+        
+    //========================================================
+	// 화면 LOAD
+	//========================================================    
+	scwin.onpageload = function() {
+		requires("uiplugin.popup");
+		G_popupId = $p.getParameter("popupID");
+		G_parameter = _util.getPopupParameter();
+
+		
+		
+		
+		if(G_parameter.sCD_Project != null){
+			cbo_gubun.setSelectedIndex(2);
+			txt_keyword.setValue(sCD_Project);
+			
+			cbo_gubun.setDisabled(true);
+			txt_keyword.setReadOnly(true);	
+		}		
+		scwin.selectData();
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	scwin.selectData = function() {
+		console.log("cbo_gubun.getValue()" + cbo_gubun.getValue());
+		console.log("txt_keyword.getValue() " + txt_keyword.getValue() );
+		console.log("G_pageNum" + G_pageNum);
+		console.log("'100'" + '100');
+		console.log("G_strLoadPage" + G_strLoadPage);
+		
+		_request.get("/ESZ/ESZA_BC_Book_Find",{
+			data : {
+				normal : {					
+					  parSearchField : cbo_gubun.getValue()
+//					, parSearchKeyword : txt_keyword.getValue() 
+//					, parPageNum : G_pageNum
+//					, parCTReadCount : '100'
+//					, parTYPageGubun : G_strLoadPage
+				}
+			},
+			success : function(res) {
+				dl_code.setJSON(res.out[0]);
+			}			
+		});
+	};
+	
+	
+	scwin.txt_keyword_onchange = function(info) {
+		//scwin.selectData();
+	};
+	
+	scwin.txt_keyword_onkeydown = function(e) {
+		if((e.charCode || e.keyCode) == 13){
+			dl_code.clearFilter();
+			console.log("일단여기 + " + cbo_gubun.getValue() + "   "+txt_keyword.getValue());
+			if(cbo_gubun.getValue() == 'DS_ACNT'){
+				dl_code.setColumnFilter(
+					{type:'row', colIndex:'DS_ACNT', key:txt_keyword.getValue().toString(), condition:'and'}
+				);
+			}
+			if(cbo_gubun.getValue() == 'CD_ACNT'){
+				dl_code.setColumnFilter(
+					{type:'row', colIndex:'CD_ACNT', key:txt_keyword.getValue().toString(), condition:'and'}
+				);
+			}
+		}	
+	};
+	
+	scwin.gd_01_onrowindexchange = function(row,oldRow) {
+		G_01_index = row;
+	};
+	
+	scwin.gd_01_oncelldblclick = function(row,col,colId) {
+		_util.runCallbackForPopup(G_popupId, dl_code.getRowJSON(row));
+	};
+	
+	scwin.btn_confirm_onclick = function(e) {
+		if(-1 == G_01_index) {
+			_util.alert("1");
+			$p.closePopup();
+		} else {
+			_util.alert("2");
+			//console.log(dl_code.getRowJSON(G_01_index));
+			_util.runCallbackForPopup(G_popupId, dl_code.getRowJSON(G_01_index));
+		}
+	};
+	
+	scwin.btn_close_onclick = function(e) {
+		$p.closePopup();
+	};
+	
+	
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="pop_contents" id="" style="">
+    		<xf:group class="tbbox" id="" style="margin: 15px 0px 0px 0px;">
+    		</xf:group>
+    		<xf:group class="shbox" id="" style="margin: 30px 0px 0px 0px">
+    				<xf:group class="shbox_inner" id="" style="">
+    					<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tb " id="" style="" tagname="table">
+    						<w2:attributes>
+    							<w2:summary></w2:summary>
+    						</w2:attributes>
+    						<xf:group class="" id="" style="" tagname="tr">
+    							<xf:group class="w2tb_th" style="" tagname="th">
+    								<xf:select1 allOption="" appearance="minimal" chooseOption="" class="" direction="auto" disabledClass="w2selectbox_disabled" id="cbo_gubun" ref="" renderType="" style="width:100.00%;" submenuSize="auto">
+    									<xf:choices>
+    										<xf:itemset nodeset="data:dl_gubun">
+    											<xf:label ref="desc"></xf:label>
+    											<xf:value ref="code"></xf:value>
+    										</xf:itemset>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group class="w2tb_td" style="width: 60%;" tagname="td">
+    								<xf:input class="" id="txt_keyword" placeholder="" style="width:99.50%;"
+    									ev:onchange="scwin.txt_keyword_onchange" ev:onkeydown="scwin.txt_keyword_onkeydown">
+    								</xf:input>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="btn_shbox" id="" style="">
+    					<xf:trigger class="btn_cm sch" disabled="" escape="false" id="tgF_select" style="" type="button">
+    						<xf:label><![CDATA[조회]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    			</xf:group><xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    			
+    			<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dl_code" defaultCellHeight="20"
+    				ev:oncelldblclick="scwin.gd_01_oncelldblclick" id="gd_01" keepDefaultColumnWidth="false" rowNumVisible="false" rowNumWidth="50"
+    				rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height:500px;"
+    				visibleRowNum="25" useFilterList="false" ev:onrowindexchange="scwin.gd_01_onrowindexchange">
+    				<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    				<w2:header style="" id="header2">
+    					<w2:row style="" id="row3">
+    						<w2:column width="100" inputType="text" style="height:20px" id="column27" value="등록번호" displayMode="label"></w2:column>
+    						<w2:column width="200" inputType="text" style="height:20px" id="column26" value="도서명" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody style="" id="gBody2">
+    					<w2:row style="" id="row4">
+    						<w2:column width="100" inputType="text" style="height:20px" id="NO_REGIST" displayMode="label"></w2:column>
+    						<w2:column width="200" inputType="text" style="height:20px" id="DS_BOOK" displayMode="label"></w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+</xf:group>
+    		<xf:group class="btncbox" id="">
+    			<xf:trigger class="btn_cm " id="btn_confirm" style="" type="button" ev:onclick="scwin.btn_confirm_onclick">
+    				<xf:label><![CDATA[확인]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="btn_close" style="" type="button" ev:onclick="scwin.btn_close_onclick">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    	
+    </body>
+</html>

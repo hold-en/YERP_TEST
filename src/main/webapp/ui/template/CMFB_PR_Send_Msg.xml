@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style="">
+    		<xf:group class="dfbox mb10" id="" style="">
+    			<xf:group class="fl" id="" style="">
+    				<w2:wframe class="btnbox_grid" id="" src="/ui/wframe/grid_btnbox.xml"
+    					style="display: inline-block;margin-right: 5px;">
+    				</w2:wframe>
+    				<xf:trigger class="btn_ext btn_down" id="" style="" type="button" disabled="true">
+    					<xf:label><![CDATA[다운로드]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_print" disabled="true" id="" style="" type="button">
+    					<xf:label><![CDATA[인쇄]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_xlsx" id="" style="" type="button">
+    					<xf:label><![CDATA[엑셀]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_bull" id="" style="" type="button">
+    					<xf:label><![CDATA[예약발송취소]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<w2:textbox class="mr5" id="" label="몇개씩 읽기" style=""></w2:textbox>
+    				<xf:input adjustMaxLength="false" id="" style="" class=""></xf:input>
+    				<xf:trigger class="btn_ext ml20" id="" style="" type="button">
+    					<xf:label><![CDATA[이전]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext" id="" style="" type="button">
+    					<xf:label><![CDATA[다음]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="lybox" id="" style="">
+    			<xf:group class="ly_column" id="" style="">
+    				<xf:group class="dfbox mb20" id="" style="">
+    					<w2:textbox class="df_tit fl" id="" label="문자메시지 보내기" style=""></w2:textbox>
+    					<xf:group style="" id="" class="fr">
+    						<xf:select1 id="" selectedIndex="-1" appearance="full" style="" cols="" rows="1" ref=""
+    							renderType="radiogroup">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[SMS (단문)]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[LMS (장문)]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" id="" class="mb_msg">
+    					<xf:group class="lybox" id="" style="height:100%;">
+    						<xf:group class="ly_column" id="" style="">
+    							<xf:group id="" class="msg_wrap">
+    								<w2:gridView scrollByColumnAdaptive="false" dataList="data:dataList1" scrollByColumn="false"
+    									style="height: 300px;" autoFit="allColumn" id="" visibleRowNum="7" class="wq_gvw" defaultCellHeight="20" autoFitMinWidth=""
+    									checkReadOnlyOnPasteEnable="">
+    									<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    									<w2:header style="" id="header2">
+    										<w2:row style="" id="row3">
+    											<w2:column removeBorderStyle="false" width="144" inputType="text" style="height:34px;"
+    												id="column12" value="전화번호" blockSelect="false" displayMode="label">
+    											</w2:column>
+    											<w2:column rowSpan="" colSpan="2" removeBorderStyle="false" width="166" inputType="text"
+    												style="height:34px;" id="column11" value="이름" blockSelect="false" displayMode="label">
+    											</w2:column>
+    										</w2:row>
+    									</w2:header>
+    									<w2:gBody style="" id="gBody2">
+    										<w2:row style="" id="row4">
+    											<w2:column removeBorderStyle="false" width="144" inputType="text" style="height:34px;"
+    												id="col1" value="" blockSelect="false" displayMode="label">
+    											</w2:column>
+    											<w2:column removeBorderStyle="false" width="96" inputType="text" style="height:34px;"
+    												id="col2" value="" blockSelect="false" displayMode="label">
+    											</w2:column>
+    											<w2:column removeBorderStyle="false" width="50" inputType="image" style="height:34px;"
+    												id="col3" value="" blockSelect="false" displayMode="label">
+    											</w2:column>
+    										</w2:row>
+    									</w2:gBody>
+    								</w2:gridView>
+    								<xf:group style="" id="" class="msg_foot">
+    									<w2:span style="" label="대상인원 총 :" id=""></w2:span>
+    									<w2:span style="" id="" label="4"></w2:span>
+    									<w2:span style="" id="" label="명"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="msg_btm">
+    									<xf:group id="" class="mb5">
+    										<w2:span style="" label="휴대폰번호" id=""></w2:span>
+    										<xf:input adjustMaxLength="false" style="" id=""></xf:input>
+    									</xf:group>
+    									<xf:group id="">
+    										<w2:span style="" label="이름" id=""></w2:span>
+    										<xf:input adjustMaxLength="false" style="" id=""></xf:input>
+    									</xf:group>
+    									<xf:group class="dfbox" id="" style="">
+    										<xf:group class="fr" id="" style="">
+    											<xf:trigger class="btn_cm" id="" style="" type="button">
+    												<xf:label><![CDATA[추가]]></xf:label>
+    											</xf:trigger>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group style="" id="" class="dfbox">
+    										<xf:trigger class="btn_ext btn_link" disabled="false" id="" style="" type="button">
+    											<xf:label><![CDATA[대상자선택]]></xf:label>
+    										</xf:trigger>
+    										<xf:trigger class="btn_ext btn_link" disabled="false" id="" style="" type="button">
+    											<xf:label><![CDATA[초기화]]></xf:label>
+    										</xf:trigger>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group class="ly_column" id="">
+    							<xf:group style="" id="" class="msg_wrap2">
+    								<xf:textarea id="" style=""></xf:textarea>
+    								<xf:group id="" style="" class="tar">
+    									<w2:span label="13" style="" id=""></w2:span>
+    									<w2:span label="/" style="" id=""></w2:span>
+    									<w2:span label="80" style="" id=""></w2:span>
+    									<w2:span label="byte" style="" id=""></w2:span>
+    								</xf:group>
+    								<xf:group class="dfbox" id="" style="">
+    									<xf:group class="tac mb10" id="" style="">
+    										<xf:trigger class="btn_cm" id="" style="" type="button">
+    											<xf:label><![CDATA[★특수문자]]></xf:label>
+    										</xf:trigger>
+    										<xf:trigger class="btn_cm" id="" style="" type="button">
+    											<xf:label><![CDATA[^^얼굴문자]]></xf:label>
+    										</xf:trigger>
+    									</xf:group>
+    									<xf:group id="" style="" class="tac">
+    										<w2:span id="" label="회신번호" style=""></w2:span>
+    										<xf:input adjustMaxLength="false" id="" style=""></xf:input>
+    									</xf:group>
+    									<xf:group class="dfbox tac" id="" style="">
+    										<xf:trigger class="btn_ext" disabled="false" id="" style="" type="button">
+    											<xf:label><![CDATA[전송]]></xf:label>
+    										</xf:trigger>
+    										<xf:trigger class="btn_ext" disabled="false" id="" style="" type="button">
+    											<xf:label><![CDATA[취소]]></xf:label>
+    										</xf:trigger>
+    									</xf:group>
+    									<xf:group class="dfbox tac mt20" id="" style="">
+    										<xf:select selectedindex="-1" id="" appearance="full" style="" cols="" rows="1" ref=""
+    											renderType="checkboxgroup">
+    											<xf:choices>
+    												<xf:item>
+    													<xf:label><![CDATA[즉시전송]]></xf:label>
+    													<xf:value><![CDATA[]]></xf:value>
+    												</xf:item>
+    												<xf:item>
+    													<xf:label><![CDATA[예약전송]]></xf:label>
+    													<xf:value><![CDATA[]]></xf:value>
+    												</xf:item>
+    											</xf:choices>
+    										</xf:select>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="msg_box warning" id="" style="">
+    					<w2:textbox class="txt_msg" id="" label="주의사항" style="" tagname=""></w2:textbox>
+    					<w2:textbox class="txt_con" for="" id="" label="1. 본 문자 서비스는 유료이므로 업무용으로 꼭 필요한 경우에만 사용하여 주십시오. (개인적 용도로 사용을 금합니다.)" style="" tagname=""></w2:textbox>
+    					<w2:textbox class="txt_con" for="" id="" label="2. 대량 문자메시지 발송은 자제하여 주시기 바랍니다." style="" tagname=""></w2:textbox>
+    					<w2:textbox class="txt_con" for="" id="" label="3. 장문 메시지 보내실 경우 상단 LMS을 이용하십시오." style="" tagname=""></w2:textbox>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="ly_column" id="">
+    				<xf:group class="dfbox mb10" id="" style="">
+    					<w2:textbox class="df_tit fl" id="" label="문자메시지 발송내역" style=""></w2:textbox>
+    					<xf:group class="fr" id="" style="">
+    						<w2:textbox class="" id="" label="총" style=""></w2:textbox>
+    						<w2:textbox class="sum" id="" label="23" style=""></w2:textbox>
+    						<w2:textbox class="" id="" label="건" style=""></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="lastColumn" autoFitMinWidth="968" checkReadOnlyOnPasteEnable="" class="wq_gvw"
+    					dataList="data:dataList1" defaultCellHeight="20" id="" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;"
+    					visibleRowNum="all">
+    					<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    					<w2:header id="header2" style="">
+    						<w2:row id="row3" style="">
+    							<w2:column blockSelect="false" displayMode="label" id="column12" inputType="checkbox" removeBorderStyle="false"
+    								style="height:34px;" value="" width="49">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text" removeBorderStyle="false"
+    								style="height:34px;" value="발송일자" width="140">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+    								style="height:34px;" value="문자메시지 내용" width="467">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text" removeBorderStyle="false"
+    								style="height:34px;" value="건수" width="70">
+    							</w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody id="gBody2" style="">
+    						<w2:row id="row4" style="">
+    							<w2:column blockSelect="false" displayMode="label" id="col1" inputType="checkbox" removeBorderStyle="false"
+    								style="height:34px;" value="" width="49">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col2" inputType="text" removeBorderStyle="false"
+    								style="height:20px" value="" width="140">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col3" inputType="text" removeBorderStyle="false"
+    								style="height:20px" value="" width="467">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col4" inputType="text" removeBorderStyle="false"
+    								style="height:20px" value="" width="70">
+    							</w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

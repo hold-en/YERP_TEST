@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="system.menu">
+
+	<resultMap id="topMenu" type="jsonObject"></resultMap>
+	<resultMap id="leftMenu" type="jsonObject"></resultMap>
+	<resultMap id="permission" type="jsonObject"></resultMap>
+	<resultMap id="permission1" type="jsonObject"></resultMap>
+	
+	<select id="getTopMenuList" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL DUC_DEV.USP_SYS_TOPMENU_SELECT(
+			   #{GBN}
+			 , #{ROLE_ID}
+			 , #{SESSION_USER_IDNT}
+			 , #{C_RESULT, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=topMenu}
+			 , #{OUT_ERR_CD, mode=OUT, jdbcType=VARCHAR, javaType=string}
+			 , #{OUT_ERR_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+		)}
+	</select>
+	
+	<select id="getLeftMenuList" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCB_SP_UserMenu_Select(
+			   #{SESSION_USER_IDNT}
+			 , ''
+		)}
+	</select>
+	
+	<select id="getMyMenuList" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCB_SP_UserMyMenu_Select(
+			   #{SESSION_USER_IDNT}
+			 , ''
+		)}
+	</select>
+	
+	<select id="getLeftMenuList2" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.ESCB_SP_UserExtraMenu_Select(
+			   #{SESSION_USER_IDNT}
+			 , 1
+		)}
+	</select>
+	
+	<select id="getMenuPermission" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL DUC_DEV.USP_PERMISSION_SELECT1(
+			   #{SESSION_USER_IDNT}
+			 , #{WORK_PRGM_IDNT}
+			 , #{C_RESULT, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=permission1}
+			 , #{OUT_ERR_CD, mode=OUT, jdbcType=VARCHAR, javaType=string}
+			 , #{OUT_ERR_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+		)}
+	</select>
+	
+	<select id="getMenuPermission2" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL DUC_DEV.USP_PERMISSION_SELECT(
+			   #{SESSION_USER_IDNT}
+			 , #{WORK_PRGM_IDNT}
+			 , #{C_RESULT, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=permission}
+			 , #{OUT_ERR_CD, mode=OUT, jdbcType=VARCHAR, javaType=string}
+			 , #{OUT_ERR_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+		)}
+	</select>
+
+</mapper>

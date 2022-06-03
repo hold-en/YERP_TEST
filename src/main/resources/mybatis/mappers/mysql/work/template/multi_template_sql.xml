@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="template">
+
+	<select id="multi_template_01_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_Contract_Select (
+			   #{CD_Project}
+		)}
+	</select>
+	
+	<select id="multi_template_02_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_ContractChange_Select (
+			   #{CD_Project}
+		)}
+	</select>
+	
+	<select id="multi_template_05_F0" parameterType="jsonObject" resultType="jsonObject">
+		SELECT CD_Project
+			 , DS_Memo
+		  FROM BMCA_TB_ContractMemo
+		 WHERE CD_Project = #{CD_Project}
+	</select>
+	
+	<select id="multi_template_09_F0" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMBA_SP_FirmCareerStartMember_Select (
+			   #{CD_Project}
+		)}
+	</select>
+	
+	<select id="multi_template_02_I0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_ContractChange_Insert(
+			   #{CD_Project}
+			 , #{SN_Seq}
+			 , #{DT_Contract}
+			 , #{DT_ProjStart}
+			 , #{DT_ProjEnd}
+			 , #{AM_Project}
+			 , #{DT_Change}
+			 , #{DS_Update}
+			 , #{DT_Submit}
+			 , #{TY_Collect}
+			 , #{ID_Damdang}
+			 , #{AM_Real}
+			 , #{AM_Joint}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+	
+	<select id="multi_template_02_U0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_ContractChange_Update(
+			   #{CD_Project}
+			 , #{SN_Seq}
+			 , #{DT_Contract}
+			 , #{DT_ProjStart}
+			 , #{DT_ProjEnd}
+			 , #{AM_Project}
+			 , #{DT_Change}
+			 , #{DS_Update}
+			 , #{DT_Submit}
+			 , #{TY_Collect}
+			 , #{ID_Damdang}
+			 , #{AM_Real}
+			 , #{AM_Joint}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+	
+	<select id="multi_template_02_D0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_ContractChange_Delete(
+			   #{CD_Project}
+			 , #{SN_Seq}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+	
+	<select id="multi_template_01_I0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_Contract_Insert(
+			   #{CD_Project}
+			 , #{DS_Project}
+			 , #{CD_Client}
+			 , #{DS_ClientDiv}
+			 , #{DS_ClientPer}
+			 , #{CD_Jojik}
+			 , #{CD_SujuJojik}
+			 , #{ID_SiteRep}
+			 , #{TY_ContGubun}
+			 , #{CD_Status}
+			 , #{TY_Sale}
+			 , #{AM_Proj}
+			 , #{AM_Vat}
+			 , #{AM_Real}
+			 , #{AM_RealVat}
+			 , #{DT_Bid}
+			 , #{DT_Cont}
+			 , #{DT_ProjStart}
+			 , #{DT_ProjEnd}
+			 , #{TY_Cont}
+			 , #{AM_Joint}
+			 , #{AM_JointVat}
+			 , #{CD_Prof}
+			 , #{DS_Joint}
+			 , #{DS_AssurCo}
+			 , #{CD_ConCal}
+			 , #{TY_Bid}
+			 , #{YN_ProjExp}
+			 , #{YN_ProjCert}
+			 , #{AM_Design}
+			 , #{AM_Plan}
+			 , #{AM_Bid}
+			 , #{YN_Domestic}
+			 , #{CD_Bank}
+			 , #{NO_BankAcc}
+			 , #{TY_Tax}
+			 , #{NO_Bid}
+			 , #{ID_Manage}
+			 , #{SN_Project}
+			 , #{CD_OrgClient}
+			 , #{DS_ContPosi}
+			 , #{DS_EtcPosi}
+			 , #{SESSION_USER_IDNT}
+			 , #{DS_CapitalSource}
+			 , #{TY_Order}
+			 , #{CD_National}
+			 , #{DT_ExpireInsure}
+			 , #{YN_CheckInsure}
+		)}
+	</select>
+	
+	<select id="multi_template_01_U0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_Contract_Update(
+			   #{CD_Project}
+			 , #{DS_Project}
+			 , #{CD_Client}
+			 , #{DS_ClientDiv}
+			 , #{DS_ClientPer}
+			 , #{CD_Jojik}
+			 , #{CD_SujuJojik}
+			 , #{ID_SiteRep}
+			 , #{TY_ContGubun}
+			 , #{CD_Status}
+			 , #{TY_Sale}
+			 , #{AM_Proj}
+			 , #{AM_Vat}
+			 , #{AM_Real}
+			 , #{AM_RealVat}
+			 , #{DT_Bid}
+			 , #{DT_Cont}
+			 , #{DT_ProjStart}
+			 , #{DT_ProjEnd}
+			 , #{TY_Cont}
+			 , #{AM_Joint}
+			 , #{AM_JointVat}
+			 , #{CD_Prof}
+			 , #{DS_Joint}
+			 , #{DS_AssurCo}
+			 , #{CD_ConCal}
+			 , #{TY_Bid}
+			 , #{YN_ProjExp}
+			 , #{YN_ProjCert}
+			 , #{AM_Design}
+			 , #{AM_Plan}
+			 , #{AM_Bid}
+			 , #{YN_Domestic}
+			 , #{CD_Bank}
+			 , #{NO_BankAcc}
+			 , #{TY_Tax}
+			 , #{NO_Bid}
+			 , #{ID_Manage}
+			 , #{SN_Project}
+			 , #{CD_OrgClient}
+			 , #{DS_ContPosi}
+			 , #{DS_EtcPosi}
+			 , #{SESSION_USER_IDNT}
+			 , #{DS_CapitalSource}
+			 , #{TY_Order}
+			 , #{CD_National}
+			 , #{DT_ExpireInsure}
+			 , #{YN_CheckInsure}
+		)}
+	</select>
+	
+	<select id="multi_template_01_D0" parameterType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.BMCA_SP_Contract_Delete(
+			   #{CD_Project}
+		)}
+	</select>
+
+</mapper>

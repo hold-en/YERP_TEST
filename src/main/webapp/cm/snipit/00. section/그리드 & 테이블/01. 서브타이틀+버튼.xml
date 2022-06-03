@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="dfbox" id="" style="">
+    		<w2:textbox class="df_tit fl" id="" label="서브타이틀" style=""></w2:textbox>
+    		<xf:group class="fr" id="" style="">
+    			<xf:trigger class="btn_cm  copy" id="" style="" type="button">
+    				<xf:label><![CDATA[행복사]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm  row_add" id="" style="" type="button">
+    				<xf:label><![CDATA[행추가]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm  row_del" id="" style="" type="button">
+    				<xf:label><![CDATA[행삭제]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm  xls_up" id="" style="" type="button">
+    				<xf:label><![CDATA[엑셀업로드]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm  xls_down" id="" style="" type="button">
+    				<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="" style="" type="button">
+    				<xf:label><![CDATA[인쇄]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="" style="" type="button">
+    				<xf:label><![CDATA[저장]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger class="btn_cm " id="" style="" type="button">
+    				<xf:label><![CDATA[삭제]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

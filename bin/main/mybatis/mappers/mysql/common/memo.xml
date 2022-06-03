@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test.memo">
+    <!--
+    <select id="getMemoListByProc" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+        {CALL stored_procedure_name()}
+    </select>
+
+    <insert id="insertMemo" parameterType="jsonObject" statementType="CALLABLE">
+        {CALL memo_proc(
+          #{TITLE},
+          #{CONTENT},
+          #{SESSION_USER_IDNT},
+          #{RESULT_CODE, mode=OUT, jdbcType=VARCHAR, javaType=string},
+          #{RESULT_MSG, mode=OUT, jdbcType=VARCHAR, javaType=string}
+        )}
+    </insert>
+    -->
+    <select id="getMemoList" parameterType="jsonObject" resultType="jsonObject">
+        SELECT * FROM TEST;
+    </select>
+
+    <insert id="insertMemo" parameterType="jsonObject">
+        INSERT INTO TEST(
+        TITLE,
+        FILE_PATH1,
+        FILE_PATH2)
+        VALUES(
+        #{TITLE},        
+        #{FILE_PATH1},
+        #{FILE_PATH2})        
+    </insert>
+
+    <update id="updateMemo" parameterType="jsonObject">
+        UPDATE TEST SET TITLE = #{TITLE}, FILE_PATH1 = #{FILE_PATH1}, FILE_PATH2 = #{FILE_PATH2}
+        WHERE IDX = #{IDX}
+    </update>
+
+    <update id="deleteFile" parameterType="jsonObject">
+        UPDATE TEST SET FILE_PATH1 = ''
+        WHERE IDX = #{IDX}
+    </update>
+    
+    <delete id="deleteMemo" parameterType="jsonObject">
+        DELETE FROM TEST WHERE IDX = #{IDX} 
+    </delete>
+
+
+</mapper>
+  

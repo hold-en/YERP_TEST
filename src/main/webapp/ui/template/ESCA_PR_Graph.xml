@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+    	<w2:type>DEFAULT</w2:type>
+        <w2:buildDate/>
+        <xf:model>
+            <xf:instance>
+                <data xmlns=""/>
+            </xf:instance>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" ev:ondataload="scwin.dlt_01_ondataload" id="dlt_01" repeatNode="map" saveRemovedData="true"
+            		style="">
+            		<w2:columnInfo>
+            			<w2:column dataType="text" id="DS_Month" name="DS_Month"></w2:column>
+            			<w2:column dataType="text" id="NO_Month" name="NO_Month"></w2:column>
+            			<w2:column dataType="text" id="AM_Proj" name="AM_Proj"></w2:column>
+            			<w2:column dataType="text" id="AM_ProjSum" name="AM_ProjSum"></w2:column>
+            			<w2:column dataType="text" id="AM_LastProj" name="AM_LastProj"></w2:column>
+            			<w2:column dataType="text" id="AM_LastProjSum" name="AM_LastProjSum"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="false">
+            			<w2:row>
+            				<DS_Month><![CDATA[1월]]></DS_Month>
+            				<NO_Month><![CDATA[01]]></NO_Month>
+            				<AM_Proj><![CDATA[123456]]></AM_Proj>
+            				<AM_ProjSum><![CDATA[123456]]></AM_ProjSum>
+            				<AM_LastProj><![CDATA[5678]]></AM_LastProj>
+            				<AM_LastProjSum><![CDATA[5678]]></AM_LastProjSum>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection>
+            </w2:workflowCollection>
+        </xf:model>
+         <script type="text/javascript" lazy="false"><![CDATA[
+        
+	scwin.onpageload = function() {
+		
+	};
+	
+	scwin.onpageunload = function() {
+		
+	};
+	
+	
+	scwin.tg_select_onclick = function(e) {
+		_request.get("/template/ESCA_PR_Graph_01_F0", {
+			data : {
+				normal : {
+					   YR_Year : sbF_YR_Year.getValue()
+					 , TY_Jojik : rdF_TY_Jojik.getValue()
+					 , CD_Jojik : ipF_CD_Jojik.getValue()
+					 , DT_To : icF_DT_To.getValue()
+					 , YN_Domestic : rdF_YN_Domestic.getValue()
+				}
+			},
+			success : function(res) {
+				dlt_01.setJSON(res.out);
+//				scwin.fn_setGraph();
+			}
+		})
+	};
+	]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" ev:onpageunload="scwin.onpageunload">
+    	<xf:group class="sub_contents" id="" style="">
+    		<xf:group class="dfbox" id="" style="">
+    			<xf:group class="fl" id="" style="">
+    				<xf:trigger class="btn_ext btn_down" id="tg_select" style="" type="button" ev:onclick="scwin.tg_select_onclick">
+    					<xf:label><![CDATA[다운로드]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_print" id="" style="" type="button" disabled="true">
+    					<xf:label><![CDATA[인쇄]]></xf:label>
+    				</xf:trigger>
+    				<xf:trigger class="btn_ext btn_xlsx" id="" style="" type="button">
+    					<xf:label><![CDATA[엑셀]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    			<xf:group class="fr" id="" style="">
+    				<xf:trigger class="btn_ext btn_link" id="" style="" type="button">
+    					<xf:label><![CDATA[상세조회]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="shbox" id="" style="">
+    			<xf:group class="shbox_inner" id="" style="">
+    				<xf:group adaptive="layout" adaptiveThreshold="768" class="w2tb tb " id="" style="" tagname="table">
+    					<w2:attributes>
+    						<w2:summary></w2:summary>
+    					</w2:attributes>
+    					<xf:group tagname="colgroup">
+    						<xf:group style="width:80px;" tagname="col"></xf:group>
+    						<xf:group style="width:326px;" tagname="col"></xf:group>
+    						<xf:group style="width:80px;" tagname="col"></xf:group>
+    						<xf:group tagname="col" style="width:400px;"></xf:group>
+    					</xf:group>
+    					<xf:group class="" id="" style="" tagname="tr">
+    						<xf:group class="w2tb_th" style="" tagname="th">
+    							<w2:textbox class="" id="" label="기준년도" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group class="w2tb_td" style="" tagname="td">
+    						<xf:group id=""><xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="width:100px;" allOption="" id="" renderType="" class="" direction="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[2021년]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[2019년]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[2018년]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1><xf:select1 ref="" appearance="full" disabled="" style="" id="" renderType="radiogroup" rows="" cols="" selectedIndex="1" class="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[전체]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[설계]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[감리]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1><xf:select1 ref="" appearance="full" disabled="" style="" id="" renderType="radiogroup" rows="" cols="" selectedIndex="1" class="ml20">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[전체]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[국내]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[해외]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1></xf:group></xf:group>
+    						<xf:group class="w2tb_th" style="" tagname="th">
+    							<w2:textbox class="" id="" label="주관부서" style=""></w2:textbox>
+    						</xf:group>
+    						<xf:group class="w2tb_td" id="" style="" tagname="td">
+    							<xf:group id="" class="flex">
+    								<xf:input style="width:100%;" id="" placeholder="" class="" disabled="true"></xf:input>
+    								<xf:trigger style="" id="" type="button" class="btn_search type02">
+    									<xf:label><![CDATA[Search]]></xf:label>
+    								</xf:trigger>
+    								<w2:span label="당년도 기준" style="" id=""></w2:span>
+    								<w2:inputCalendar calendarValueType="yearMonthDate" focusOnDateSelect="false" footerDiv="true" id=""
+    									renderDiv="true" renderType="" rightAlign="false" style="width: 120px;" class="flex_no">
+    								</w2:inputCalendar>
+    								<w2:span id="" label="까지" style=""></w2:span>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="btn_shbox" id="" style="">
+    				<xf:trigger class="btn_cm sch" disabled="" escape="false" id="" style="" type="button">
+    					<xf:label><![CDATA[조회]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="lybox col2" id="" style="">
+    			<xf:group class="ly_column" id="" style="">
+    				<w2:fusionchart accessibility="false" drawType="javascript" runflashAt="IE6,IE7,IE8" seriesType="simple"
+    					chartType="Column2D" style="width: 100%;height: 535px;margin-top: 15px;" id="" ref="data:dataList1">
+    				</w2:fusionchart>
+    			</xf:group>
+    			<xf:group class="ly_column" id="" style="">
+    				<xf:group adaptiveThreshold="" class="gvwbox" id="" style="">
+    					<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="wq_gvw" dataList="data:dlt_01"
+    						defaultCellHeight="34" id="" keepDefaultColumnWidth="true" rowNumHeaderValue="No" rowNumVisible="false" rowNumWidth="50"
+    						rowStatusHeaderValue="상태" rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false"
+    						style="height:535px;" visibleRowNum="all">
+    						<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    						<w2:header id="header2" style="">
+    							<w2:row style="" id="row6">
+    								<w2:column width="70" inputType="text" style="height:34px;" id="column29" value="구분" displayMode="label"
+    									colSpan="" rowSpan="2" fixColumnWidth="true">
+    								</w2:column>
+    								<w2:column width="140" inputType="text" style="height:34px;" id="column28" value="전년도"
+    									displayMode="label" colSpan="2" rowSpan="">
+    								</w2:column>
+    								<w2:column width="140" inputType="text" style="height:34px;" id="column26" value="당년도"
+    									displayMode="label" colSpan="2" rowSpan="">
+    								</w2:column>
+    							</w2:row>
+    							<w2:row id="row3" style="">
+    								<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="월별" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="column9" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="누적액" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="월별" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="column7" inputType="text"
+    									removeBorderStyle="false" style="height:34px;" value="누적액" width="120">
+    								</w2:column>
+    							</w2:row>
+    						</w2:header>
+    						<w2:gBody id="gBody2" style="">
+    							<w2:row id="row4" style="">
+    								<w2:column blockSelect="false" displayMode="label" id="DS_Month" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="70" value="1월">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col2" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120" value="">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col3" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col4" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120">
+    								</w2:column>
+    								<w2:column blockSelect="false" displayMode="label" id="col5" inputType="text" removeBorderStyle="false"
+    									style="height:34px;" width="120">
+    								</w2:column>
+    							</w2:row>
+    						</w2:gBody>
+    						<w2:footer style="" id="footer1">
+    							<w2:row style="" id="row5">
+    								<w2:column width="70" inputType="text" style="height:34px;" id="column20" value="합계"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column19" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column18" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column17" value=""
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="120" inputType="text" style="height:34px;" id="column16" value=""
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    						</w2:footer>
+    					</w2:gridView>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>
